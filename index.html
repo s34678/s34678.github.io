@@ -3,56 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>พัทธ์ธีรา วรรณสวัสดิ์</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #b8a9ff;
-            color: #333;
-            text-align: center;
-            padding: 50px;
-        }
-        .card {
-            background: white;
-            padding: 50px;
-            border-radius: 50px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        h1 { color: #2c3e50; }
-        p { font-size: 18px; line-height: 1.6; }
-    </style>
+    <title>หน้าแรก - My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="card">
-        <h1>ยินดีต้อนรับสู่โปรไฟล์ของฉัน น.ส.พัทธ์ธีรา วรรณสวัสดิ์👋</h1>
-        <p>สวัสดีค่ะ! ดิฉันชื่อ <strong>พัทธ์ธีรา (Phatteera)</strong></p>
-        <p>ขณะนี้กำลังศึกษา/สนใจด้าน Industrial Business Adminjstration and Trade </p>
-        <p>นี่คือเว็บไซต์แรกของฉันที่โฮสต์บน GitHub Pages!</p>
-        <a href="portfolio.html" class="portfolio-button">
-    📁 แฟ้มสะสมผลงาน
-</a>
+    <div class="site-wrapper">
+        
+        <header>
+            <div class="logo-brand">
+                <h1>PORTFOLIO</h1>
+                <span>My personal guide</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">หน้าแรก</a></li>
+                    <li><a href="about.html">คำนำ & ประวัติ</a></li>
+                    <li><a href="projects.html">ผลงานทั้งหมด</a></li>
+                    <li><a href="contact.html">ติดต่อ</a></li>
+                </ul>
+            </nav>
+        </header>
 
-<style>
-    .portfolio-button {
-        display: inline-block;
-        background-color: #3498db;
-        color: white;
-        padding: 15 px 30 px;
-        margin-top: 20 px;
-        border-radius: 10 px;
-        text-decoration: none;
-        font-size: 20 px;
-        font-weight: bold;
-    }
-
-    .portfolio-button:hover {
-        background-color: #2980b9;
-    }
-</style>
+        <section class="hero-section">
+            <div class="hero-left">
+                <h2 class="hero-title">Welcome to my<br>Psychology <span>portfolio</span></h2>
+                <p class="hero-desc">รวบรวมผลงาน ประวัติ และทักษะต่างๆที่เรียนรู้จากหลายที่มารวมกัน</p>
+                <a href="projects.html" class="btn-primary">ชมผลงานทั้งหมด</a>
+            </div>
+            
+            <div class="hero-right">
+    <img src="F.png" alt="Hero Image">
+            </div>
+        </section>
 
     </div>
+
 </body>
 </html>
