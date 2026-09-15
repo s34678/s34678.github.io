@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f2e6;
+    color: #4a3829;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* แถบด้านซ้าย */
+.sidebar {
+    width: 320px;
+    background-color: #f2e9d8;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.sidebar-header {
+    margin-bottom: 40px;
+}
+
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #c82e2e;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4a3829;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #7a6552;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: #c82e2e;
+    margin: 10px auto;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+.nav-item {
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #4a3829;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.nav-item.active {
+    background-color: #c82e2e;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-item:hover:not(.active) {
+    background-color: #e0d4c0;
+}
+
+.sidebar, .nav-menu {
+    position: relative;
+    z-index: 5;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.mountain-icon {
+    font-size: 40px;
+    color: #9a8570;
+}
+
+.chinese-slogan {
+    font-size: 18px;
+    font-weight: bold;
+    color: #c82e2e;
+}
+
+.thai-slogan {
+    font-size: 14px;
+    color: #7a6552;
+}
+
+.panda-icon {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+/* เนื้อหาหลัก */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #f8f2e6;
+}
+
+.card {
+    background-color: #fff9ef;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.card-header h2 {
+    font-size: 22px;
+    color: #4a3829;
+}
+
+.profile-circle {
+    width: 160px;
+    height: 160px;
+    background-color: #e8ddd0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    color: #7a6552;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.main-heading {
+    font-size: 24px;
+    color: #4a3829;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.intro-paragraph, .content-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a3829;
+    text-align: justify;
+}
+
+/* Timeline */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-item {
+    padding: 15px;
+    background-color: #f2e9d8;
+    border-radius: 8px;
+    border-left: 4px solid #c82e2e;
+}
+
+.timeline-item h4 {
+    font-size: 18px;
+    color: #c82e2e;
+    margin-bottom: 5px;
+}
+
+/* Skills */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-item {
+    padding: 15px;
+    background-color: #f2e9d8;
+    border-radius: 8px;
+}
+
+.skill-item h4 {
+    font-size: 18px;
+    color: #c82e2e;
+    margin-bottom: 10px;
+}
+
+/* Works */
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.work-item {
+    padding: 15px;
+    background-color: #f2e9d8;
+    border-radius: 8px;
+}
+
+.work-item h4 {
+    font-size: 18px;
+    color: #c82e2e;
+    margin-bottom: 8px;
+}
+
+.date {
+    font-size: 14px;
+    color: #7a6552;
+    margin-top: 5px;
+}
+
+/* Goals */
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.goal-item {
+    padding: 15px;
+    background-color: #f2e9d8;
+    border-radius: 8px;
+}
+
+.goal-item h4 {
+    font-size: 18px;
+    color: #c82e2e;
+    margin-bottom: 10px;
+}
+
+/* Contact */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 16px;
+}
+
+.contact-info strong {
+    color: #c82e2e;
+}
+
+/* มือถือ */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+    .main-content {
+        padding: 20px;
+    }
+    .works-grid {
+        grid-template-columns: 1fr;
+    }
+}
