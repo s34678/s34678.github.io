@@ -16,7 +16,6 @@ body {
     min-height: 100vh;
 }
 
-/* แถบด้านซ้าย */
 .sidebar {
     width: 320px;
     background-color: #f2e9d8;
@@ -78,26 +77,16 @@ body {
     text-decoration: none;
     color: #4a3829;
     font-size: 16px;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 10;
-    cursor: pointer;
-    pointer-events: auto;
+    display: block;
 }
 
 .nav-item.active {
     background-color: #c82e2e;
     color: white;
-    font-weight: 500;
 }
 
 .nav-item:hover:not(.active) {
     background-color: #e0d4c0;
-}
-
-.sidebar, .nav-menu {
-    position: relative;
-    z-index: 5;
 }
 
 .sidebar-footer {
@@ -129,7 +118,6 @@ body {
     margin-top: 10px;
 }
 
-/* เนื้อหาหลัก */
 .main-content {
     flex: 1;
     padding: 40px;
@@ -187,109 +175,13 @@ body {
     margin-bottom: 20px;
 }
 
-.intro-paragraph, .content-text {
+.intro-paragraph {
     font-size: 16px;
     line-height: 1.8;
     color: #4a3829;
     text-align: justify;
 }
 
-/* Timeline */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.timeline-item {
-    padding: 15px;
-    background-color: #f2e9d8;
-    border-radius: 8px;
-    border-left: 4px solid #c82e2e;
-}
-
-.timeline-item h4 {
-    font-size: 18px;
-    color: #c82e2e;
-    margin-bottom: 5px;
-}
-
-/* Skills */
-.skills-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.skill-item {
-    padding: 15px;
-    background-color: #f2e9d8;
-    border-radius: 8px;
-}
-
-.skill-item h4 {
-    font-size: 18px;
-    color: #c82e2e;
-    margin-bottom: 10px;
-}
-
-/* Works */
-.works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.work-item {
-    padding: 15px;
-    background-color: #f2e9d8;
-    border-radius: 8px;
-}
-
-.work-item h4 {
-    font-size: 18px;
-    color: #c82e2e;
-    margin-bottom: 8px;
-}
-
-.date {
-    font-size: 14px;
-    color: #7a6552;
-    margin-top: 5px;
-}
-
-/* Goals */
-.goals-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.goal-item {
-    padding: 15px;
-    background-color: #f2e9d8;
-    border-radius: 8px;
-}
-
-.goal-item h4 {
-    font-size: 18px;
-    color: #c82e2e;
-    margin-bottom: 10px;
-}
-
-/* Contact */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    font-size: 16px;
-}
-
-.contact-info strong {
-    color: #c82e2e;
-}
-
-/* มือถือ */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -299,8 +191,5 @@ body {
     }
     .main-content {
         padding: 20px;
-    }
-    .works-grid {
-        grid-template-columns: 1fr;
     }
 }
