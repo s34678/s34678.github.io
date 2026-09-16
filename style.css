@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --mint: #a8ded0;
-    --mint-dark: #5eaa99;
-    --mint-light: #edf9f6;
-    --dark: #263b37;
-    --gray: #71817e;
+    --blue: #8fb8ff;
+    --blue-dark: #5f8ee8;
+    --purple: #7566d9;
+    --purple-light: #f1efff;
+    --dark: #292747;
+    --gray: #72718a;
     --white: #ffffff;
 }
 
@@ -35,7 +36,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #e7efed;
+    border-bottom: 1px solid #e5e6f3;
     background: rgba(255,255,255,.9);
     position: sticky;
     top: 0;
@@ -66,14 +67,14 @@ nav a {
 
 nav a:hover,
 nav a.active {
-    color: var(--mint-dark);
+    color: var(--purple);
 }
 
 nav a.active::after {
     content: "";
     width: 5px;
     height: 5px;
-    background: var(--mint-dark);
+    background: var(--purple);
     border-radius: 50%;
     position: absolute;
     left: 50%;
@@ -95,7 +96,7 @@ nav a.active::after {
 }
 
 .page-title p {
-    color: var(--mint-dark);
+    color: var(--purple);
     font-size: 13px;
     letter-spacing: 3px;
     margin-bottom: 18px;
@@ -104,6 +105,15 @@ nav a.active::after {
 .page-title h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(45px, 7vw, 75px);
+
+    background: linear-gradient(
+        90deg,
+        #5f8ee8,
+        #7566d9
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 
@@ -123,6 +133,7 @@ nav a.active::after {
     object-fit: cover;
     border-radius: 20px;
     display: block;
+    box-shadow: 0 15px 35px rgba(100, 100, 180, .12);
 }
 
 .about-content h2 {
@@ -138,8 +149,9 @@ nav a.active::after {
 .info {
     margin-top: 25px;
     padding: 20px;
-    background: var(--mint-light);
+    background: var(--purple-light);
     border-radius: 15px;
+    border-left: 4px solid var(--blue-dark);
 }
 
 .info p {
@@ -174,19 +186,20 @@ nav a.active::after {
 
 .skill-card {
     padding: 28px;
-    border: 1px solid #dce9e6;
+    border: 1px solid #dedff0;
     border-radius: 18px;
     transition: .3s;
+    background: white;
 }
 
 .skill-card:hover {
     transform: translateY(-8px);
-    border-color: var(--mint);
-    box-shadow: 0 15px 35px rgba(70,120,110,.1);
+    border-color: var(--blue);
+    box-shadow: 0 15px 35px rgba(100, 100, 180, .14);
 }
 
 .skill-card span {
-    color: var(--mint-dark);
+    color: var(--purple);
     font-size: 13px;
 }
 
@@ -219,23 +232,34 @@ nav a.active::after {
 }
 
 .main-btn {
-    background: var(--dark);
+    background: linear-gradient(
+        135deg,
+        #5f8ee8,
+        #7566d9
+    );
     color: white;
+    border: none;
 }
 
 .main-btn:hover {
-    background: var(--mint-dark);
+    background: linear-gradient(
+        135deg,
+        #4f7fda,
+        #6657c9
+    );
     transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(100, 100, 200, .2);
 }
 
 .outline-btn {
     color: var(--dark);
-    border: 1px solid #b9cbc7;
+    border: 1px solid #bfc4df;
 }
 
 .outline-btn:hover {
-    border-color: var(--mint-dark);
-    color: var(--mint-dark);
+    border-color: var(--purple);
+    color: var(--purple);
+    transform: translateY(-3px);
 }
 
 
@@ -244,9 +268,9 @@ nav a.active::after {
 footer {
     text-align: center;
     padding: 30px;
-    color: #93a39f;
+    color: #9294a8;
     font-size: 13px;
-    border-top: 1px solid #e7efed;
+    border-top: 1px solid #e5e6f3;
 }
 
 
@@ -317,3 +341,22 @@ footer {
 
 
 @media (max-width: 500px) {
+
+    .skills {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title h1 {
+        font-size: 45px;
+    }
+
+    .page-buttons {
+        flex-direction: column;
+    }
+
+    .main-btn,
+    .outline-btn {
+        text-align: center;
+    }
+
+}
