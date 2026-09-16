@@ -1,320 +1,548 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-         * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    background: #f2ece0;
-    display: flex;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>หน้าแรก 🧸 | My Portfolio</title>
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  background: linear-gradient(135deg, #dff6ff, #fff0f8);
+  color: #666;
+}
+
+
+/* =========================
+   แถบเมนู
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: rgba(255,255,255,0.95);
+
+  box-shadow: 0 4px 18px rgba(120,180,220,0.2);
+
+  z-index: 999;
+}
+
+.nav-logo {
+  color: #e98faf;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #69aeca;
+  font-weight: bold;
+
+  padding: 10px 14px;
+  border-radius: 25px;
+
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  background: #ffe3ef;
+  color: #e77fa5;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   หน้าแรก
+========================= */
+
+.home {
+  min-height: 100vh;
+
+  padding: 110px 20px 60px;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: linear-gradient(135deg, #dff6ff, #fff0f8);
+}
+
+
+/* =========================
+   กล่องหลัก
+========================= */
+
+.home-content {
+  position: relative;
+  z-index: 2;
+
+  background: rgba(255,255,255,0.88);
+
+  padding: 40px 35px;
+
+  border-radius: 35px;
+
+  width: min(700px, 95%);
+
+  box-shadow:
+    0 15px 40px rgba(130,180,215,0.25);
+
+  border: 3px solid white;
+
+  animation: appear 0.8s ease;
+}
+
+
+/* =========================
+   รูปโปรไฟล์กรอบหัวใจ
+========================= */
+
+.profile-photo {
+  width: 280px;
+  height: 280px;
+
+  margin: 0 auto 20px;
+
+  overflow: hidden;
+
+  clip-path: polygon(
+    50% 100%,
+    0 35%,
+    0 22%,
+    10% 8%,
+    25% 3%,
+    40% 8%,
+    50% 22%,
+    60% 8%,
+    75% 3%,
+    90% 8%,
+    100% 22%,
+    100% 35%
+  );
+
+  background: linear-gradient(
+    135deg,
+    #f5a5c5,
+    #91d8f2
+  );
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   ตกแต่ง
+========================= */
+
+.decor {
+  position: absolute;
+
+  top: 95px;
+
+  color: #f3a9c8;
+
+  font-size: 25px;
+}
+
+.bear {
+  font-size: 65px;
+
+  margin-bottom: 5px;
+
+  animation: bounce 2s infinite;
+}
+
+
+/* =========================
+   ข้อความ
+========================= */
+
+.welcome {
+  color: #69aeca;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+
+  font-size: 14px;
+}
+
+h1 {
+  color: #555;
+
+  font-size: 38px;
+
+  line-height: 1.5;
+
+  margin: 15px 0;
+}
+
+h1 span {
+  color: #ed8eb1;
+}
+
+.intro {
+  color: #777;
+
+  font-size: 20px;
+
+  margin-bottom: 20px;
+}
+
+.cute-icons {
+  font-size: 25px;
+
+  letter-spacing: 8px;
+
+  margin: 20px 0;
+}
+
+
+/* =========================
+   ปุ่ม
+========================= */
+
+.start-btn {
+  display: inline-block;
+
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3a1c0,
+      #83cbe8
+    );
+
+  color: white;
+
+  padding: 13px 28px;
+
+  border-radius: 30px;
+
+  font-weight: bold;
+
+  box-shadow:
+    0 7px 18px rgba(150,190,220,0.25);
+
+  transition: 0.3s;
+}
+
+.start-btn:hover {
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   ของตกแต่งลอย
+========================= */
+
+.floating {
+  position: absolute;
+
+  font-size: 35px;
+
+  animation:
+    floating 4s ease-in-out infinite;
+}
+
+.f1 {
+  left: 10%;
+  top: 25%;
+}
+
+.f2 {
+  right: 12%;
+  top: 20%;
+}
+
+.f3 {
+  left: 15%;
+  bottom: 20%;
+}
+
+.f4 {
+  right: 15%;
+  bottom: 18%;
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes floating {
+
+  0%,100% {
+    transform: translateY(0) rotate(0deg);
   }
- 
-  .sidebar {
-    width: 270px;
-    height: 100%;
-    flex-shrink: 0;
-    background: #f2ece0;
-    padding: 32px 22px;
-    color: #4a3f35;
-    box-shadow: 4px 0 16px rgba(0,0,0,0.15);
-    overflow-y: auto;
+
+  50% {
+    transform: translateY(-20px) rotate(8deg);
   }
- 
-  /* โลโก้ */
-  .logo-badge {
-    width: 88px;
-    height: 88px;
-    margin: 0 auto 4px;
-    border-radius: 50%;
-    background: #c0392b;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #f2ece0;
-    font-size: 34px;
-    font-weight: 700;
-    position: relative;
+
+}
+
+@keyframes bounce {
+
+  0%,100% {
+    transform: translateY(0);
   }
-  .logo-badge::before,
-  .logo-badge::after {
-    content: "❀";
-    position: absolute;
-    color: #c0392b;
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+}
+
+@keyframes appear {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width:700px) {
+
+  .navbar {
+    height: auto;
+
+    padding: 10px;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .nav-logo {
     font-size: 16px;
   }
-  .logo-badge::before { top: -6px; left: -10px; }
-  .logo-badge::after  { top: -2px; right: -14px; }
- 
-  .brand-title {
-    text-align: center;
-    font-family: 'Brush Script MT', cursive;
-    font-size: 30px;
-    margin: 10px 0 4px;
-    color: #2c2c2c;
+
+  .nav-menu {
+    gap: 2px;
   }
- 
-  .brand-sub {
-    text-align: center;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #6b5f52;
-    margin-bottom: 8px;
+
+  .nav-menu a {
+    font-size: 11px;
+
+    padding: 7px;
   }
- 
-  .accent-line {
-    width: 40px;
-    height: 3px;
-    background: #c0392b;
-    border-radius: 3px;
-    margin: 0 auto 20px;
+
+  .home {
+    padding-top: 150px;
   }
- 
-  /* เมนู */
-  nav ul {
-    list-style: none;
-    margin: 0 0 28px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+
+  .home-content {
+    padding: 30px 18px;
   }
-  nav a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    text-decoration: none;
-    color: #4a3f35;
-    font-size: 14px;
-    transition: background 0.15s, color 0.15s;
+
+  .profile-photo {
+    width: 230px;
+    height: 230px;
   }
-  nav a i { font-style: normal; width: 18px; text-align: center; }
-  nav a:hover { background: #e7ddc9; }
-  nav a.active {
-    background: #c0392b;
-    color: #fff;
+
+  h1 {
+    font-size: 28px;
   }
- 
-  /* ภูเขา decorative */
-  .mountain { margin: 8px 0 4px; }
- 
-  .quote {
-    text-align: center;
-    margin: 4px 0 20px;
+
+  .intro {
+    font-size: 17px;
   }
-  .quote .cn {
-    font-size: 15px;
-    font-weight: 600;
-    color: #2c2c2c;
-  }
-  .quote .th {
-    font-size: 12px;
-    color: #6b5f52;
-    margin-top: 6px;
-    line-height: 1.5;
-  }
- 
-  .footer-art { text-align: center; }
- 
-  /* เนื้อหาหลัก */
-  .main-content {
-    flex: 1;
-    min-width: 0;
-    height: 100%;
-    background: #ece4d3;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    box-sizing: border-box;
-    overflow-y: auto;
-  }
- 
-  .about-card,
-  .preface-card {
-    flex: 1;
-    min-height: 0;
-    background: #faf7f0;
-    border-radius: 24px;
-    padding: 28px 32px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    box-sizing: border-box;
-    overflow-y: auto;
-  }
- 
-  .about-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 22px;
-  }
-  .about-header .icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: #c0392b;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .about-header h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #2c2c2c;
-  }
- 
-  .about-body {
-    display: flex;
-    gap: 28px;
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
- 
-  .about-photo {
-    position: relative;
-    width: 190px;
-    height: 190px;
-    flex-shrink: 0;
-  }
-  .about-photo img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-  }
-  .sticky-note {
-    position: absolute;
-    top: 14px;
-    right: -6px;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-weight: 600;
-    font-size: 13px;
-    color: #2c2c2c;
-    line-height: 1.4;
-    text-align: right;
-  }
-  .heart-mark {
-    position: absolute;
-    bottom: -6px;
-    right: -14px;
-    font-size: 20px;
-    color: #c0392b;
-  }
- 
-  .about-text {
-    flex: 1;
-    min-width: 220px;
-  }
-  .about-text p {
-    margin: 0 0 18px;
-    font-size: 14px;
-    line-height: 1.9;
-    color: #4a3f35;
-  }
-  .tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .tag {
-    background: #f4d9d3;
-    color: #b0392b;
-    font-size: 12px;
-    padding: 5px 14px;
-    border-radius: 999px;
-  }
-    </style>
+
+}
+
+</style>
+
 </head>
+
+
 <body>
-<aside class="sidebar">
- 
-    <div class="logo-badge">学</div>
-    <div class="brand-title">Phatteera</div>
-    <div class="brand-sub">เส้นทางสู่อนาคต<br>ที่อยากไปให้ถึง</div>
-    <div class="accent-line"></div>
- 
-    <nav>
-      <ul>
-        <li><a href="#" class="active"><i>🏠</i> หน้าแรก</a></li>
-        <li><a href="#"><i>👤</i> เกี่ยวกับฉัน</a></li>
-        <li><a href="#"><i>🎓</i> ประวัติการศึกษา</a></li>
-        <li><a href="#"><i>⭐</i> ทักษะและความสามารถ</a></li>
-        <li><a href="#"><i>📖</i> ผลงาน / กิจกรรม</a></li>
-        <li><a href="#"><i>🎯</i> เป้าหมายในอนาคต</a></li>
-        <li><a href="#"><i>✉️</i> ติดต่อ</a></li>
-      </ul>
-    </nav>
- 
-    <svg class="mountain" viewBox="0 0 230 90" width="100%" height="90">
-      <polygon points="0,90 45,25 75,55 110,10 160,60 190,35 230,90" fill="#c9c2b3"/>
-      <polygon points="30,90 75,45 110,70 160,30 230,90" fill="#b6ae9c" opacity="0.7"/>
-    </svg>
- 
-    <div class="quote">
-      <div class="cn">"学习中文<br>打开更大的世界"</div>
-      <div class="th">เรียนภาษาจีน<br>เพื่อเปิดโลกที่กว้างขึ้น</div>
-    </div>
- 
-    <div class="footer-art">
-      <svg viewBox="0 0 100 60" width="90" height="54">
-        <ellipse cx="50" cy="45" rx="26" ry="14" fill="#f2ece0" stroke="#4a3f35" stroke-width="1.5"/>
-        <circle cx="38" cy="26" r="13" fill="#fff" stroke="#2c2c2c" stroke-width="1.5"/>
-        <circle cx="30" cy="16" r="5" fill="#2c2c2c"/>
-        <circle cx="46" cy="16" r="5" fill="#2c2c2c"/>
-        <circle cx="33" cy="27" r="3.5" fill="#2c2c2c"/>
-        <circle cx="43" cy="27" r="3.5" fill="#2c2c2c"/>
-      </svg>
-    </div>
- 
-  </aside>
-    <div class="main-content">
-    <div class="about-card">
-      <div class="about-header">
-        <span class="icon">👤</span>
-        <h2>เกี่ยวกับฉัน</h2>
-      </div>
-      <div class="about-body">
-        <div class="about-photo">
-          <img src="Tha.jpg" alt="รูปโปรไฟล์พัทธ์ธีรา">
-        </div>
-        <div class="about-text">
-          <p>
-            สวัสดีค่ะ ดิฉัน "น.ส.พัทธ์ธีรา วรรณสวัสดิ์"<br>
-            <h1>นี่คือแฟ้มสะสมผลงานที่รวบรวมกิจกรรมและผลงานต่างๆด้านภาษาจีนของดิฉันเพื่อศึกษาต่อในระดับอุดมศึกษาค่ะ</h1>
-          </p>
-          <div class="tags">
-            <span class="tag">ภาษาจีน</span>
-            <span class="tag">การเรียนรู้</span>
-            <span class="tag">พัฒนาตัวเอง</span>
-            <span class="tag">อนาคต</span>
-          </div>
-        </div>
-      </div>
-    </div>
-        <div class="preface-card">
-      <div class="about-header">
-        <span class="icon">📝</span>
-        <h2>คำนำ</h2>
-      </div>
-      <p style="margin:0; font-size:14px; line-height:1.9; color:#4a3f35;">
-        แฟ้มสะสมผลงานฉบับนี้จัดทำขึ้นเพื่อรวบรวมเส้นทางการเรียนรู้ภาษาจีนของดิฉันตั้งแต่จุดเริ่มต้นของความสนใจจนถึงผลงาน กิจกรรม และทักษะต่างๆที่ได้พัฒนาขึ้นตลอดระยะเวลาที่ผ่านมาการเรียนรู้ภาษาจีน
-        สำหรับดิฉันไม่ได้เป็นเพียงการเรียนรู้ภาษาและวัฒนธรรมเท่านั้น แต่ยังเป็นโอกาสในการเปิดมุมมองต่อยอดความรู้ไปสู่การประยุกต์ใช้ในด้านธุรกิจและการสื่อสารระหว่างประเทศ ซึ่งเป็นสิ่งที่ดิฉันสนใจและต้องการ
-        พัฒนาต่อไปในอนาคตหวังเป็นอย่างยิ่งว่าเนื้อหาในแฟ้มสะสมผลงานฉบับนี้จะสะท้อนให้เห็นถึงความตั้งใจ ความพยายาม และความมุ่งมั่นในการเรียนรู้ภาษาจีน รวมถึงความพร้อมที่จะนำความรู้และประสบการณ์ที่ได้รับไปต่อยอดในการศึกษาและก้าวไปสู่เป้าหมายในอนาคตค่ะ
-      </p>
-    </div>
+
+
+<!-- =========================
+     แถบเมนู
+========================= -->
+
+<nav class="navbar">
+
+  <div class="nav-logo">
+    🧸 My Portfolio
   </div>
- 
- 
+
+  <div class="nav-menu">
+
+    <a href="index.html">
+      🏠 หน้าแรก
+    </a>
+
+    <a href="me.html">
+      🌷 เกี่ยวกับฉัน
+    </a>
+
+    <a href="activities.html">
+      👩🏻‍🎓 การศึกษา
+    </a>
+
+    <a href="works.html">
+      🏆 ผลงาน
+    </a>
+
+    <a href="contact.html">
+      📞 ติดต่อฉัน
+    </a>
+
   </div>
+
+</nav>
+
+
+<!-- =========================
+     หน้าแรก
+========================= -->
+
+<section class="home">
+
+
+  <!-- ของตกแต่ง -->
+
+  <div class="decor">
+    ✦ 💗 ✦ 🎀 ✦ 🍯 ✦
+  </div>
+
+
+  <div class="home-content">
+
+
+    <!-- รูปโปรไฟล์กรอบหัวใจ -->
+
+    <div class="profile-photo">
+
+      <img
+        src="https://raw.githubusercontent.com/s34678/images/main/ntk.jpg"
+        alt="รูปโปรไฟล์ของฉัน"
+      >
+
+    </div>
+
+
+    <div class="bear">
+      🧸
+    </div>
+
+
+    <p class="welcome">
+      ✨ WELCOME TO MY PORTFOLIO ✨
+    </p>
+
+
+    <h1>
+
+      ยินดีต้อนรับสู่<br>
+
+      <span>
+        เว็บไซต์ Portfolio ของฉัน
+      </span>
+
+      💕
+
+    </h1>
+
+
+    <p class="intro">
+      เรามาทำความรู้จักกันให้มากขึ้นกันเถอะ! 🌷
+    </p>
+
+
+    <div class="cute-icons">
+      🌸 💗 🎀 🍯 ☁️
+    </div>
+
+
+    <!-- ปุ่มไปหน้าเกี่ยวกับฉัน -->
+
+    <a
+      href="me.html"
+      class="start-btn"
+    >
+
+      💌 ทำความรู้จักฉัน
+
+    </a>
+
+
+  </div>
+
+
+  <!-- ของตกแต่งลอย -->
+
+  <div class="floating f1">
+    💗
+  </div>
+
+  <div class="floating f2">
+    🌸
+  </div>
+
+  <div class="floating f3">
+    🎀
+  </div>
+
+  <div class="floating f4">
+    ✨
+  </div>
+
+
+</section>
+
+
 </body>
 </html>
