@@ -485,7 +485,6 @@ footer {
 
 }
 
-
 /* SMALL MOBILE */
 
 @media (max-width: 500px) {
@@ -511,4 +510,174 @@ footer {
         width: 100%;
     }
 
+}
+/* =================================================
+   BLUE - PURPLE THEME
+   เปลี่ยนสีชมพูของหน้า Home เป็นฟ้า-ม่วง
+   ================================================= */
+
+/* พื้นหลังหน้าเว็บ */
+body {
+    background: linear-gradient(
+        135deg,
+        #EAF6FF 0%,
+        #F3F0FF 50%,
+        #EEF2FF 100%
+    );
+
+    color: #292747;
+}
+
+
+/* HEADER */
+
+header {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #DDE5F5;
+}
+
+.logo {
+    color: #6857D9 !important;
+}
+
+nav a {
+    color: #68708A;
+}
+
+nav a:hover,
+nav a.active {
+    color: #6857D9 !important;
+}
+
+nav a.active::after {
+    background: #6857D9 !important;
+}
+
+
+/* PAGE TITLE */
+
+.page-title p {
+    color: #5F8FEF !important;
+}
+
+.page-title h1 {
+    background: linear-gradient(
+        90deg,
+        #4F8FEF,
+        #6857D9
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* หัวข้อและข้อความต่าง ๆ */
+
+h1,
+h2,
+h3 {
+    color: #292747;
+}
+
+.about-content h2,
+.simple-section h2 {
+    color: #6857D9;
+}
+
+
+/* ข้อความ Highlight / ข้อความสีชมพูเดิม */
+
+.highlight,
+.title,
+.subtitle {
+    color: #6857D9 !important;
+}
+
+
+/* ถ้าหน้า Home ใช้ class เหล่านี้ */
+
+.hero h1,
+.hero h2,
+.hero h3 {
+    color: #6857D9 !important;
+}
+
+.hero .highlight {
+    color: #5F8FEF !important;
+}
+
+
+/* INFO BOX */
+
+.info {
+    background: linear-gradient(
+        135deg,
+        #EEF7FF,
+        #F3EEFF
+    );
+
+    border-left: 4px solid #6857D9;
+}
+
+
+/* SKILL CARD */
+
+.skill-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #DDE4F5;
+}
+
+.skill-card:hover {
+    border-color: #7DB7FF;
+
+    box-shadow:
+        0 15px 35px rgba(104, 87, 217, 0.15);
+}
+
+.skill-card span {
+    color: #6857D9 !important;
+}
+
+
+/* BUTTON */
+
+.main-btn {
+    background: linear-gradient(
+        135deg,
+        #4F8FEF,
+        #7657D9
+    ) !important;
+
+    color: #FFFFFF !important;
+}
+
+.main-btn:hover {
+    background: linear-gradient(
+        135deg,
+        #3D7FDF,
+        #6245C5
+    ) !important;
+}
+
+
+/* OUTLINE BUTTON */
+
+.outline-btn {
+    color: #6857D9 !important;
+    border-color: #BFC9E5;
+}
+
+.outline-btn:hover {
+    color: #FFFFFF !important;
+    border-color: #6857D9;
+    background: #6857D9;
+}
+
+
+/* FOOTER */
+
+footer {
+    color: #8589A3;
+    border-top: 1px solid #DDE5F5;
 }
