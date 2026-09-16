@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เกี่ยวกับฉัน | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+        }
+
+        .about-card {
+            background: #ffffff;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .about-title h1 {
+            margin-bottom: 10px;
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-text {
+            flex: 1;
+        }
+
+        .profile-text h2 {
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 18px;
+            background: #edf9f6;
+        }
+
+        .info-box p {
+            margin: 10px 0;
+            line-height: 1.8;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+        }
+
+        @media (max-width: 700px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-card {
+                padding: 25px;
+            }
+
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- เมนู -->
+    <nav>
+        <a href="index.html">หน้าหลัก</a>
+        <a href="about.html">เกี่ยวกับฉัน</a>
+        <a href="portfolio.html">ผลงาน</a>
+        <a href="activities.html">กิจกรรม</a>
+        <a href="contact.html">ติดต่อ</a>
+    </nav>
+
+    <!-- เนื้อหา -->
+    <main class="about-container">
+
+        <section class="about-card">
+
+            <div class="about-title">
+                <h1>เกี่ยวกับฉัน</h1>
+                <p>About Me</p>
+            </div>
+
+            <div class="profile-section">
+
+                <!-- ถ้ามีรูป ให้เปลี่ยนชื่อไฟล์ตรงนี้ -->
+                <img 
+                    src="profile.jpg" 
+                    alt="รูปโปรไฟล์"
+                    class="profile-image"
+                >
+
+                <div class="profile-text">
+                    <h2>น.ส. พัทธ์ธีรา วรรณสวัสดิ์</h2>
+
+                    <p>
+                        ชื่อเล่น ยาหยี
+                    </p>
+
+                    <p>
+                        นักเรียนชั้นมัธยมศึกษาปีที่ 6/8
+                        แผนการเรียนภาษาจีน
+                    </p>
+
+                    <p>
+                        โรงเรียนบ้านบึง “อุตสาหกรรมนุเคราะห์”
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="info-box">
+
+                <h2>ความสนใจ</h2>
+
+                <p>
+                    ดิฉันมีความสนใจด้านภาษาจีนและการบริหารธุรกิจ
+                    โดยต้องการนำความรู้ด้านภาษาไปประยุกต์ใช้กับการทำงาน
+                    และการดำเนินธุรกิจในอนาคต
+                </p>
+
+                <p>
+                    ตลอดระยะเวลาที่ผ่านมา ดิฉันได้เรียนรู้และพัฒนาทักษะ
+                    ภาษาจีนผ่านทั้งการเรียนในห้องเรียน กิจกรรม
+                    การแข่งขัน และกิจกรรมแลกเปลี่ยนทางภาษาและวัฒนธรรม
+                </p>
+
+            </div>
+
+            <div class="info-box">
+
+                <h2>เป้าหมายในอนาคต</h2>
+
+                <p>
+                    ดิฉันต้องการศึกษาต่อในระดับมหาวิทยาลัย
+                    ในสาขาที่เกี่ยวข้องกับบริหารธุรกิจและการค้าระหว่างประเทศ
+                    เพื่อพัฒนาความรู้ด้านธุรกิจควบคู่กับทักษะภาษาจีน
+                </p>
+
+                <p>
+                    และนำความรู้ที่ได้รับไปต่อยอดในการทำงาน
+                    รวมถึงการสร้างธุรกิจของตนเองในอนาคต
+                </p>
+
+            </div>
+
+            <a href="index.html" class="back-button">
+                ← กลับหน้าหลัก
+            </a>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
