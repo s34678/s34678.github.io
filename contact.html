@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ติดต่อฉัน 💌 | My Portfolio</title>
+
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  background: linear-gradient(135deg, #dff6ff, #fff0f8);
+  color: #666;
+}
+
+
+/* =========================
+   แถบเมนู
+========================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: rgba(255,255,255,0.95);
+
+  box-shadow: 0 4px 18px rgba(120,180,220,0.2);
+
+  z-index: 999;
+}
+
+.nav-logo {
+  color: #e98faf;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #69aeca;
+  font-weight: bold;
+
+  padding: 10px 14px;
+  border-radius: 25px;
+
+  transition: 0.3s;
+}
+
+.nav-menu a:hover {
+  background: #ffe3ef;
+  color: #e77fa5;
+  transform: translateY(-3px);
+}
+
+
+/* =========================
+   หน้าติดต่อ
+========================= */
+
+.contact {
+  min-height: 100vh;
+
+  padding: 110px 20px 60px;
+
+  text-align: center;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  color: #69aeca;
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #ed91b3;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+
+/* =========================
+   กล่องหลัก
+========================= */
+
+.contact-card {
+  width: min(850px, 95%);
+
+  margin: auto;
+
+  padding: 40px 35px;
+
+  background: rgba(255,255,255,0.9);
+
+  border: 3px solid white;
+
+  border-radius: 35px;
+
+  box-shadow:
+    0 15px 40px rgba(130,180,215,0.25);
+
+  animation: appear 0.8s ease;
+}
+
+
+/* =========================
+   หมี
+========================= */
+
+.bear {
+  font-size: 70px;
+  margin-bottom: 10px;
+
+  animation: floating 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   ข้อความ
+========================= */
+
+.contact-text {
+  color: #777;
+  font-size: 16px;
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================
+   กล่องข้อมูลติดต่อ
+========================= */
+
+.contact-info {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  text-align: left;
+}
+
+
+.contact-box {
+
+  background: #f8fcff;
+
+  border: 2px solid #e2f4fc;
+
+  border-radius: 22px;
+
+  padding: 22px;
+
+  transition: 0.3s;
+}
+
+
+.contact-box:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 8px 20px rgba(150,190,220,0.18);
+}
+
+
+.contact-box h3 {
+
+  color: #ee91b5;
+
+  font-size: 18px;
+
+  margin-bottom: 10px;
+}
+
+
+.contact-box p {
+
+  color: #777;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   ลิงก์
+========================= */
+
+.contact-box a {
+
+  color: #69aeca;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  word-break: break-word;
+}
+
+
+.contact-box a:hover {
+
+  color: #e77fa5;
+
+  text-decoration: underline;
+}
+
+
+/* =========================
+   ขอบคุณ
+========================= */
+
+.thank-you {
+
+  margin-top: 30px;
+
+  padding: 22px;
+
+  background: linear-gradient(
+    135deg,
+    #fff0f7,
+    #e9f8ff
+  );
+
+  border-radius: 25px;
+
+  border: 2px solid white;
+}
+
+
+.thank-you h2 {
+
+  color: #ed8eb1;
+
+  font-size: 23px;
+
+  margin-bottom: 8px;
+}
+
+
+.thank-you p {
+
+  color: #777;
+
+  line-height: 1.7;
+}
+
+
+/* =========================
+   ปุ่มกลับหน้าแรก
+========================= */
+
+.home-btn {
+
+  display: inline-block;
+
+  margin-top: 25px;
+
+  padding: 13px 30px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3a1c0,
+      #83cbe8
+    );
+
+  box-shadow:
+    0 7px 18px rgba(150,190,220,0.25);
+
+  transition: 0.3s;
+}
+
+
+.home-btn:hover {
+
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   ของตกแต่ง
+========================= */
+
+.decor {
+
+  position: absolute;
+
+  font-size: 30px;
+
+  animation:
+    floating 4s ease-in-out infinite;
+}
+
+
+.d1 {
+  top: 20%;
+  left: 7%;
+}
+
+
+.d2 {
+  top: 35%;
+  right: 7%;
+  animation-delay: 1s;
+}
+
+
+.d3 {
+  bottom: 15%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+
+.d4 {
+  bottom: 18%;
+  right: 10%;
+  animation-delay: 1.5s;
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes floating {
+
+  0%,100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(8deg);
+  }
+
+}
+
+
+@keyframes appear {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width:700px) {
+
+  .navbar {
+
+    height: auto;
+
+    padding: 10px;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .nav-logo {
+    font-size: 16px;
+  }
+
+  .nav-menu {
+
+    gap: 2px;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+
+  .nav-menu a {
+
+    font-size: 11px;
+
+    padding: 7px;
+  }
+
+  .contact {
+
+    padding-top: 135px;
+  }
+
+  .title {
+
+    font-size: 30px;
+  }
+
+  .contact-card {
+
+    padding: 30px 18px;
+  }
+
+  .contact-info {
+
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     แถบเมนู
+========================= -->
+
+<nav class="navbar">
+
+  <div class="nav-logo">
+    🧸 My Portfolio
+  </div>
+
+  <div class="nav-menu">
+
+    <a href="index.html">
+      🏠 หน้าแรก
+    </a>
+
+    <a href="me.html">
+      🌷 เกี่ยวกับฉัน
+    </a>
+
+    <a href="activities.html">
+      👩🏻‍🎓 การศึกษา
+    </a>
+
+    <a href="works.html">
+      🏆 ผลงาน
+    </a>
+
+    <a href="contact.html">
+      📞 ติดต่อฉัน
+    </a>
+
+  </div>
+
+</nav>
+
+
+<!-- =========================
+     หน้าติดต่อฉัน
+========================= -->
+
+<section class="contact">
+
+
+  <!-- ของตกแต่ง -->
+
+  <div class="decor d1">🌸</div>
+
+  <div class="decor d2">💗</div>
+
+  <div class="decor d3">🎀</div>
+
+  <div class="decor d4">🧸</div>
+
+
+  <h1 class="title">
+    💌 ติดต่อฉัน 💌
+  </h1>
+
+
+  <p class="subtitle">
+    สามารถติดต่อและพูดคุยกับฉันได้ที่นี่นะ 💕
+  </p>
+
+
+  <div class="contact-card">
+
+
+    <!-- หมี -->
+
+    <div class="bear">
+      🧸
+    </div>
+
+
+    <p class="contact-text">
+
+      ขอบคุณที่เข้ามาทำความรู้จักและเยี่ยมชม
+      Portfolio ของฉันนะคะ 🌷<br>
+
+      หากต้องการติดต่อ สามารถติดต่อฉันได้ตามช่องทางด้านล่างเลยค่ะ 💗
+
+    </p>
+
+
+    <!-- ข้อมูลติดต่อ -->
+
+    <div class="contact-info">
+
+
+      <!-- Email -->
+
+      <div class="contact-box">
+
+        <h3>
+          📧 E-mail
+        </h3>
+
+        <p>
+          <a href="mailto: phathththirawrrnswasdi@gmail.com">
+            phaththththirawrrnswasdi@gmail.com
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- Instagram -->
+
+      <div class="contact-box">
+
+        <h3>
+          📷 Instagram
+        </h3>
+
+        <p>
+          <a href="https://www.instagram.com/pxxttxee?stkn=NGg0amFyMXczcWMx&utm_source=target="_blank">
+            pxxttxee
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- เบอร์โทร -->
+
+      <div class="contact-box">
+
+        <h3>
+          📱 เบอร์โทร
+        </h3>
+
+        <p>
+          <a href="tel:0996164878">
+            099-616-4878
+          </a>
+        </p>
+
+      </div>
+
+    <!-- ขอบคุณ -->
+
+    <div class="thank-you">
+
+      <h2>
+        ขอบคุณที่รับชมPortfolioของฉัน 
+      </h2>
+
+      <p>
+        หวังว่าเว็บไซต์นี้จะทำให้ทุกคนได้รู้จักฉันมากขึ้นนะคะ 🌸<br>
+        ขอบคุณสำหรับการเยี่ยมชมและให้ความสนใจใน Portfolio ของฉันค่ะ 🧸✨
+      </p>
+
+    </div>
+
+
+    <!-- กลับสู่หน้าแรก -->
+
+    <a
+      href="index.html"
+      class="home-btn"
+    >
+      กลับสู่หน้าแรก
+    </a>
+
+
+  </div>
+
+</section>
+
+
+</body>
+
+</html>
