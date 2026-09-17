@@ -1,683 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-:root {
-    --blue: #7DB7FF;
-    --blue-dark: #4F8FEF;
-    --purple: #7657D9;
-    --purple-dark: #5B43B5;
-    --purple-light: #F2EFFF;
-    --blue-light: #EEF7FF;
-    --dark: #292747;
-    --gray: #72718A;
-    --white: #FFFFFF;
-}
+    <title>My Portfolio</title>
 
+    <link rel="stylesheet" href="style.css">
 
-/* RESET */
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<body>
 
-html {
-    scroll-behavior: smooth;
-}
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo">My Portfolio</a>
 
-body {
-    font-family: 'Kanit', sans-serif;
+        <nav>
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    /* พื้นหลังฟ้า-ม่วง */
-    background: linear-gradient(
-        135deg,
-        #EAF6FF 0%,
-        #F4F0FF 50%,
-        #EEF1FF 100%
-    );
 
-    color: var(--dark);
-    min-height: 100vh;
-}
+    <!-- HERO / หน้าปก -->
+    <main class="hero">
 
+        <div class="hero-content">
 
-/* HEADER */
+            <p class="hero-small">WELCOME TO MY PORTFOLIO</p>
 
-header {
-    width: 100%;
-    padding: 25px 7%;
+            <h1>
+                Hello, I'm
+                <span class="highlight">Your Name</span>
+            </h1>
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+            <h2>
+                Student &amp; Creative Designer
+            </h2>
 
-    border-bottom: 1px solid #DFE5F5;
+            <p class="hero-description">
+                ยินดีต้อนรับเข้าสู่เว็บไซต์ Portfolio ของฉัน
+                ที่รวบรวมประวัติ ผลงาน ทักษะ และสิ่งที่ฉันสนใจ
+            </p>
 
-    background: rgba(255, 255, 255, 0.94);
+            <div class="hero-buttons">
+                <a href="about.html" class="main-btn">
+                    About Me
+                </a>
 
-    position: sticky;
-    top: 0;
-    z-index: 10;
+                <a href="skills.html" class="outline-btn">
+                    My Skills
+                </a>
+            </div>
 
-    backdrop-filter: blur(12px);
-}
+        </div>
 
 
-/* LOGO */
+        <!-- รูปโปรไฟล์ -->
+        <div class="hero-image">
 
-.logo {
-    color: var(--purple);
-    text-decoration: none;
+            <div class="circle-bg"></div>
 
-    font-size: 21px;
-    font-weight: 600;
+            <img src="profile.jpg" alt="Profile">
 
-    letter-spacing: .5px;
-}
+        </div>
 
+    </main>
 
-/* NAV */
 
-nav {
-    display: flex;
-    gap: 30px;
-}
+    <!-- FOOTER -->
+    <footer>
+        © 2026 My Portfolio. All Rights Reserved.
+    </footer>
 
-nav a {
-    text-decoration: none;
-    color: var(--gray);
-
-    font-size: 15px;
-
-    position: relative;
-
-    transition: .3s;
-}
-
-nav a:hover,
-nav a.active {
-    color: var(--purple);
-}
-
-nav a.active::after {
-    content: "";
-
-    width: 6px;
-    height: 6px;
-
-    background: var(--purple);
-
-    border-radius: 50%;
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -10px;
-
-    transform: translateX(-50%);
-}
-
-
-/* PAGE */
-
-.page {
-    width: 86%;
-    max-width: 1150px;
-
-    margin: auto;
-
-    padding: 90px 0;
-}
-
-
-/* PAGE TITLE */
-
-.page-title {
-    margin-bottom: 55px;
-}
-
-.page-title p {
-    color: var(--blue-dark);
-
-    font-size: 13px;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 18px;
-}
-
-.page-title h1 {
-    font-family: 'Playfair Display', serif;
-
-    font-size: clamp(45px, 7vw, 75px);
-
-    /* ฟ้า → ม่วง */
-
-    background: linear-gradient(
-        90deg,
-        #4F8FEF,
-        #7657D9
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-/* ABOUT */
-
-.about-box {
-    display: grid;
-
-    grid-template-columns: 350px 1fr;
-
-    gap: 60px;
-
-    align-items: center;
-
-    margin-bottom: 80px;
-}
-
-
-/* ABOUT PHOTO */
-
-.about-photo img {
-    width: 100%;
-
-    aspect-ratio: 1;
-
-    object-fit: cover;
-
-    border-radius: 20px;
-
-    display: block;
-
-    border: 4px solid rgba(255,255,255,.8);
-
-    box-shadow:
-        0 15px 40px rgba(79, 143, 239, .15);
-}
-
-
-/* ABOUT CONTENT */
-
-.about-content h2 {
-    font-size: 28px;
-
-    margin-bottom: 18px;
-
-    color: var(--purple-dark);
-}
-
-.about-content > p {
-    color: var(--gray);
-
-    line-height: 1.9;
-}
-
-
-/* INFO BOX */
-
-.info {
-    margin-top: 25px;
-
-    padding: 20px;
-
-    background: linear-gradient(
-        135deg,
-        #EEF7FF,
-        #F3EEFF
-    );
-
-    border-radius: 15px;
-
-    border-left: 4px solid var(--purple);
-
-    box-shadow:
-        0 8px 25px rgba(100, 90, 180, .08);
-}
-
-.info p {
-    margin: 7px 0;
-}
-
-
-/* SECTION */
-
-.simple-section {
-    margin-bottom: 70px;
-}
-
-.simple-section h2 {
-    font-size: 28px;
-
-    margin-bottom: 18px;
-
-    color: var(--purple-dark);
-}
-
-.simple-section > p {
-    color: var(--gray);
-
-    line-height: 1.9;
-}
-
-
-/* SKILLS */
-
-.skills {
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 18px;
-}
-
-.skill-card {
-    padding: 28px;
-
-    border: 1px solid #DDE3F4;
-
-    border-radius: 18px;
-
-    transition: .3s;
-
-    background: rgba(255,255,255,.88);
-
-    box-shadow:
-        0 5px 20px rgba(80, 100, 180, .04);
-}
-
-.skill-card:hover {
-    transform: translateY(-8px);
-
-    border-color: var(--blue);
-
-    box-shadow:
-        0 15px 35px rgba(100, 100, 200, .15);
-}
-
-.skill-card span {
-    color: var(--purple);
-
-    font-size: 13px;
-}
-
-.skill-card h3 {
-    margin: 25px 0 8px;
-
-    color: var(--dark);
-}
-
-.skill-card p {
-    color: var(--gray);
-
-    font-size: 14px;
-
-    line-height: 1.7;
-}
-
-
-/* BUTTONS */
-
-.page-buttons {
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-top: 55px;
-}
-
-.main-btn,
-.outline-btn {
-    display: inline-block;
-
-    text-decoration: none;
-
-    padding: 12px 25px;
-
-    border-radius: 30px;
-
-    transition: .3s;
-}
-
-
-/* MAIN BUTTON */
-
-.main-btn {
-    background: linear-gradient(
-        135deg,
-        #4F8FEF,
-        #7657D9
-    );
-
-    color: white;
-
-    border: none;
-
-    box-shadow:
-        0 8px 20px rgba(100, 90, 200, .18);
-}
-
-.main-btn:hover {
-    background: linear-gradient(
-        135deg,
-        #3D7FDF,
-        #6245C5
-    );
-
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 12px 28px rgba(100, 90, 200, .25);
-}
-
-
-/* OUTLINE BUTTON */
-
-.outline-btn {
-    color: var(--purple-dark);
-
-    border: 1px solid #BFC9E5;
-
-    background: rgba(255,255,255,.6);
-}
-
-.outline-btn:hover {
-    border-color: var(--purple);
-
-    color: var(--purple);
-
-    transform: translateY(-3px);
-
-    background: #F5F2FF;
-}
-
-
-/* FOOTER */
-
-footer {
-    text-align: center;
-
-    padding: 30px;
-
-    color: #8589A3;
-
-    font-size: 13px;
-
-    border-top: 1px solid #DFE5F5;
-
-    background: rgba(255,255,255,.6);
-}
-
-
-/* ANIMATION */
-
-.page-title,
-.about-box,
-.simple-section,
-.skill-card {
-    animation: fadeUp .8s ease both;
-}
-
-@keyframes fadeUp {
-
-    from {
-        opacity: 0;
-
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-
-        transform: translateY(0);
-    }
-
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    header {
-        padding: 20px;
-
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    nav {
-        gap: 15px;
-
-        flex-wrap: wrap;
-
-        justify-content: center;
-    }
-
-    .page {
-        width: 90%;
-
-        padding: 60px 0;
-    }
-
-    .about-box {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-    }
-
-    .about-photo {
-        max-width: 350px;
-
-        margin: auto;
-    }
-
-    .skills {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .page-buttons {
-        gap: 15px;
-    }
-
-}
-
-/* SMALL MOBILE */
-
-@media (max-width: 500px) {
-
-    .skills {
-        grid-template-columns: 1fr;
-    }
-
-    .page-title h1 {
-        font-size: 45px;
-    }
-
-    .page-buttons {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    .main-btn,
-    .outline-btn {
-        text-align: center;
-
-        width: 100%;
-    }
-
-}
-/* =================================================
-   BLUE - PURPLE THEME
-   เปลี่ยนสีชมพูของหน้า Home เป็นฟ้า-ม่วง
-   ================================================= */
-
-/* พื้นหลังหน้าเว็บ */
-body {
-    background: linear-gradient(
-        135deg,
-        #EAF6FF 0%,
-        #F3F0FF 50%,
-        #EEF2FF 100%
-    );
-
-    color: #292747;
-}
-
-
-/* HEADER */
-
-header {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid #DDE5F5;
-}
-
-.logo {
-    color: #6857D9 !important;
-}
-
-nav a {
-    color: #68708A;
-}
-
-nav a:hover,
-nav a.active {
-    color: #6857D9 !important;
-}
-
-nav a.active::after {
-    background: #6857D9 !important;
-}
-
-
-/* PAGE TITLE */
-
-.page-title p {
-    color: #5F8FEF !important;
-}
-
-.page-title h1 {
-    background: linear-gradient(
-        90deg,
-        #4F8FEF,
-        #6857D9
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-
-/* หัวข้อและข้อความต่าง ๆ */
-
-h1,
-h2,
-h3 {
-    color: #292747;
-}
-
-.about-content h2,
-.simple-section h2 {
-    color: #6857D9;
-}
-
-
-/* ข้อความ Highlight / ข้อความสีชมพูเดิม */
-
-.highlight,
-.title,
-.subtitle {
-    color: #6857D9 !important;
-}
-
-
-/* ถ้าหน้า Home ใช้ class เหล่านี้ */
-
-.hero h1,
-.hero h2,
-.hero h3 {
-    color: #6857D9 !important;
-}
-
-.hero .highlight {
-    color: #5F8FEF !important;
-}
-
-
-/* INFO BOX */
-
-.info {
-    background: linear-gradient(
-        135deg,
-        #EEF7FF,
-        #F3EEFF
-    );
-
-    border-left: 4px solid #6857D9;
-}
-
-
-/* SKILL CARD */
-
-.skill-card {
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid #DDE4F5;
-}
-
-.skill-card:hover {
-    border-color: #7DB7FF;
-
-    box-shadow:
-        0 15px 35px rgba(104, 87, 217, 0.15);
-}
-
-.skill-card span {
-    color: #6857D9 !important;
-}
-
-
-/* BUTTON */
-
-.main-btn {
-    background: linear-gradient(
-        135deg,
-        #4F8FEF,
-        #7657D9
-    ) !important;
-
-    color: #FFFFFF !important;
-}
-
-.main-btn:hover {
-    background: linear-gradient(
-        135deg,
-        #3D7FDF,
-        #6245C5
-    ) !important;
-}
-
-
-/* OUTLINE BUTTON */
-
-.outline-btn {
-    color: #6857D9 !important;
-    border-color: #BFC9E5;
-}
-
-.outline-btn:hover {
-    color: #FFFFFF !important;
-    border-color: #6857D9;
-    background: #6857D9;
-}
-
-
-/* FOOTER */
-
-footer {
-    color: #8589A3;
-    border-top: 1px solid #DDE5F5;
-}
+</body>
+</html>
