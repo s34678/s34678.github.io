@@ -4,248 +4,178 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yee | My Portfolio</title>
+    <title>YEE. | My Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- ดาวพื้นหลัง -->
-    <div class="stars"></div>
+<!-- ================= HEADER ================= -->
 
-    <!-- Navigation -->
-    <header>
-        <nav>
+<header class="header">
 
-            <div class="logo">
-                YEE<span>.</span>
-            </div>
+    <a href="index.html" class="logo">
+        YEE.
+    </a>
 
-            <div class="menu">
-                <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="portfolio.html">Portfolio</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="contact.html">Contact</a>
-            </div>
+    <nav class="navbar">
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-            <button id="themeBtn">☾</button>
+</header>
 
-        </nav>
-    </header>
 
+<!-- ================= HERO ================= -->
 
-    <!-- HERO -->
-    <main>
+<main>
 
-        <section class="hero">
+<section class="hero">
 
-            <div class="hero-content">
+    <div class="hero-left">
 
-                <div class="hello">
-                    ✦ WELCOME TO MY WORLD
-                </div>
+        <p class="welcome">
+            ✦ WELCOME TO MY WORLD
+        </p>
 
-                <h1>
-                    Hello,<br>
-                    I'm <span>Yee</span>
-                </h1>
+        <h1>
+            Hello,<br>
+            I'm <span>Yee</span>
+        </h1>
 
-                <p class="description">
-                    นักเรียนสายศิลป์-ภาษาจีน
-                    ที่กำลังเรียนรู้ เติบโต
-                    และสร้างเส้นทางของตัวเอง
-                </p>
+        <p class="intro">
+            ศิลป์-ภาษาจีน ที่กำลังเรียนรู้ เติบโต
+            และสร้างเส้นทางของตัวเอง
+        </p>
 
-                <div class="buttons">
+        <div class="hero-links">
 
-                    <a href="about.html" class="main-btn">
-                        Explore Me
-                        <span>→</span>
-                    </a>
+            <a href="about.html">
+                Explore Me →
+            </a>
 
-                    <a href="portfolio.html" class="second-btn">
-                        My Portfolio
-                    </a>
+            <a href="portfolio.html">
+                My Portfolio
+            </a>
 
-                </div>
+        </div>
 
-                <div class="scroll">
-                    <span>↓</span>
-                    Scroll to explore
-                </div>
+        <p class="scroll">
+            ↓ Scroll to explore
+        </p>
 
-            </div>
+    </div>
 
 
-            <!-- CARD -->
-            <div class="profile-wrapper">
+    <div class="hero-right">
 
-                <div class="glow"></div>
+        <div class="star">✦</div>
 
-                <div class="profile-card" id="profileCard">
+        <p class="small-title">
+            Y
+        </p>
 
-                    <div class="sparkle">✦</div>
+        <p class="portfolio-text">
+            MY PORTFOLIO
+        </p>
 
-                    <div class="avatar">
-                        Y
-                    </div>
+        <h2>
+            YEE
+        </h2>
 
-                    <div class="card-text">
-                        <p>MY PORTFOLIO</p>
-                        <h2>YEE</h2>
-                        <span>Student • Chinese • Business</span>
-                    </div>
+        <p>
+            Student • Chinese • Business
+        </p>
 
-                    <div class="card-bottom">
-                        <span>2026</span>
-                        <span>♡</span>
-                    </div>
+        <p>
+            2026 ♡
+        </p>
 
-                </div>
+    </div>
 
-            </div>
+</section>
 
-        </section>
 
+<!-- ================= FEATURES ================= -->
 
-        <!-- ABOUT MINI SECTION -->
-        <section class="mini-section">
+<section class="features">
 
-            <div class="mini-card">
-                <div class="mini-icon">📚</div>
-                <h3>Learning</h3>
-                <p>เรียนรู้สิ่งใหม่ ๆ อยู่เสมอ</p>
-            </div>
+    <div class="feature">
 
-            <div class="mini-card">
-                <div class="mini-icon">🌏</div>
-                <h3>Chinese</h3>
-                <p>ความสนใจด้านภาษาจีน</p>
-            </div>
+        <div class="icon">
+            📚
+        </div>
 
-            <div class="mini-card">
-                <div class="mini-icon">💼</div>
-                <h3>Business</h3>
-                <p>สนใจธุรกิจและการทำงาน</p>
-            </div>
+        <h2>
+            Learning
+        </h2>
 
-        </section>
+        <p>
+            เรียนรู้สิ่งใหม่ ๆ อยู่เสมอ
+        </p>
 
-    </main>
+    </div>
 
 
-    <!-- Back to top -->
-    <button id="topBtn">↑</button>
+    <div class="feature">
 
+        <div class="icon">
+            🌎
+        </div>
 
-    <script>
+        <h2>
+            Chinese
+        </h2>
 
-        /* =========================
-           DARK MODE
-        ========================= */
+        <p>
+            ความสนใจด้านภาษาจีน
+        </p>
 
-        const themeBtn = document.getElementById("themeBtn");
+    </div>
 
-        themeBtn.addEventListener("click", () => {
 
-            document.body.classList.toggle("dark");
+    <div class="feature">
 
-            if (document.body.classList.contains("dark")) {
-                themeBtn.textContent = "☀";
-            } else {
-                themeBtn.textContent = "☾";
-            }
+        <div class="icon">
+            💼
+        </div>
 
-        });
+        <h2>
+            Business
+        </h2>
 
+        <p>
+            สนใจธุรกิจและการทำงาน
+        </p>
 
-        /* =========================
-           CARD 3D EFFECT
-        ========================= */
+    </div>
 
-        const card = document.getElementById("profileCard");
+</section>
 
-        card.addEventListener("mousemove", (e) => {
+</main>
 
-            const rect = card.getBoundingClientRect();
 
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+<!-- ================= FOOTER ================= -->
 
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
+<footer>
 
-            const rotateX = (y - centerY) / 15;
-            const rotateY = (centerX - x) / 15;
+    <p>
+        © 2026 YEE. All Rights Reserved.
+    </p>
 
-            card.style.transform =
-                `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+</footer>
 
-        });
 
-
-        card.addEventListener("mouseleave", () => {
-
-            card.style.transform =
-                "rotateX(0deg) rotateY(0deg) scale(1)";
-
-        });
-
-
-        /* =========================
-           BACK TO TOP
-        ========================= */
-
-        const topBtn = document.getElementById("topBtn");
-
-        window.addEventListener("scroll", () => {
-
-            if (window.scrollY > 400) {
-                topBtn.classList.add("show");
-            } else {
-                topBtn.classList.remove("show");
-            }
-
-        });
-
-        topBtn.addEventListener("click", () => {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        });
-
-
-        /* =========================
-           STAR PARTICLES
-        ========================= */
-
-        const stars = document.querySelector(".stars");
-
-        for (let i = 0; i < 70; i++) {
-
-            const star = document.createElement("span");
-
-            star.classList.add("star");
-
-            star.style.left = Math.random() * 100 + "%";
-            star.style.top = Math.random() * 100 + "%";
-
-            star.style.animationDelay =
-                Math.random() * 4 + "s";
-
-            star.style.animationDuration =
-                2 + Math.random() * 4 + "s";
-
-            stars.appendChild(star);
-
-        }
-
-    </script>
+<script src="script.js"></script>
 
 </body>
 </html>
