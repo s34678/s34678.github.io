@@ -1,88 +1,675 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About — YEE.</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --purple:#7164d9;
+    --purple-dark:#29264d;
+    --purple-light:#eeeaff;
+    --cream:#faf9f6;
+    --text:#29264d;
+    --muted:#77758b;
+    --line:#dedce8;
+}
+
+body{
+    background:var(--cream);
+    color:var(--text);
+    font-family:'Kanit',sans-serif;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+    padding:28px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    font-size:15px;
+}
+
+.nav-links a:hover{
+    color:var(--purple);
+}
+
+.nav-links .active{
+    color:var(--purple);
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 7% 70px;
+}
+
+.page-number{
+    color:var(--purple);
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+}
+
+.page-header h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(65px,9vw,110px);
+    line-height:.9;
+}
+
+.page-header h1 span{
+    color:var(--purple);
+}
+
+.page-header p{
+    max-width:600px;
+    margin-top:30px;
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.8;
+}
+
+
+/* =========================
+   ABOUT INTRO
+========================= */
+
+.about-section{
+    border-top:1px solid var(--line);
+    padding:80px 7%;
+}
+
+.about-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+}
+
+.section-title{
+    color:var(--purple);
+    font-size:13px;
+    letter-spacing:3px;
+}
+
+.about-content h2{
+    font-family:'Playfair Display',serif;
+    font-size:43px;
+    line-height:1.2;
+    margin-bottom:25px;
+}
+
+.about-content p{
+    color:var(--muted);
+    font-size:17px;
+    line-height:1.9;
+    margin-bottom:18px;
+}
+
+
+/* =========================
+   INFO
+========================= */
+
+.info-section{
+    background:var(--purple-light);
+    padding:80px 7%;
+}
+
+.info-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.info-card{
+    background:white;
+    padding:32px;
+    border-radius:22px;
+    border:1px solid var(--line);
+}
+
+.info-card small{
+    color:var(--purple);
+    letter-spacing:2px;
+    font-size:12px;
+}
+
+.info-card h3{
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    margin:14px 0 8px;
+}
+
+.info-card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+
+/* =========================
+   INTERESTS
+========================= */
+
+.interests{
+    max-width:1100px;
+    margin:auto;
+    padding:90px 7%;
+}
+
+.interests h2{
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    margin:15px 0 45px;
+}
+
+.interest-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.interest{
+    padding:30px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    min-height:180px;
+}
+
+.interest span{
+    font-size:25px;
+}
+
+.interest h3{
+    font-family:'Playfair Display',serif;
+    font-size:25px;
+    margin:18px 0 8px;
+}
+
+.interest p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+    background:var(--purple-dark);
+    color:white;
+    padding:90px 7%;
+    text-align:center;
+}
+
+.quote p{
+    max-width:850px;
+    margin:auto;
+    font-family:'Playfair Display',serif;
+    font-size:38px;
+    line-height:1.35;
+}
+
+.quote span{
+    display:block;
+    margin-top:25px;
+    color:#bcb5ff;
+    font-family:'Kanit',sans-serif;
+    font-size:14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 7%;
+    display:flex;
+    justify-content:space-between;
+    color:var(--muted);
+    font-size:14px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    .nav-links{
+        gap:20px;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .interest-list{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    nav{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .nav-links{
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:13px;
+    }
+
+    .page-header{
+        padding:60px 7%;
+    }
+
+    .page-header h1{
+        font-size:65px;
+    }
+
+    .page-header p{
+        font-size:16px;
+    }
+
+    .about-section{
+        padding:65px 7%;
+    }
+
+    .about-content h2{
+        font-size:36px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .interests{
+        padding:65px 7%;
+    }
+
+    .interests h2{
+        font-size:40px;
+    }
+
+    .interest-list{
+        grid-template-columns:1fr;
+    }
+
+    .quote{
+        padding:70px 7%;
+    }
+
+    .quote p{
+        font-size:28px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<header>
-    <nav>
-        <div class="logo">MY PORTFOLIO</div>
 
-        <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="about.html" class="active">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-</header>
+<!-- NAVBAR -->
 
-<section class="page-title">
-    <p>GET TO KNOW ME</p>
-    <h1>About Me</h1>
-</section>
+<nav>
 
-<section class="about">
-
-    <div class="profile-box">
-        <div class="profile-circle">Y</div>
-        <h2>Yee</h2>
-        <p>Student | Chinese Language</p>
+    <div class="logo">
+        YEE.
     </div>
 
-    <div class="about-text">
+    <ul class="nav-links">
 
-        <h2>Hello! 👋</h2>
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
 
-        <p>
-            สวัสดีค่ะ ฉันชื่อหยี
-            เป็นนักเรียนที่มีความสนใจด้านภาษาจีน
-            ธุรกิจ และการเรียนรู้สิ่งใหม่ ๆ
-        </p>
+        <li>
+            <a href="about.html" class="active">
+                About
+            </a>
+        </li>
 
-        <p>
-            เว็บไซต์นี้จัดทำขึ้นเพื่อรวบรวมประวัติ
-            ผลงาน กิจกรรม และประสบการณ์ต่าง ๆ
-            ที่เกิดขึ้นระหว่างการเรียน
-        </p>
+        <li>
+            <a href="portfolio.html">
+                Portfolio
+            </a>
+        </li>
 
-        <div class="info">
+        <li>
+            <a href="gallery.html">
+                Gallery
+            </a>
+        </li>
 
-            <div>
-                <b>ชื่อเล่น</b>
-                <span>หยี</span>
+        <li>
+            <a href="contact.html">
+                Contact
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- HEADER -->
+
+<section class="page-header">
+
+    <div class="page-number">
+        02 — ABOUT ME
+    </div>
+
+    <h1>
+        This is<br>
+        <span>Yee.</span>
+    </h1>
+
+    <p>
+        ทำความรู้จักตัวตน ความสนใจ
+        และเส้นทางการเรียนรู้ของฉัน
+        ที่ค่อย ๆ เติบโตขึ้นจากภาษาจีน
+        ไปสู่ความสนใจด้านธุรกิจ
+    </p>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about-section">
+
+    <div class="about-grid">
+
+        <div>
+            <div class="section-title">
+                WHO I AM
             </div>
+        </div>
 
-            <div>
-                <b>สายการเรียน</b>
-                <span>ศิลป์-ภาษาจีน</span>
-            </div>
 
-            <div>
-                <b>ความสนใจ</b>
-                <span>ภาษาจีน / ธุรกิจ</span>
-            </div>
+        <div class="about-content">
 
-            <div>
-                <b>เป้าหมาย</b>
-                <span>มหาวิทยาลัย</span>
-            </div>
+            <h2>
+                Learning from what
+                I love.
+            </h2>
+
+            <p>
+                ฉันเป็นนักเรียนที่มีความสนใจ
+                ด้านภาษาจีนและธุรกิจ
+                โดยมองว่าภาษาไม่ได้เป็นเพียง
+                วิชาที่เรียนในห้องเรียน
+                แต่สามารถนำไปต่อยอด
+                กับการทำงานและธุรกิจได้
+            </p>
+
+            <p>
+                ตลอดช่วงการเรียนที่ผ่านมา
+                ฉันได้เรียนรู้ผ่านทั้งกิจกรรม
+                การแข่งขัน การเข้าค่าย
+                และประสบการณ์ต่าง ๆ
+                ซึ่งทำให้ค้นพบว่าตัวเองสนใจ
+                การนำภาษาไปใช้ในโลกธุรกิจ
+                มากขึ้นเรื่อย ๆ
+            </p>
 
         </div>
 
     </div>
 
 </section>
+
+
+<!-- INFORMATION -->
+
+<section class="info-section">
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <small>EDUCATION</small>
+
+            <h3>
+                Student
+            </h3>
+
+            <p>
+                นักเรียนระดับมัธยมศึกษาปีที่ 6
+                แผนการเรียนภาษาจีน
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <small>INTEREST</small>
+
+            <h3>
+                Chinese × Business
+            </h3>
+
+            <p>
+                สนใจการนำภาษาจีนมาใช้ร่วมกับ
+                การค้าขาย การตลาด
+                และธุรกิจระหว่างประเทศ
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <small>PERSONALITY</small>
+
+            <h3>
+                Curious
+            </h3>
+
+            <p>
+                ชอบเรียนรู้สิ่งใหม่ ๆ
+                สังเกตรายละเอียด
+                และค่อย ๆ พัฒนาตัวเอง
+                จากประสบการณ์ที่ได้รับ
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <small>GOAL</small>
+
+            <h3>
+                Keep Growing
+            </h3>
+
+            <p>
+                พัฒนาภาษาและทักษะทางธุรกิจ
+                เพื่อเตรียมตัวสู่การเรียน
+                และการทำงานในอนาคต
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTERESTS -->
+
+<section class="interests">
+
+    <div class="section-title">
+        WHAT I LIKE
+    </div>
+
+    <h2>
+        Things that<br>
+        inspire me.
+    </h2>
+
+
+    <div class="interest-list">
+
+
+        <div class="interest">
+
+            <span>中</span>
+
+            <h3>
+                Chinese
+            </h3>
+
+            <p>
+                เรียนรู้ภาษา วัฒนธรรม
+                และการสื่อสารภาษาจีน
+            </p>
+
+        </div>
+
+
+        <div class="interest">
+
+            <span>✦</span>
+
+            <h3>
+                Business
+            </h3>
+
+            <p>
+                สนใจการค้าขาย
+                การตลาด และการสร้างธุรกิจ
+            </p>
+
+        </div>
+
+
+        <div class="interest">
+
+            <span>↗</span>
+
+            <h3>
+                New Experiences
+            </h3>
+
+            <p>
+                ชอบเรียนรู้จากกิจกรรม
+                และประสบการณ์ใหม่ ๆ
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+    <p>
+        “Every experience is
+        a step toward who
+        I want to become.”
+    </p>
+
+    <span>
+        YEE. · 2026
+    </span>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
-    <p>© 2026 My Portfolio</p>
+
+    <div>
+        © 2026 YEE.
+    </div>
+
+    <div>
+        Chinese × Business
+    </div>
+
 </footer>
+
 
 </body>
 </html>
