@@ -1,103 +1,628 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>YEE. | My Portfolio</title>
+<title>YEE. — Personal Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
 
-    <link rel="stylesheet" href="style.css">
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --purple:#7164d9;
+    --purple-dark:#29264d;
+    --purple-light:#eeeaff;
+    --cream:#faf9f6;
+    --text:#29264d;
+    --muted:#77758b;
+    --line:#dedce8;
+}
+
+body{
+    background:var(--cream);
+    color:var(--text);
+    font-family:'Kanit',sans-serif;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    width:100%;
+    padding:28px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+    background:rgba(250,249,246,.9);
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:34px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--text);
+    font-size:15px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--purple);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    max-width:1250px;
+    margin:auto;
+    min-height:650px;
+    padding:90px 7%;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.small-title{
+    font-size:14px;
+    letter-spacing:3px;
+    color:var(--purple);
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(60px,7vw,105px);
+    line-height:.95;
+    font-weight:600;
+}
+
+.hero h1 span{
+    color:var(--purple);
+}
+
+.hero-text{
+    max-width:520px;
+    margin-top:30px;
+    font-size:18px;
+    line-height:1.9;
+    color:var(--muted);
+}
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    margin-top:38px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:13px 25px;
+    border-radius:30px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.btn-main{
+    background:var(--purple);
+    color:white;
+}
+
+.btn-main:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:1px solid var(--text);
+    color:var(--text);
+}
+
+.btn-outline:hover{
+    background:var(--text);
+    color:white;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+
+.profile-area{
+    position:relative;
+}
+
+.profile-card{
+    background:var(--purple-light);
+    border-radius:30px;
+    padding:35px;
+    min-height:450px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    position:relative;
+    overflow:hidden;
+}
+
+.profile-card::before{
+    content:"Y";
+    position:absolute;
+    top:-80px;
+    right:-20px;
+    font-family:'Playfair Display',serif;
+    font-size:300px;
+    color:rgba(113,100,217,.12);
+}
+
+.profile-number{
+    position:absolute;
+    top:30px;
+    left:35px;
+    font-size:13px;
+    letter-spacing:2px;
+    color:var(--purple);
+}
+
+.profile-chinese{
+    position:absolute;
+    top:35px;
+    right:35px;
+    font-size:24px;
+}
+
+.profile-card h2{
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    margin-bottom:8px;
+}
+
+.profile-card p{
+    color:var(--muted);
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:80px 7%;
+}
+
+.intro-inner{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-label{
+    color:var(--purple);
+    font-size:13px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.intro h2{
+    font-family:'Playfair Display',serif;
+    font-size:50px;
+    max-width:750px;
+    line-height:1.15;
+}
+
+.intro h2 span{
+    color:var(--purple);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+    max-width:1100px;
+    margin:70px auto;
+    padding:0 7%;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    padding:35px;
+    background:white;
+    border:1px solid var(--line);
+    border-radius:22px;
+    min-height:210px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-7px);
+    border-color:var(--purple);
+}
+
+.card-number{
+    color:var(--purple);
+    font-size:13px;
+    letter-spacing:2px;
+}
+
+.card h3{
+    font-family:'Playfair Display',serif;
+    font-size:27px;
+    margin:28px 0 10px;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+}
+
+/* =========================
+   LEARNING
+========================= */
+
+.learning{
+    background:var(--purple-dark);
+    color:white;
+    padding:90px 7%;
+}
+
+.learning-inner{
+    max-width:1100px;
+    margin:auto;
+}
+
+.learning .section-label{
+    color:#bcb5ff;
+}
+
+.learning h2{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    margin-bottom:50px;
+}
+
+.timeline{
+    border-left:1px solid rgba(255,255,255,.3);
+}
+
+.timeline-item{
+    padding:0 0 45px 35px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    width:9px;
+    height:9px;
+    background:#bcb5ff;
+    border-radius:50%;
+    position:absolute;
+    left:-5px;
+    top:7px;
+}
+
+.timeline-year{
+    color:#bcb5ff;
+    font-size:14px;
+    letter-spacing:2px;
+}
+
+.timeline-item h3{
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    margin:8px 0;
+}
+
+.timeline-item p{
+    color:#c7c5d2;
+    line-height:1.7;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:35px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--line);
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:900px){
+
+    nav{
+        padding:22px 5%;
+    }
+
+    .nav-links{
+        gap:20px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:70px 7%;
+        gap:45px;
+    }
+
+    .hero h1{
+        font-size:75px;
+    }
+
+    .profile-card{
+        min-height:360px;
+    }
+
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+    nav{
+        flex-direction:column;
+        gap:18px;
+    }
+
+    .nav-links{
+        gap:16px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .nav-links a{
+        font-size:13px;
+    }
+
+    .hero{
+        padding:55px 7%;
+        min-height:auto;
+    }
+
+    .hero h1{
+        font-size:58px;
+    }
+
+    .hero-text{
+        font-size:16px;
+    }
+
+    .hero-buttons{
+        flex-wrap:wrap;
+    }
+
+    .profile-card{
+        min-height:330px;
+        padding:28px;
+    }
+
+    .profile-card h2{
+        font-size:35px;
+    }
+
+    .intro{
+        padding:65px 7%;
+    }
+
+    .intro h2{
+        font-size:38px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+        padding:0 7%;
+        margin:50px auto;
+    }
+
+    .learning{
+        padding:65px 7%;
+    }
+
+    .learning h2{
+        font-size:43px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+}
+
+</style>
 </head>
+
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- NAVBAR -->
 
-<header class="header">
+<nav>
 
-    <a href="index.html" class="logo">
-        YEE.
-    </a>
+    <div class="logo">YEE.</div>
 
-    <nav class="navbar">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
 
-</header>
+</nav>
 
 
-<!-- ================= HERO ================= -->
-
-<main>
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="hero-left">
+    <div>
 
-        <p class="welcome">
-            ✦ WELCOME TO MY WORLD
-        </p>
+        <div class="small-title">
+            ✦ WELCOME TO MY PORTFOLIO
+        </div>
 
         <h1>
             Hello,<br>
-            I'm <span>Yee</span>
+            I'm <span>Yee.</span>
         </h1>
 
-        <p class="intro">
-            ศิลป์-ภาษาจีน ที่กำลังเรียนรู้ เติบโต
-            และสร้างเส้นทางของตัวเอง
+        <p class="hero-text">
+            นักเรียนสายภาษาจีนที่สนใจด้านธุรกิจ
+            การสื่อสาร และการเรียนรู้สิ่งใหม่ ๆ
+            พร้อมสร้างเส้นทางของตัวเองในอนาคต
         </p>
 
-        <div class="hero-links">
-
-            <a href="about.html">
+        <div class="hero-buttons">
+            <a href="about.html" class="btn btn-main">
                 Explore Me →
             </a>
 
-            <a href="portfolio.html">
+            <a href="portfolio.html" class="btn btn-outline">
                 My Portfolio
             </a>
+        </div>
+
+    </div>
+
+
+    <div class="profile-area">
+
+        <div class="profile-card">
+
+            <div class="profile-number">
+                01 / 04
+            </div>
+
+            <div class="profile-chinese">
+                您好
+            </div>
+
+            <div>
+                <h2>YEE</h2>
+
+                <p>
+                    Student · Chinese · Business
+                </p>
+
+                <p>
+                    Portfolio 2026
+                </p>
+            </div>
 
         </div>
 
-        <p class="scroll">
-            ↓ Scroll to explore
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <div class="intro-inner">
+
+        <div class="section-label">
+            ABOUT MY JOURNEY
+        </div>
+
+        <h2>
+            Learning Chinese,
+            discovering <span>business</span>,
+            and creating my own path.
+        </h2>
+
+    </div>
+
+</section>
+
+
+<!-- CARDS -->
+
+<section class="cards">
+
+    <div class="card">
+
+        <div class="card-number">
+            01 — LANGUAGE
+        </div>
+
+        <h3>Chinese</h3>
+
+        <p>
+            เรียนรู้ภาษาจีนผ่านกิจกรรม
+            การแข่งขัน และประสบการณ์
+            ที่ได้ลงมือทำจริง
         </p>
 
     </div>
 
 
-    <div class="hero-right">
+    <div class="card">
 
-        <div class="star">✦</div>
+        <div class="card-number">
+            02 — BUSINESS
+        </div>
 
-        <p class="small-title">
-            Y
-        </p>
-
-        <p class="portfolio-text">
-            MY PORTFOLIO
-        </p>
-
-        <h2>
-            YEE
-        </h2>
+        <h3>Business</h3>
 
         <p>
-            Student • Chinese • Business
+            สนใจการค้าขาย การตลาด
+            และการนำภาษาไปต่อยอด
+            กับธุรกิจระหว่างประเทศ
         </p>
 
+    </div>
+
+
+    <div class="card">
+
+        <div class="card-number">
+            03 — FUTURE
+        </div>
+
+        <h3>My Future</h3>
+
         <p>
-            2026 ♡
+            อยากพัฒนาทักษะภาษาและธุรกิจ
+            เพื่อนำไปใช้สร้างโอกาส
+            และธุรกิจของตัวเอง
         </p>
 
     </div>
@@ -105,77 +630,85 @@
 </section>
 
 
-<!-- ================= FEATURES ================= -->
+<!-- LEARNING -->
 
-<section class="features">
+<section class="learning">
 
-    <div class="feature">
+    <div class="learning-inner">
 
-        <div class="icon">
-            📚
+        <div class="section-label">
+            MY LEARNING JOURNEY
         </div>
 
-        <h2>
-            Learning
-        </h2>
+        <h2>Still Learning.</h2>
 
-        <p>
-            เรียนรู้สิ่งใหม่ ๆ อยู่เสมอ
-        </p>
+        <div class="timeline">
 
-    </div>
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2023
+                </div>
+
+                <h3>Starting with Chinese</h3>
+
+                <p>
+                    เริ่มต้นเรียนรู้ภาษาจีน
+                    และค้นพบว่าภาษาสามารถเชื่อมโยง
+                    ผู้คนและโอกาสได้มากกว่าที่คิด
+                </p>
+
+            </div>
 
 
-    <div class="feature">
+            <div class="timeline-item">
 
-        <div class="icon">
-            🌎
+                <div class="timeline-year">
+                    2024
+                </div>
+
+                <h3>Exploring Experiences</h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมด้านภาษาจีน
+                    การแข่งขัน และกิจกรรมแลกเปลี่ยน
+                    เพื่อพัฒนาตัวเอง
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="timeline-year">
+                    2026
+                </div>
+
+                <h3>Building My Future</h3>
+
+                <p>
+                    เตรียมตัวเข้าสู่มหาวิทยาลัย
+                    และก้าวต่อไปสู่เส้นทาง
+                    Chinese × Business
+                </p>
+
+            </div>
+
         </div>
-
-        <h2>
-            Chinese
-        </h2>
-
-        <p>
-            ความสนใจด้านภาษาจีน
-        </p>
-
-    </div>
-
-
-    <div class="feature">
-
-        <div class="icon">
-            💼
-        </div>
-
-        <h2>
-            Business
-        </h2>
-
-        <p>
-            สนใจธุรกิจและการทำงาน
-        </p>
 
     </div>
 
 </section>
 
-</main>
-
-
-<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <p>
-        © 2026 YEE. All Rights Reserved.
-    </p>
+    <div>© 2026 YEE.</div>
+
+    <div>Chinese × Business</div>
 
 </footer>
 
-
-<script src="script.js"></script>
 
 </body>
 </html>
