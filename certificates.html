@@ -249,11 +249,39 @@ main{
     display:block;
 }
 
-.certificate-title{
+
+/* =========================
+   📜 CERTIFICATE DETAILS
+========================= */
+
+.certificate-info{
+    padding:17px 8px 8px;
     text-align:center;
-    padding:15px 5px 5px;
+}
+
+.certificate-info h3{
+    color:#ff9fc5;
+    font-size:19px;
+    font-weight:500;
+    margin-bottom:8px;
+}
+
+.certificate-info p{
     color:#d8e1ef;
-    font-size:15px;
+    font-size:14px;
+    line-height:1.75;
+    margin-bottom:8px;
+}
+
+.certificate-info .certificate-meta{
+    color:#a8c7ff;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.certificate-info .certificate-meta span{
+    display:inline-block;
+    margin:2px 5px;
 }
 
 
@@ -313,6 +341,14 @@ main{
         height:300px;
     }
 
+    .certificate-info h3{
+        font-size:18px;
+    }
+
+    .certificate-info p{
+        font-size:14px;
+    }
+
 }
 
 </style>
@@ -337,6 +373,10 @@ main{
 </div>
 
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
     <a href="./index.html" class="logo">
@@ -345,22 +385,38 @@ main{
 
     <nav>
 
-        <a href="./index.html">หน้าแรก</a>
+        <a href="./index.html">
+            หน้าแรก
+        </a>
 
-        <a href="./profile.html">เกี่ยวกับฉัน</a>
+        <a href="./profile.html">
+            เกี่ยวกับฉัน
+        </a>
 
-        <a href="./education.html">มหาวิทยาลัย</a>
+        <a href="./education.html">
+            มหาวิทยาลัย
+        </a>
 
-        <a href="./activities.html">กิจกรรม</a>
+        <a href="./activities.html">
+            กิจกรรม
+        </a>
 
-        <a href="./certificates.html" class="active">เกียรติบัตร</a>
+        <a href="./certificates.html" class="active">
+            เกียรติบัตร
+        </a>
 
-        <a href="./contact.html">ติดต่อฉัน</a>
+        <a href="./contact.html">
+            ติดต่อฉัน
+        </a>
 
     </nav>
 
 </header>
 
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
@@ -385,6 +441,10 @@ main{
     <div class="certificates-grid">
 
 
+        <!-- =========================
+             CERTIFICATE 1
+        ========================= -->
+
         <div class="certificate-card">
 
             <div class="certificate-image">
@@ -396,12 +456,30 @@ main{
 
             </div>
 
-            <div class="certificate-title">
-                เกียรติบัตรที่ 1
+            <div class="certificate-info">
+
+                <h3>
+                    เกียรติบัตรการเข้าร่วมกิจกรรม
+                </h3>
+
+                <p>
+                    เกียรติบัตรที่แสดงถึงการเข้าร่วมกิจกรรมและการเรียนรู้
+                    เพื่อพัฒนาความรู้และประสบการณ์ของตนเอง
+                </p>
+
+                <div class="certificate-meta">
+                    <span>🏆 Certificate</span>
+                    <span>📜 เกียรติบัตร</span>
+                </div>
+
             </div>
 
         </div>
 
+
+        <!-- =========================
+             CERTIFICATE 2
+        ========================= -->
 
         <div class="certificate-card">
 
@@ -414,12 +492,30 @@ main{
 
             </div>
 
-            <div class="certificate-title">
-                เกียรติบัตรที่ 2
+            <div class="certificate-info">
+
+                <h3>
+                    เกียรติบัตรด้านภาษาจีน
+                </h3>
+
+                <p>
+                    เกียรติบัตรที่สะท้อนความสนใจและการพัฒนาทักษะ
+                    ด้านภาษาจีนผ่านการเรียนรู้และกิจกรรมต่าง ๆ
+                </p>
+
+                <div class="certificate-meta">
+                    <span>🀄 ภาษาจีน</span>
+                    <span>📚 การเรียนรู้</span>
+                </div>
+
             </div>
 
         </div>
 
+
+        <!-- =========================
+             CERTIFICATE 3
+        ========================= -->
 
         <div class="certificate-card">
 
@@ -432,12 +528,30 @@ main{
 
             </div>
 
-            <div class="certificate-title">
-                เกียรติบัตรที่ 3
+            <div class="certificate-info">
+
+                <h3>
+                    เกียรติบัตรการอบรมและพัฒนาทักษะ
+                </h3>
+
+                <p>
+                    การเข้าร่วมกิจกรรมเพื่อเพิ่มพูนความรู้
+                    ฝึกทักษะ และเปิดโอกาสให้ได้เรียนรู้จากประสบการณ์จริง
+                </p>
+
+                <div class="certificate-meta">
+                    <span>📖 การอบรม</span>
+                    <span>✦ พัฒนาทักษะ</span>
+                </div>
+
             </div>
 
         </div>
 
+
+        <!-- =========================
+             CERTIFICATE 4
+        ========================= -->
 
         <div class="certificate-card">
 
@@ -450,12 +564,30 @@ main{
 
             </div>
 
-            <div class="certificate-title">
-                เกียรติบัตรที่ 4
+            <div class="certificate-info">
+
+                <h3>
+                    เกียรติบัตรกิจกรรมการเรียนรู้
+                </h3>
+
+                <p>
+                    หลักฐานการเข้าร่วมกิจกรรมที่ช่วยส่งเสริม
+                    การเรียนรู้ ทักษะการสื่อสาร และประสบการณ์นอกห้องเรียน
+                </p>
+
+                <div class="certificate-meta">
+                    <span>✦ กิจกรรม</span>
+                    <span>🩷 ประสบการณ์</span>
+                </div>
+
             </div>
 
         </div>
 
+
+        <!-- =========================
+             CERTIFICATE 5
+        ========================= -->
 
         <div class="certificate-card">
 
@@ -468,8 +600,22 @@ main{
 
             </div>
 
-            <div class="certificate-title">
-                เกียรติบัตรที่ 5
+            <div class="certificate-info">
+
+                <h3>
+                    เกียรติบัตรการเข้าร่วมกิจกรรม
+                </h3>
+
+                <p>
+                    แสดงถึงการเข้าร่วมกิจกรรมและการพัฒนาตนเอง
+                    ซึ่งสามารถนำประสบการณ์ไปต่อยอดในการเรียนและการทำงานในอนาคต
+                </p>
+
+                <div class="certificate-meta">
+                    <span>🏆 Certificate</span>
+                    <span>✦ Portfolio</span>
+                </div>
+
             </div>
 
         </div>
@@ -478,24 +624,41 @@ main{
     </div>
 
 
+    <!-- =========================
+         BOTTOM NAV
+    ========================= -->
+
     <div class="bottom-nav">
 
-        <a href="./index.html">🏠 หน้าแรก</a>
+        <a href="./index.html">
+            🏠 หน้าแรก
+        </a>
 
-        <a href="./profile.html">🩷 เกี่ยวกับฉัน</a>
+        <a href="./profile.html">
+            🩷 เกี่ยวกับฉัน
+        </a>
 
-        <a href="./education.html">🧀 มหาวิทยาลัย</a>
+        <a href="./education.html">
+            🧀 มหาวิทยาลัย
+        </a>
 
-        <a href="./activities.html">🎈 กิจกรรม</a>
+        <a href="./activities.html">
+            🎈 กิจกรรม
+        </a>
 
-        <a href="./certificates.html" class="active">🏆 เกียรติบัตร</a>
+        <a href="./certificates.html" class="active">
+            🏆 เกียรติบัตร
+        </a>
 
-        <a href="./contact.html">🥨 ติดต่อฉัน</a>
+        <a href="./contact.html">
+            🥨 ติดต่อฉัน
+        </a>
 
     </div>
 
 
 </main>
+
 
 </body>
 </html>
