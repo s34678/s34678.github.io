@@ -1,610 +1,125 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="contact-box">
 
-    <title>Contact | Yee Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- INSTAGRAM -->
 
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <div class="contact-card">
 
-    <style>
-
-        :root {
-            --purple: #7164d9;
-            --purple-dark: #29264d;
-            --purple-light: #eeeaff;
-            --cream: #faf9f6;
-            --white: #ffffff;
-            --gray: #77748a;
-            --border: #e7e3f3;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Kanit', sans-serif;
-            background: var(--cream);
-            color: var(--purple-dark);
-            line-height: 1.7;
-        }
-
-        /* =========================
-           NAVBAR
-        ========================= */
-
-        nav {
-            width: 100%;
-            padding: 22px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(250,249,246,0.95);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 25px;
-            font-weight: 700;
-            color: var(--purple-dark);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 28px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--purple-dark);
-            font-size: 15px;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover,
-        nav ul li a.active {
-            color: var(--purple);
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        .page-header {
-            text-align: center;
-            padding: 90px 20px 60px;
-        }
-
-        .small-title {
-            color: var(--purple);
-            font-size: 14px;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 58px;
-            line-height: 1.2;
-            margin-bottom: 18px;
-        }
-
-        .page-header p {
-            max-width: 600px;
-            margin: auto;
-            color: var(--gray);
-            font-size: 16px;
-        }
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-section {
-            width: 86%;
-            max-width: 1050px;
-            margin: 0 auto 90px;
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 45px;
-            align-items: stretch;
-        }
-
-        /* LEFT */
-
-        .contact-intro {
-            background: var(--purple-dark);
-            color: white;
-            border-radius: 28px;
-            padding: 45px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 430px;
-        }
-
-        .contact-intro h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 38px;
-            margin-bottom: 18px;
-        }
-
-        .contact-intro p {
-            color: #dddaf0;
-            font-weight: 300;
-        }
-
-        .hello {
-            font-size: 14px;
-            color: #bcb5ff;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-        }
-
-        .contact-sign {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            margin-top: 35px;
-        }
-
-        /* RIGHT */
-
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .contact-card {
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 24px 28px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            text-decoration: none;
-            color: var(--purple-dark);
-            transition: 0.3s;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--purple);
-            box-shadow: 0 12px 30px rgba(70, 60, 130, 0.08);
-        }
-
-        .icon {
-            width: 52px;
-            height: 52px;
-            background: var(--purple-light);
-            color: var(--purple);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            flex-shrink: 0;
-        }
-
-        .contact-text {
-            flex: 1;
-        }
-
-        .contact-text span {
-            display: block;
-            color: var(--gray);
-            font-size: 13px;
-            margin-bottom: 2px;
-        }
-
-        .contact-text strong {
-            font-size: 16px;
-            font-weight: 500;
-        }
-
-        .arrow {
-            color: var(--purple);
-            font-size: 20px;
-        }
-
-        /* =========================
-           MESSAGE
-        ========================= */
-
-        .message-box {
-            width: 86%;
-            max-width: 1050px;
-            margin: 0 auto 90px;
-            text-align: center;
-            background: var(--purple-light);
-            border-radius: 28px;
-            padding: 55px 25px;
-        }
-
-        .message-box h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 35px;
-            margin-bottom: 10px;
-        }
-
-        .message-box p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: auto;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            background: var(--purple-dark);
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
-
-        footer p {
-            font-size: 13px;
-            color: #c9c6da;
-        }
-
-        footer .footer-name {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            margin-bottom: 5px;
-            color: white;
-        }
-
-        /* =========================
-           RESPONSIVE
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-intro {
-                min-height: auto;
-            }
-        }
-
-        @media (max-width: 600px) {
-
-            nav {
-                padding: 18px 5%;
-            }
-
-            nav ul {
-                gap: 13px;
-            }
-
-            nav ul li a {
-                font-size: 12px;
-            }
-
-            .logo {
-                font-size: 21px;
-            }
-
-            .page-header {
-                padding: 65px 20px 45px;
-            }
-
-            .page-header h1 {
-                font-size: 43px;
-            }
-
-            .contact-section {
-                width: 90%;
-            }
-
-            .contact-intro {
-                padding: 32px;
-                border-radius: 22px;
-            }
-
-            .contact-intro h2 {
-                font-size: 31px;
-            }
-
-            .contact-card {
-                padding: 19px;
-            }
-
-            .message-box {
-                width: 90%;
-                padding: 40px 20px;
-            }
-
-            .message-box h2 {
-                font-size: 29px;
-            }
-        }
-
-    </style>
-</head>
-
-<body>
-
-<!-- =========================
-     NAVBAR
-========================= -->
-
-<nav>
-
-    <div class="logo">YEE.</div>
-
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-
-</nav>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header class="page-header">
-
-    <div class="small-title">GET IN TOUCH</div>
-
-    <h1>Let's Connect.</h1>
-
-    <p>
-        Thank you for visiting my portfolio.
-        If you would like to know more about me,
-        my work, or my experiences, feel free to contact me.
-    </p>
-
-</header>
-
-
-<!-- =========================
-     CONTACT SECTION
-========================= -->
-
-<section class="contact-section">
-
-    <!-- LEFT -->
-
-    <div class="contact-intro">
-
-        <div>
-
-            <div class="hello">
-                HELLO, I'M YEE.
-            </div>
-
-            <h2>
-                Let's stay<br>
-                connected.
-            </h2>
-
-            <p>
-                This portfolio is a collection of my
-                learning experiences, activities,
-                interests and future goals.
-            </p>
-
+        <div class="contact-icon">
+            📱
         </div>
 
-        <div class="contact-sign">
-            — Yee
-        </div>
-
-    </div>
-
-
-    <!-- RIGHT -->
-
-    <div class="contact-list">
-
-        <!-- Instagram -->
-
-        <a href="#" class="contact-card">
-
-            <div class="icon">
-                ◎
-            </div>
-
-            <div class="contact-text">
-
-                <span>Instagram</span>
-
-                <strong>@yourusername</strong>
-
-            </div>
-
-            <div class="arrow">
-                →
-            </div>
-
-        </a>
-
-
-        <!-- Email -->
-
-        <a href="mailto:your@email.com" class="contact-card">
-
-            <div class="icon">
-                ✉
-            </div>
-
-            <div class="contact-text">
-
-                <span>Email</span>
-
-                <strong>your@email.com</strong>
-
-            </div>
-
-            <div class="arrow">
-                →
-            </div>
-
-        </a>
-
-
-        <!-- GitHub -->
-
-        <a href="#" class="contact-card">
-
-            <div class="icon">
-                ◇
-            </div>
-
-            <div class="contact-text">
-
-                <span>GitHub</span>
-
-                <strong>My Portfolio Website</strong>
-
-            </div>
-
-            <div class="arrow">
-                →
-            </div>
-
-        </a>
-
-
-        <!-- Portfolio -->
-
-        <a href="index.html" class="contact-card">
-
-            <div class="icon">
-                ✦
-            </div>
-
-            <div class="contact-text">
-
-                <span>Portfolio</span>
-
-                <strong>Back to my portfolio</strong>
-
-            </div>
-
-            <div class="arrow">
-                →
-            </div>
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MESSAGE
-========================= -->
-
-<section class="message-box">
-
-    <h2>Thank you for visiting.</h2>
-
-    <p>
-        Every experience is a small step toward
-        the person I want to become.
-    </p>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="footer-name">
-        YEE.
-    </div>
-
-    <p>
-        Chinese · Business · Future
-    </p>
-
-    <p>
-        © 2026 Yee Portfolio
-    </p>
-
-</footer>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-    <nav>
-        <div class="logo">MY PORTFOLIO</div>
-
-        <div class="menu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html" class="active">Contact</a>
-        </div>
-    </nav>
-</header>
-
-<section class="page-title">
-    <p>LET'S CONNECT</p>
-    <h1>Contact</h1>
-</section>
-
-<section class="contact">
-
-    <div class="contact-box">
-        <h2>Let's talk ✦</h2>
+        <h2>
+            Instagram
+        </h2>
 
         <p>
-            หากต้องการติดต่อหรือพูดคุย
-            สามารถติดต่อผ่านช่องทางต่าง ๆ ได้
+            สามารถติดตามและพูดคุยกับฉัน
+            ผ่าน Instagram ได้ที่บัญชีด้านล่าง
         </p>
 
-        <div class="contact-info">
-            <p>📧 Email : your@email.com</p>
-            <p>📱 Instagram : @yourusername</p>
-            <p>💬 Line : yourline</p>
-        </div>
+        <a
+            href="https://www.instagram.com/pxxttxee"
+            target="_blank"
+            class="contact-link"
+        >
+            @pxxttxee
+        </a>
+
+        <br>
+
+        <a
+            href="https://www.instagram.com/p.pxxttxee"
+            target="_blank"
+            class="contact-link"
+        >
+            @p.pxxttxee
+        </a>
+
     </div>
 
-</section>
 
-<footer>
-    <p>© 2026 My Portfolio</p>
-</footer>
+    <!-- PHONE -->
 
-</body>
-</html>
+    <div class="contact-card">
+
+        <div class="contact-icon">
+            ☎️
+        </div>
+
+        <h2>
+            เบอร์โทรศัพท์
+        </h2>
+
+        <p>
+            สามารถติดต่อฉันได้ทางโทรศัพท์
+            สำหรับการติดต่อทั่วไป
+        </p>
+
+        <a
+            href="tel:0996164878"
+            class="contact-link"
+        >
+            099-616-4878
+        </a>
+
+    </div>
+
+
+    <!-- LINE -->
+
+    <div class="contact-card">
+
+        <div class="contact-icon">
+            💬
+        </div>
+
+        <h2>
+            LINE
+        </h2>
+
+        <p>
+            สามารถติดต่อและพูดคุยกับฉัน
+            ผ่าน LINE ได้ที่ ID ด้านล่าง
+        </p>
+
+        <a
+            href="https://line.me/ti/p/~0886540283"
+            target="_blank"
+            class="contact-link"
+        >
+            ID: 0886540283
+        </a>
+
+    </div>
+
+
+    <!-- PORTFOLIO -->
+
+    <div class="contact-card">
+
+        <div class="contact-icon">
+            🧀
+        </div>
+
+        <h2>
+            My Portfolio
+        </h2>
+
+        <p>
+            เว็บไซต์ Portfolio นี้รวบรวมข้อมูล
+            ประวัติการศึกษา กิจกรรม เกียรติบัตร
+            และเป้าหมายในการศึกษาต่อของฉัน
+        </p>
+
+        <a
+            href="./index.html"
+            class="contact-link"
+        >
+            กลับหน้าแรก
+        </a>
+
+    </div>
+
+
+</div>
