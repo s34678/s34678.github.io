@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YEE. — เกียรติบัตร</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #172b4d 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #101d38 0%, transparent 40%),
+                #071426;
+
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            background: rgba(7,20,38,0.85);
+
+            backdrop-filter: blur(10px);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #c7d4e8;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff9fc5;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 86%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title .small {
+            color: #ff9fc5;
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .page-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #aebdd1;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CERTIFICATES GRID
+        ========================= */
+
+        .certificates {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+
+        /* =========================
+           CERTIFICATE CARD
+        ========================= */
+
+        .certificate-card {
+            background: rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            border-radius: 22px;
+
+            overflow: hidden;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+            transition: 0.3s;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(255,159,197,0.35);
+        }
+
+
+        /* =========================
+           CERTIFICATE IMAGE
+        ========================= */
+
+        .certificate-image {
+            width: 100%;
+            height: 350px;
+
+            object-fit: contain;
+
+            display: block;
+
+            background: #ffffff;
+        }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .certificate-content {
+            padding: 25px;
+        }
+
+        .certificate-number {
+            color: #ff9fc5;
+
+            font-size: 14px;
+
+            margin-bottom: 8px;
+        }
+
+        .certificate-content h3 {
+            font-size: 21px;
+
+            font-weight: 500;
+
+            line-height: 1.5;
+
+            margin-bottom: 14px;
+        }
+
+        .certificate-content p {
+            color: #c2cedd;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           BOTTOM NAVIGATION
+        ========================= */
+
+        .bottom-nav {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 60px;
+        }
+
+        .bottom-nav a {
+            padding: 12px 24px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #d9e3f0;
+
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: rgba(255,159,197,0.15);
+
+            color: #ff9fc5;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .certificates {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 40px;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            main {
+                width: 92%;
+                padding: 45px 0;
+            }
+
+            .page-title h1 {
+                font-size: 34px;
+            }
+
+            .page-title p {
+                font-size: 14px;
+            }
+
+            .certificate-image {
+                height: 300px;
+            }
+
+            .certificate-content {
+                padding: 20px;
+            }
+
+            .certificate-content h3 {
+                font-size: 19px;
+            }
+
+            .certificate-content p {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="./index.html" class="logo">
+            🧀 My Portfolio
+        </a>
+
+
+        <nav>
+
+            <a href="./index.html">
+                หน้าแรก
+            </a>
+
+            <a href="./profile.html">
+                เกี่ยวกับฉัน
+            </a>
+
+            <a href="./education.html">
+                มหาวิทยาลัย
+            </a>
+
+            <a href="./activities.html">
+                กิจกรรม
+            </a>
+
+            <a href="./certificates.html" class="active">
+                เกียรติบัตร
+            </a>
+
+            <a href="./contact.html">
+                ติดต่อฉัน
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="page-title">
+
+            <div class="small">
+                🏆 MY CERTIFICATES
+            </div>
+
+            <h1>
+                เกียรติบัตร
+            </h1>
+
+            <p>
+                เกียรติบัตรและผลงานที่สะท้อนการเรียนรู้และการพัฒนาตนเอง 🩷
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             CERTIFICATES
+        ========================= -->
+
+        <div class="certificates">
+
+
+            <!-- เกียรติบัตรที่ 1 -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="./IMG_0390.jpeg"
+                    alt="เกียรติบัตรที่ 1"
+                    class="certificate-image"
+                >
+
+                <div class="certificate-content">
+
+                    <div class="certificate-number">
+                        เกียรติบัตรที่ 01
+                    </div>
+
+                    <h3>
+                        เกียรติบัตรด้านการเรียนรู้และพัฒนาทักษะ
+                    </h3>
+
+                    <p>
+                        เกียรติบัตรฉบับนี้เป็นหลักฐานการเข้าร่วมกิจกรรมหรือการเรียนรู้
+                        ที่ช่วยส่งเสริมการพัฒนาความรู้และทักษะของผู้เรียน
+                        สะท้อนถึงความตั้งใจในการเรียนรู้และการพัฒนาตนเอง
+                        เพื่อนำความรู้ไปต่อยอดในการศึกษาระดับมหาวิทยาลัย
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เกียรติบัตรที่ 2 -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="./IMG_1632.jpeg"
+                    alt="เกียรติบัตรที่ 2"
+                    class="certificate-image"
+                >
+
+                <div class="certificate-content">
+
+                    <div class="certificate-number">
+                        เกียรติบัตรที่ 02
+                    </div>
+
+                    <h3>
+                        เกียรติบัตรด้านการพัฒนาทักษะ
+                    </h3>
+
+                    <p>
+                        เกียรติบัตรที่ได้รับจากการเข้าร่วมกิจกรรม
+                        หรือการพัฒนาความสามารถในด้านต่าง ๆ
+                        ทำให้ได้เรียนรู้จากประสบการณ์จริง
+                        ฝึกความรับผิดชอบ และนำความรู้ที่ได้รับ
+                        มาประยุกต์ใช้ในการเรียนและการทำงานร่วมกับผู้อื่น
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เกียรติบัตรที่ 3 -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="./IMG_7584.jpeg"
+                    alt="เกียรติบัตรที่ 3"
+                    class="certificate-image"
+                >
+
+                <div class="certificate-content">
+
+                    <div class="certificate-number">
+                        เกียรติบัตรที่ 03
+                    </div>
+
+                    <h3>
+                        เกียรติบัตรด้านภาษาและการสื่อสาร
+                    </h3>
+
+                    <p>
+                        เกียรติบัตรที่สะท้อนถึงการเรียนรู้และพัฒนาทักษะ
+                        ด้านภาษาและการสื่อสาร
+                        ได้ฝึกการใช้ภาษาอย่างเหมาะสม
+                        รวมถึงพัฒนาความมั่นใจในการสื่อสาร
+                        ซึ่งสามารถนำไปต่อยอดกับการเรียนด้านธุรกิจ
+                        การค้า และการสื่อสารระหว่างประเทศ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เกียรติบัตรที่ 4 -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="./IMG_2670.jpeg"
+                    alt="เกียรติบัตรที่ 4"
+                    class="certificate-image"
+                >
+
+                <div class="certificate-content">
+
+                    <div class="certificate-number">
+                        เกียรติบัตรที่ 04
+                    </div>
+
+                    <h3>
+                        เกียรติบัตรจากการเข้าร่วมกิจกรรม
+                    </h3>
+
+                    <p>
+                        การเข้าร่วมกิจกรรมครั้งนี้ช่วยเปิดโอกาสให้ได้เรียนรู้
+                        จากประสบการณ์นอกห้องเรียน
+                        ได้ฝึกการทำงานร่วมกับผู้อื่น
+                        การรับผิดชอบหน้าที่ และการปรับตัว
+                        ซึ่งเป็นทักษะสำคัญสำหรับการศึกษาต่อในระดับมหาวิทยาลัย
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- เกียรติบัตรที่ 5 -->
+
+            <div class="certificate-card">
+
+                <img
+                    src="./Screenshot 2026-06-18 111947.png"
+                    alt="เกียรติบัตรที่ 5"
+                    class="certificate-image"
+                >
+
+                <div class="certificate-content">
+
+                    <div class="certificate-number">
+                        เกียรติบัตรที่ 05
+                    </div>
+
+                    <h3>
+                        เกียรติบัตรด้านการเรียนรู้และประสบการณ์
+                    </h3>
+
+                    <p>
+                        เกียรติบัตรฉบับนี้สะท้อนถึงการเข้าร่วมกิจกรรม
+                        และการแสวงหาประสบการณ์ใหม่ ๆ
+                        ได้พัฒนาทักษะการเรียนรู้ ความรับผิดชอบ
+                        และการนำประสบการณ์ที่ได้รับมาปรับใช้
+                        เพื่อเตรียมความพร้อมสำหรับการศึกษาต่อในอนาคต
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             BOTTOM NAVIGATION
+        ========================= -->
+
+        <div class="bottom-nav">
+
+            <a href="./index.html">
+                🏠 หน้าแรก
+            </a>
+
+            <a href="./profile.html">
+                🩷 เกี่ยวกับฉัน
+            </a>
+
+            <a href="./education.html">
+                🧀 มหาวิทยาลัย
+            </a>
+
+            <a href="./activities.html">
+                🦋 กิจกรรม
+            </a>
+
+            <a href="./certificates.html">
+                🏆 เกียรติบัตร
+            </a>
+
+            <a href="./contact.html">
+                🥨 ติดต่อฉัน
+            </a>
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
