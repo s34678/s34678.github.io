@@ -2,6 +2,591 @@
 <html lang="th">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เกี่ยวกับฉัน | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Kanit',sans-serif;
+    background:#071426;
+    color:white;
+    min-height:100vh;
+}
+
+header{
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#050f1d;
+    border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-family:'Playfair Display',serif;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#aebbd0;
+    text-decoration:none;
+    font-size:15px;
+}
+
+nav a:hover,
+nav a.active{
+    color:#72a8ff;
+}
+
+.container{
+    width:90%;
+    max-width:1050px;
+    margin:auto;
+    padding:55px 0 70px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title small{
+    color:#9bc2ff;
+}
+
+.title h1{
+    font-family:'Playfair Display',serif;
+    font-size:55px;
+    margin:10px 0;
+}
+
+.title h1 span{
+    color:#72a8ff;
+}
+
+.title p{
+    color:#9aaac0;
+}
+
+.profile{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:45px;
+    align-items:center;
+    padding:35px;
+    background:#102442;
+    border:1px solid #254a7c;
+    border-radius:30px;
+}
+
+.photo{
+    width:240px;
+    height:290px;
+    margin:auto;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:30px;
+    border:3px solid #72a8ff;
+}
+
+.profile h2{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.profile h2 span{
+    color:#72a8ff;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.info div{
+    background:#193354;
+    border:1px solid #2c4e7b;
+    padding:13px;
+    border-radius:15px;
+    color:#c1cede;
+    font-size:14px;
+}
+
+.info strong{
+    color:#9bc2ff;
+}
+
+.box{
+    margin-top:12px;
+    padding:14px;
+    border-radius:15px;
+    background:#193354;
+    color:#b9c7d8;
+    line-height:1.8;
+}
+
+.box strong{
+    color:#72a8ff;
+}
+
+.section{
+    margin-top:60px;
+}
+
+.section h2{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:28px;
+}
+
+.section h2 span{
+    color:#72a8ff;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.card{
+    padding:28px;
+    background:#102442;
+    border:1px solid #254a7c;
+    border-radius:25px;
+}
+
+.card .emoji{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#aebbd0;
+    line-height:1.9;
+    font-size:15px;
+}
+
+.education{
+    color:#b8c6d8;
+    line-height:2;
+}
+
+.education strong{
+    color:#9bc2ff;
+}
+
+.interests{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+    padding:30px;
+    background:#102442;
+    border:1px solid #254a7c;
+    border-radius:25px;
+}
+
+.tag{
+    padding:10px 18px;
+    border-radius:25px;
+    background:#193b68;
+    border:1px solid #37639a;
+    color:#c5d9f7;
+}
+
+.nice{
+    margin-top:55px;
+    padding:35px;
+    text-align:center;
+    background:#102442;
+    border:1px solid #254a7c;
+    border-radius:25px;
+}
+
+.nice h2{
+    font-family:'Playfair Display',serif;
+    color:#9bc2ff;
+    font-size:28px;
+}
+
+
+/* มือถือ */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        gap:14px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .profile{
+        grid-template-columns:1fr;
+        padding:25px;
+    }
+
+    .photo{
+        width:200px;
+        height:245px;
+    }
+
+    .profile{
+        text-align:center;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+        text-align:left;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .title h1{
+        font-size:43px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="./index.html" class="logo">
+        🧀 My Portfolio
+    </a>
+
+    <nav>
+
+        <a href="./index.html">
+            หน้าแรก
+        </a>
+
+        <a href="./profile.html" class="active">
+            เกี่ยวกับฉัน
+        </a>
+
+        <a href="./education.html">
+            การศึกษา
+        </a>
+
+        <a href="./activities.html">
+            ผลงาน
+        </a>
+
+        <a href="./contact.html">
+            ติดต่อฉัน
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<div class="container">
+
+
+<!-- หัวข้อ -->
+
+<div class="title">
+
+    <small>🩷 GET TO KNOW ME</small>
+
+    <h1>
+        เกี่ยวกับ<span>ฉัน</span> 🦋
+    </h1>
+
+    <p>
+        มาทำความรู้จักตัวตนของฉันกัน
+    </p>
+
+</div>
+
+
+<!-- ข้อมูลส่วนตัว -->
+
+<div class="profile">
+
+    <div class="photo">
+
+        <!-- ใส่ชื่อไฟล์รูปใหม่ตรงนี้ -->
+
+        <img
+            src="./profile.jpeg"
+            alt="รูปโปรไฟล์"
+        >
+
+    </div>
+
+
+    <div>
+
+        <h2>
+            พัทธ์ธีรา
+            <span>วรรณสวัสดิ์(ยาหยี)</span>
+        </h2>
+
+
+        <div class="info">
+
+            <div>
+                <strong>วันเกิด:</strong>
+                6 กันยายน 2552
+            </div>
+
+            <div>
+                <strong>อายุ:</strong>
+                17 ปี
+            </div>
+
+            <div>
+                <strong>ราศี:</strong>
+                สิงห์
+            </div>
+
+            <div>
+                <strong>น้ำหนัก:</strong>
+                37 กก.
+            </div>
+
+            <div>
+                <strong>ส่วนสูง:</strong>
+                156 ซม.
+            </div>
+
+        </div>
+
+
+        <div class="box">
+
+            <strong>🩷 จุดแข็ง</strong>
+
+            <p>
+                เข้าใจอารมณ์ผู้อื่น
+                ทำอะไรหลาย ๆ อย่างพร้อมกันได้
+            </p>
+
+        </div>
+
+
+        <div class="box">
+
+            <strong>🦋 จุดอ่อน</strong>
+
+            <p>
+                หมดไฟง่าย
+                ติดความสมบูรณ์แบบ
+                ทุกอย่างต้องเป็นไปตามแผนเสมอ
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ข้อมูลเพิ่มเติม -->
+
+<section class="section">
+
+<h2>
+    ข้อมูล<span>ของฉัน</span> 🩷
+</h2>
+
+
+<div class="cards">
+
+
+<!-- การศึกษา -->
+
+<div class="card">
+
+    <div class="emoji">🏫</div>
+
+    <h3>การศึกษา</h3>
+
+    <div class="education">
+
+        <p>
+            <strong>🧀 ระดับอนุบาล - ประถมศึกษา</strong><br>
+            โรงเรียนบุญประทีปวิทยาคาร
+        </p>
+
+        <p>
+            <strong>🥨 ระดับมัธยมต้น</strong><br>
+            โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+        </p>
+
+        <p>
+            <strong>🦋 ระดับมัธยมศึกษาตอนปลาย</strong><br>
+            โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- สิ่งที่สนใจ -->
+
+<div class="card">
+
+    <div class="emoji">🥨</div>
+
+    <h3>สิ่งที่สนใจ</h3>
+
+    <p>
+        สนใจด้านภาษาจีน ธุรกิจ
+        การค้าระหว่างประเทศ
+        การนำเข้าและส่งออก
+        และการสื่อสารระหว่างประเทศ
+        รวมถึงการนำภาษาไปประยุกต์ใช้กับธุรกิจ
+    </p>
+
+</div>
+
+
+<!-- สิ่งที่อยากพัฒนา -->
+
+<div class="card">
+
+    <div class="emoji">🧀</div>
+
+    <h3>สิ่งที่อยากพัฒนา</h3>
+
+    <p>
+        ต้องการพัฒนาทักษะภาษาจีน
+        การสื่อสาร
+        การทำงานร่วมกับผู้อื่น
+        และความรู้ด้านธุรกิจ
+        เพื่อให้สามารถนำไปใช้ได้จริง
+    </p>
+
+</div>
+
+
+<!-- เป้าหมาย -->
+
+<div class="card">
+
+    <div class="emoji">🩷</div>
+
+    <h3>เป้าหมายในอนาคต</h3>
+
+    <p>
+        ต้องการนำความรู้ด้านภาษาจีน
+        มาประยุกต์ใช้ร่วมกับความรู้ด้านธุรกิจ
+        และต่อยอดไปสู่การเรียนต่อ
+        และการทำงานด้านธุรกิจระหว่างประเทศ
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ความสนใจ -->
+
+<section class="section">
+
+<h2>
+    ความ<span>สนใจ</span> 🦋
+</h2>
+
+<div class="interests">
+
+    <div class="tag">🧀 ภาษาจีน</div>
+
+    <div class="tag">🥨 ธุรกิจ</div>
+
+    <div class="tag">🩷 การค้าระหว่างประเทศ</div>
+
+    <div class="tag">🦋 การนำเข้าและส่งออก</div>
+
+    <div class="tag">🧀 การสื่อสารระหว่างประเทศ</div>
+
+</div>
+
+</section>
+
+
+<!-- จบหน้า -->
+
+<div class="nice">
+
+    <h2>
+        nice to meet you
+    </h2>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="th">
+
+<head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
