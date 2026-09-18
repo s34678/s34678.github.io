@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,244 +11,844 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Kanit',sans-serif;
+
+    background:
+        radial-gradient(circle at top left,#172b4d 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#101d38 0%,transparent 40%),
+        #071426;
+
     color:#fff;
     min-height:100vh;
-    overflow-x:hidden;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(40,100,255,.22),transparent 30%),
-    radial-gradient(circle at 80% 70%,rgba(255,80,160,.12),transparent 30%),
-    #07111f;
-}
-a{text-decoration:none;color:inherit}
-
-header{
-    position:sticky;top:0;z-index:100;
-    padding:22px 7%;
-    display:flex;justify-content:space-between;align-items:center;
-    background:rgba(5,15,30,.85);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(120,170,255,.15);
-}
-.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
-nav{display:flex;gap:28px;flex-wrap:wrap}
-nav a{color:#b8c8df;font-size:15px}
-nav a:hover,nav a.active{color:#72a8ff}
-
-main{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:850px;
-    margin:auto;
-    padding:65px 0;
 }
 
-/* หัวใจ */
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   HEART BACKGROUND
+========================= */
+
 .hearts{
     position:fixed;
     inset:0;
+
     pointer-events:none;
     overflow:hidden;
+
     z-index:0;
 }
+
 .heart{
     position:absolute;
     bottom:-60px;
+
     color:#ff9fc5;
+
     font-size:22px;
+
     opacity:.5;
-    text-shadow:0 0 12px rgba(255,130,190,.8);
-    animation:heartFloat 9s ease-in infinite;
+
+    text-shadow:
+        0 0 12px rgba(255,130,190,.8);
+
+    animation:
+        heartFloat
+        9s
+        ease-in
+        infinite;
 }
+
 @keyframes heartFloat{
-    0%{transform:translateY(0) rotate(0deg);opacity:0}
-    15%{opacity:.6}
-    50%{transform:translateY(-55vh) translateX(35px) rotate(15deg)}
-    100%{transform:translateY(-115vh) translateX(-25px) rotate(-15deg);opacity:0}
+
+    0%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.6;
+    }
+
+    50%{
+        transform:
+            translateY(-55vh)
+            translateX(35px)
+            rotate(15deg);
+    }
+
+    100%{
+        transform:
+            translateY(-115vh)
+            translateX(-25px)
+            rotate(-15deg);
+
+        opacity:0;
+    }
+
 }
 
-.title{text-align:center;margin-bottom:40px}
-.title small{color:#72a8ff;letter-spacing:2px}
-.title h1{font-family:'Playfair Display',serif;font-size:48px;margin:8px}
-.title p{color:#9baec8}
 
-.card{
-    background:rgba(13,29,52,.82);
-    border:1px solid rgba(100,150,255,.18);
-    border-radius:30px;
-    padding:30px;
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+
+    padding:22px 7%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:rgba(7,20,38,.9);
+
+    backdrop-filter:blur(10px);
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+
+    font-size:25px;
+    font-weight:700;
+
+    color:#fff;
+}
+
+nav{
+    display:flex;
+
+    gap:25px;
+
+    align-items:center;
+}
+
+nav a{
+    color:#c7d4e8;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#ff9fc5;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    width:92%;
+    max-width:700px;
+
+    margin:auto;
+
+    padding:65px 0;
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title{
     text-align:center;
-    margin-bottom:25px;
-    box-shadow:0 20px 60px rgba(0,0,0,.22);
+
+    margin-bottom:35px;
 }
-.profile{
-    width:160px;height:160px;
-    margin:0 auto 20px;
+
+.page-title .small{
+    color:#ff9fc5;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    margin-bottom:8px;
+}
+
+.page-title h1{
+    font-family:'Playfair Display',serif;
+
+    font-size:48px;
+
+    margin-bottom:10px;
+}
+
+.page-title p{
+    color:#aebdd1;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.profile-photo{
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:35px;
+}
+
+.photo-circle{
+    width:190px;
+    height:190px;
+
     padding:5px;
+
     border-radius:50%;
-    background:linear-gradient(135deg,#ff9fc5,#72a8ff,#fff,#ff9fc5);
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fc5,
+            #a8c7ff,
+            #ffffff,
+            #ff9fc5
+        );
+
+    box-shadow:
+        0 0 30px rgba(255,159,197,.25),
+        0 10px 40px rgba(0,0,0,.3);
+
     animation:spin 8s linear infinite;
 }
-.profile img{
-    width:100%;height:100%;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid #071426;
-}
-@keyframes spin{to{transform:rotate(360deg)}}
 
-.card h2{font-size:25px;margin-bottom:15px}
-.card p{color:#b7c6da;line-height:2}
+.photo-circle img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid #071426;
+
+    display:block;
+}
+
+@keyframes spin{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    100%{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   CONTACT LIST
+========================= */
 
 .contact-list{
-    display:grid;
-    gap:15px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    margin-top:10px;
 }
+
 .contact-item{
-    display:block;
-    padding:18px;
+    width:100%;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.1);
+
     border-radius:18px;
-    background:rgba(7,18,33,.8);
-    border:1px solid rgba(120,170,255,.14);
+
     transition:.3s;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.12);
 }
+
 .contact-item:hover{
-    transform:translateY(-4px);
-    border-color:#72a8ff;
-}
-.contact-item strong{
-    display:block;
-    color:#72a8ff;
-    margin-bottom:5px;
-}
-.contact-item span{color:#dbe7f7}
+    transform:translateY(-3px);
 
-.home{
-    display:inline-block;
-    margin-top:20px;
-    padding:13px 25px;
-    border-radius:25px;
-    background:rgba(80,140,255,.15);
-    border:1px solid rgba(120,170,255,.3);
-    color:#dbe7f7;
+    border-color:rgba(255,159,197,.4);
+
+    background:rgba(255,159,197,.08);
+}
+
+.contact-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    font-size:22px;
+}
+
+.contact-text{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+}
+
+.contact-label{
+    color:#ff9fc5;
+
+    font-size:13px;
+}
+
+.contact-value{
+    color:#fff;
+
+    font-size:16px;
+
+    word-break:break-word;
+}
+
+
+/* =========================
+   THANK YOU
+========================= */
+
+.thank-you{
+    text-align:center;
+
+    margin-top:42px;
+
+    padding:25px 20px;
+
+    color:#d7e1ef;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    background:rgba(255,255,255,.04);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+
+/* =========================
+   BACK HOME
+========================= */
+
+.back-home{
+    display:flex;
+
+    justify-content:center;
+
+    margin-top:25px;
+}
+
+.back-home a{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:13px 30px;
+
+    border-radius:30px;
+
+    background:rgba(255,159,197,.12);
+
+    border:1px solid rgba(255,159,197,.3);
+
+    color:#ffb5d0;
+
     transition:.3s;
 }
-.home:hover{transform:translateY(-4px);color:#72a8ff}
 
-.bottom-navigation{
-    margin-top:35px;
-    display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+.back-home a:hover{
+    background:rgba(255,159,197,.22);
+
+    transform:translateY(-3px);
 }
-.bottom-button{
-    min-width:110px;padding:13px 15px;text-align:center;
-    border-radius:16px;
-    background:rgba(13,29,52,.85);
-    border:1px solid rgba(120,170,255,.2);
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-nav{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:55px;
+}
+
+.bottom-nav a{
+    padding:11px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.07);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    color:#d9e3f0;
+
     transition:.3s;
 }
-.bottom-button:hover{transform:translateY(-4px);border-color:#72a8ff;color:#72a8ff}
 
-@media(max-width:768px){
-    header{flex-direction:column;gap:15px;padding:18px 5%}
-    nav{gap:13px;justify-content:center}
-    nav a{font-size:13px}
-    .title h1{font-size:38px}
-    .card{padding:22px}
+.bottom-nav a:hover,
+.bottom-nav a.active{
+    background:rgba(255,159,197,.15);
+
+    color:#ff9fc5;
 }
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+    header{
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:15px;
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    main{
+        width:92%;
+
+        padding:45px 0;
+    }
+
+    .page-title h1{
+        font-size:36px;
+    }
+
+    .page-title p{
+        font-size:14px;
+    }
+
+    .photo-circle{
+        width:155px;
+        height:155px;
+    }
+
+    .contact-item{
+        padding:15px 17px;
+    }
+
+    .contact-value{
+        font-size:14px;
+    }
+
+    .bottom-nav{
+        gap:10px;
+    }
+
+    .bottom-nav a{
+        padding:10px 15px;
+
+        font-size:14px;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEARTS
+========================= -->
+
 <div class="hearts">
-    <span class="heart" style="left:5%;animation-delay:-2s">♡</span>
-    <span class="heart" style="left:17%;animation-delay:-6s">♥</span>
-    <span class="heart" style="left:30%;animation-delay:-4s">♡</span>
-    <span class="heart" style="left:44%;animation-delay:-8s">♥</span>
-    <span class="heart" style="left:58%;animation-delay:-3s">♡</span>
-    <span class="heart" style="left:72%;animation-delay:-7s">♥</span>
-    <span class="heart" style="left:86%;animation-delay:-5s">♡</span>
-    <span class="heart" style="left:95%;animation-delay:-1s">♥</span>
+
+    <span class="heart"
+        style="left:5%;animation-delay:-2s;">
+        ♥
+    </span>
+
+    <span class="heart"
+        style="left:18%;animation-delay:-6s;font-size:17px;">
+        ♡
+    </span>
+
+    <span class="heart"
+        style="left:32%;animation-delay:-4s;">
+        ♥
+    </span>
+
+    <span class="heart"
+        style="left:48%;animation-delay:-8s;font-size:18px;">
+        ♡
+    </span>
+
+    <span class="heart"
+        style="left:63%;animation-delay:-3s;">
+        ♥
+    </span>
+
+    <span class="heart"
+        style="left:78%;animation-delay:-7s;font-size:18px;">
+        ♡
+    </span>
+
+    <span class="heart"
+        style="left:92%;animation-delay:-5s;">
+        ♥
+    </span>
+
 </div>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-<div class="logo">🧀 My Portfolio</div>
-<nav>
-<a href="./index.html">หน้าแรก</a>
-<a href="./profile.html">เกี่ยวกับฉัน</a>
-<a href="./education.html">มหาวิทยาลัย</a>
-<a href="./activities.html">กิจกรรม</a>
-<a href="./certificates.html">เกียรติบัตร</a>
-<a href="./contact.html" class="active">ติดต่อฉัน</a>
-</nav>
+
+    <a href="./index.html" class="logo">
+        🧀 My Portfolio
+    </a>
+
+    <nav>
+
+        <a href="./index.html">
+            หน้าแรก
+        </a>
+
+        <a href="./profile.html">
+            เกี่ยวกับฉัน
+        </a>
+
+        <a href="./education.html">
+            มหาวิทยาลัย
+        </a>
+
+        <a href="./activities.html">
+            กิจกรรม
+        </a>
+
+        <a href="./certificates.html">
+            เกียรติบัตร
+        </a>
+
+        <a href="./contact.html" class="active">
+            ติดต่อฉัน
+        </a>
+
+    </nav>
+
 </header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
 
 <main>
 
-<div class="title">
-<small>🩷 CONTACT</small>
-<h1>ติดต่อฉัน</h1>
-<p>ช่องทางสำหรับติดต่อและทำความรู้จักกัน</p>
-</div>
 
-<div class="card">
+<!-- TITLE -->
 
-<div class="profile">
-<img src="./IMG_2139.jpeg" alt="พัทธ์ธีรา วรรณสวัสดิ์">
-</div>
+<div class="page-title">
 
-<h2>พัทธ์ธีรา วรรณสวัสดิ์ 🩷</h2>
+    <div class="small">
+        🩷 CONTACT ME
+    </div>
 
-<p>
-ขอบคุณที่เข้ามาเยี่ยมชม Portfolio ของฉัน
-<br>
-หวังว่าเว็บไซต์นี้จะช่วยให้ทุกคนได้รู้จักตัวฉันมากขึ้น
-</p>
+    <h1>
+        ติดต่อฉัน
+    </h1>
 
-<a class="home" href="./index.html">🏠 กลับหน้าแรก</a>
+    <p>
+        สามารถติดต่อฉันผ่านช่องทางต่าง ๆ ได้ที่นี่
+    </p>
 
 </div>
 
-<div class="card">
+
+<!-- =========================
+     PROFILE IMAGE
+========================= -->
+
+<div class="profile-photo">
+
+    <div class="photo-circle">
+
+        <img
+            src="./IMG_2139.jpeg"
+            alt="รูปของพัทธ์ธีรา"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
 
 <div class="contact-list">
 
-<a class="contact-item" href="https://www.instagram.com/pxxttxee" target="_blank">
-<strong>📷 Instagram</strong>
-<span>@pxxttxee</span>
+
+<!-- INSTAGRAM 1 -->
+
+<a
+    class="contact-item"
+    href="https://www.instagram.com/pxxttxee"
+    target="_blank"
+>
+
+    <div class="contact-icon">
+        📷
+    </div>
+
+    <div class="contact-text">
+
+        <span class="contact-label">
+            Instagram
+        </span>
+
+        <span class="contact-value">
+            @pxxttxee
+        </span>
+
+    </div>
+
 </a>
 
-<a class="contact-item" href="https://www.instagram.com/p.pxxttxee" target="_blank">
-<strong>📷 Instagram</strong>
-<span>@p.pxxttxee</span>
+
+<!-- INSTAGRAM 2 -->
+
+<a
+    class="contact-item"
+    href="https://www.instagram.com/p.pxxttxee"
+    target="_blank"
+>
+
+    <div class="contact-icon">
+        📷
+    </div>
+
+    <div class="contact-text">
+
+        <span class="contact-label">
+            Instagram
+        </span>
+
+        <span class="contact-value">
+            @p.pxxttxee
+        </span>
+
+    </div>
+
 </a>
 
-<a class="contact-item" href="tel:0996164878">
-<strong>📞 โทรศัพท์</strong>
-<span>099-616-4878</span>
+
+<!-- PHONE -->
+
+<a
+    class="contact-item"
+    href="tel:0996164878"
+>
+
+    <div class="contact-icon">
+        📞
+    </div>
+
+    <div class="contact-text">
+
+        <span class="contact-label">
+            โทรศัพท์
+        </span>
+
+        <span class="contact-value">
+            099-616-4878
+        </span>
+
+    </div>
+
 </a>
 
-<a class="contact-item" href="https://line.me/ti/p/~0886540283" target="_blank">
-<strong>💚 LINE</strong>
-<span>ID: 0886540283</span>
+
+<!-- LINE -->
+
+<a
+    class="contact-item"
+    href="https://line.me/ti/p/~0886540283"
+    target="_blank"
+>
+
+    <div class="contact-icon">
+        💬
+    </div>
+
+    <div class="contact-text">
+
+        <span class="contact-label">
+            LINE
+        </span>
+
+        <span class="contact-value">
+            ID: 0886540283
+        </span>
+
+    </div>
+
 </a>
+
 
 </div>
 
+
+<!-- =========================
+     THANK YOU
+========================= -->
+
+<div class="thank-you">
+
+    🩷 ขอบคุณที่เข้ามาชมเว็บไซต์ของฉัน 🩷
+
 </div>
 
-<div class="bottom-navigation">
-<a class="bottom-button" href="./index.html">🏠<br>หน้าแรก</a>
-<a class="bottom-button" href="./profile.html">🩷<br>เกี่ยวกับฉัน</a>
-<a class="bottom-button" href="./education.html">🧀<br>มหาวิทยาลัย</a>
-<a class="bottom-button" href="./activities.html">🦋<br>กิจกรรม</a>
-<a class="bottom-button" href="./certificates.html">🏆<br>เกียรติบัตร</a>
-<a class="bottom-button" href="./contact.html">🥨<br>ติดต่อฉัน</a>
+
+<!-- =========================
+     BACK HOME
+========================= -->
+
+<div class="back-home">
+
+    <a href="./index.html">
+        🏠 กลับหน้าแรก
+    </a>
+
 </div>
+
+
+<!-- =========================
+     BOTTOM NAV
+========================= -->
+
+<div class="bottom-nav">
+
+    <a href="./index.html">
+        🏠 หน้าแรก
+    </a>
+
+    <a href="./profile.html">
+        🩷 เกี่ยวกับฉัน
+    </a>
+
+    <a href="./education.html">
+        🧀 มหาวิทยาลัย
+    </a>
+
+    <a href="./activities.html">
+        🦋 กิจกรรม
+    </a>
+
+    <a href="./certificates.html">
+        🏆 เกียรติบัตร
+    </a>
+
+    <a href="./contact.html" class="active">
+        🥨 ติดต่อฉัน
+    </a>
+
+</div>
+
 
 </main>
+
 </body>
+
 </html>
