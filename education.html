@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>YEE. — มหาวิทยาลัย</title>
+<title>YEE. — University</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -17,170 +21,202 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root{
+    --bg:#07111f;
+    --card:#122238;
+    --card-light:#192b42;
+
+    --blue:#72a8ff;
+    --blue-light:#b7d2ff;
+
+    --pink:#ff91c8;
+    --pink-light:#ffb5dc;
+
+    --text:#edf4ff;
+    --muted:#91a4bd;
+
+    --line:rgba(120,170,255,.18);
 }
+
+
+/* =========================
+   BODY
+========================= */
 
 body{
-    font-family:'Kanit',sans-serif;
-    background:
-        radial-gradient(circle at top left,#172b4d 0%,transparent 35%),
-        radial-gradient(circle at bottom right,#101d38 0%,transparent 40%),
-        #071426;
-    color:#fff;
+
     min-height:100vh;
-}
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(60,120,255,.16),
+            transparent 28%
+        ),
 
+        radial-gradient(
+            circle at 90% 70%,
+            rgba(100,70,255,.12),
+            transparent 30%
+        ),
 
-/* =========================
-   🌙 ORBIT LIGHT
-========================= */
+        var(--bg);
 
-.orbits{
-    position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:0;
-}
+    color:var(--text);
 
-.orbit{
-    position:absolute;
-    width:180px;
-    height:180px;
-    border:1px solid rgba(168,199,255,.13);
-    border-radius:50%;
-    animation:orbitMove 18s linear infinite;
-}
-
-.orbit::after{
-    content:"";
-    position:absolute;
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#a8c7ff;
-    box-shadow:
-        0 0 8px #a8c7ff,
-        0 0 18px rgba(168,199,255,.8);
-    top:-3px;
-    left:50%;
-}
-
-.orbit:nth-child(1){
-    left:-60px;
-    top:18%;
-}
-
-.orbit:nth-child(2){
-    right:-80px;
-    top:45%;
-    width:230px;
-    height:230px;
-    animation-duration:23s;
-    animation-direction:reverse;
-}
-
-.orbit:nth-child(3){
-    left:35%;
-    bottom:-100px;
-    width:200px;
-    height:200px;
-    animation-duration:20s;
-}
-
-@keyframes orbitMove{
-
-    from{
-        transform:rotate(0deg);
-    }
-
-    to{
-        transform:rotate(360deg);
-    }
+    font-family:'Kanit',sans-serif;
 
 }
 
 
 /* =========================
-   HEADER
+   NAVBAR
 ========================= */
-
-header{
-    width:100%;
-    padding:22px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid rgba(255,255,255,.08);
-    background:rgba(7,20,38,.9);
-    backdrop-filter:blur(10px);
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.logo{
-    font-family:'Playfair Display',serif;
-    font-size:25px;
-    font-weight:700;
-}
 
 nav{
+
+    width:100%;
+
+    padding:25px 7%;
+
     display:flex;
-    gap:25px;
+
+    justify-content:space-between;
+
     align-items:center;
+
+    border-bottom:1px solid var(--line);
+
+    background:rgba(7,17,31,.75);
+
+    backdrop-filter:blur(12px);
+
 }
 
-nav a{
-    color:#c7d4e8;
+
+.logo{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:29px;
+
+    font-weight:700;
+
+    color:white;
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+    list-style:none;
+
+}
+
+
+.nav-links a{
+
+    color:var(--muted);
+
+    text-decoration:none;
+
     font-size:15px;
+
     transition:.3s;
+
 }
 
-nav a:hover,
-nav a.active{
-    color:#ff9fc5;
+
+.nav-links a:hover,
+.nav-links .active{
+
+    color:var(--pink);
+
 }
 
 
 /* =========================
-   MAIN
+   PAGE HEADER
 ========================= */
 
-main{
-    width:92%;
-    max-width:900px;
+.page-header{
+
+    max-width:1100px;
+
     margin:auto;
-    padding:65px 0;
-    position:relative;
-    z-index:2;
-}
 
-.page-title{
+    padding:75px 7% 45px;
+
     text-align:center;
-    margin-bottom:40px;
+
 }
 
-.page-title .small{
-    color:#ff9fc5;
-    letter-spacing:2px;
-    font-size:15px;
+
+.page-number{
+
+    color:var(--pink);
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    margin-bottom:18px;
+
 }
 
-.page-title h1{
+
+.page-header h1{
+
     font-family:'Playfair Display',serif;
-    font-size:48px;
-    margin:8px 0;
+
+    font-size:clamp(55px,8vw,82px);
+
+    line-height:1;
+
+    margin-bottom:22px;
+
 }
 
-.page-title p{
-    color:#aebdd1;
+
+.page-header h1 span{
+
+    color:var(--pink);
+
+}
+
+
+.page-header p{
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================
+   UNIVERSITY SECTION
+========================= */
+
+.university-section{
+
+    max-width:1100px;
+
+    margin:0 auto;
+
+    padding:20px 7% 70px;
+
 }
 
 
@@ -189,32 +225,103 @@ main{
 ========================= */
 
 .university-card{
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:25px;
-    padding:30px;
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
+
+    position:relative;
+
+    padding:45px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20,39,65,.92),
+            rgba(10,25,45,.92)
+        );
+
+    border:1px solid var(--line);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+
+    overflow:hidden;
+
+}
+
+
+.university-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border:1px solid rgba(120,170,255,.12);
+
+    border-radius:50%;
+
+    left:-110px;
+
+    top:-70px;
+
+}
+
+
+.university-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+
+    height:230px;
+
+    border:1px solid rgba(120,170,255,.12);
+
+    border-radius:50%;
+
+    right:-110px;
+
+    bottom:-90px;
+
 }
 
 
 /* =========================
-   🏫 ตรามหาวิทยาลัย
+   UNIVERSITY LOGO
 ========================= */
 
 .university-logo{
-    width:40px;
-    height:40px;
-    margin:0 auto 18px;
+
+    width:110px;
+
+    height:110px;
+
+    margin:0 auto 20px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
 }
 
+
 .university-logo img{
-    width:40px;
-    height:40px;
-    object-fit:contain;
+
+    width:100%;
+
+    height:100%;
+
     display:block;
+
+    object-fit:contain;
+
 }
 
 
@@ -223,101 +330,268 @@ main{
 ========================= */
 
 .university-name{
+
     text-align:center;
-    margin-bottom:25px;
+
+    position:relative;
+
+    z-index:2;
+
 }
+
 
 .university-name h2{
-    font-size:25px;
-    color:#fff;
+
+    font-size:30px;
+
+    line-height:1.4;
+
     margin-bottom:8px;
+
 }
 
+
 .university-name p{
-    color:#a8c7ff;
-    font-size:17px;
+
+    color:var(--blue-light);
+
+    font-size:18px;
+
 }
 
 
 /* =========================
-   INFO GRID
+   INFORMATION GRID
 ========================= */
 
 .info-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:35px;
+
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
-    margin-top:25px;
-}
 
-.info-box{
-    padding:20px;
-    background:rgba(255,255,255,.045);
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,.07);
-}
+    grid-template-columns:repeat(2,1fr);
 
-.info-box h3{
-    color:#ff9fc5;
-    font-size:17px;
-    margin-bottom:8px;
-}
+    gap:22px;
 
-.info-box p{
-    color:#d2dbea;
-    line-height:1.7;
 }
 
 
-/* =========================
-   CONTENT SECTIONS
-========================= */
+.info-card{
 
-.section{
-    margin-top:25px;
-    padding:25px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:20px;
-}
+    padding:27px;
 
-.section h3{
-    color:#ff9fc5;
-    margin-bottom:10px;
-    font-size:20px;
-}
+    border-radius:22px;
 
-.section p{
-    color:#d2dbea;
-    line-height:1.8;
-}
+    background:rgba(28,45,67,.75);
 
+    border:1px solid rgba(120,170,255,.15);
 
-/* =========================
-   BOTTOM NAV
-========================= */
-
-.bottom-nav{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:50px;
-}
-
-.bottom-nav a{
-    padding:10px 18px;
-    border-radius:30px;
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.1);
-    color:#d9e3f0;
     transition:.3s;
+
 }
 
-.bottom-nav a:hover,
-.bottom-nav a.active{
-    color:#ff9fc5;
-    background:rgba(255,159,197,.12);
+
+.info-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:rgba(120,170,255,.35);
+
+}
+
+
+.info-card h3{
+
+    color:var(--pink);
+
+    font-size:20px;
+
+    margin-bottom:12px;
+
+}
+
+
+.info-card p{
+
+    color:#d4deed;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+}
+
+
+/* =========================
+   DETAIL BOX
+========================= */
+
+.detail-box{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:22px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(28,45,67,.75);
+
+    border:1px solid rgba(120,170,255,.15);
+
+}
+
+
+.detail-box h3{
+
+    color:var(--pink);
+
+    font-size:21px;
+
+    margin-bottom:15px;
+
+}
+
+
+.detail-box p{
+
+    color:#d4deed;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================
+   FUTURE GOAL
+========================= */
+
+.future-box{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:22px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:rgba(28,45,67,.75);
+
+    border:1px solid rgba(120,170,255,.15);
+
+}
+
+
+.future-box h3{
+
+    color:var(--pink);
+
+    font-size:21px;
+
+    margin-bottom:15px;
+
+}
+
+
+.future-box p{
+
+    color:#d4deed;
+
+    font-size:16px;
+
+    line-height:1.9;
+
+}
+
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+.bottom-navigation{
+
+    max-width:1100px;
+
+    margin:0 auto 60px;
+
+    padding:0 7%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+
+.bottom-button{
+
+    min-width:125px;
+
+    padding:14px 20px;
+
+    border-radius:18px;
+
+    background:rgba(13,29,52,.8);
+
+    border:1px solid var(--line);
+
+    color:var(--text);
+
+    text-decoration:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:5px;
+
+    transition:.3s;
+
+}
+
+
+.bottom-button span{
+
+    font-size:14px;
+
+}
+
+
+.bottom-button:hover,
+.bottom-button.active{
+
+    transform:translateY(-4px);
+
+    border-color:var(--pink);
+
+    color:var(--pink);
+
+    box-shadow:
+        0 10px 30px rgba(255,100,180,.15);
+
 }
 
 
@@ -325,139 +599,264 @@ main{
    MOBILE
 ========================= */
 
-@media(max-width:700px){
-
-    header{
-        flex-direction:column;
-        gap:15px;
-    }
+@media(max-width:850px){
 
     nav{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:13px;
+
+        flex-direction:column;
+
+        gap:18px;
+
     }
 
-    .page-title h1{
-        font-size:38px;
+
+    .nav-links{
+
+        gap:16px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
     }
+
+
+    .page-header{
+
+        padding:60px 7% 35px;
+
+    }
+
+
+    .page-header h1{
+
+        font-size:55px;
+
+    }
+
 
     .university-card{
-        padding:20px;
+
+        padding:30px 20px;
+
     }
 
-    .university-logo{
-        width:35px;
-        height:35px;
-        margin-bottom:15px;
-    }
-
-    .university-logo img{
-        width:35px;
-        height:35px;
-    }
 
     .info-grid{
+
         grid-template-columns:1fr;
+
+    }
+
+
+    .university-name h2{
+
+        font-size:24px;
+
+    }
+
+
+    .university-name p{
+
+        font-size:16px;
+
+    }
+
+
+    .university-logo{
+
+        width:90px;
+
+        height:90px;
+
+        margin-bottom:18px;
+
+    }
+
+
+    .bottom-navigation{
+
+        gap:10px;
+
+    }
+
+
+    .bottom-button{
+
+        min-width:105px;
+
+        padding:12px 15px;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    .logo{
+
+        font-size:25px;
+
+    }
+
+
+    .nav-links{
+
+        gap:12px;
+
+    }
+
+
+    .nav-links a{
+
+        font-size:13px;
+
+    }
+
+
+    .page-header h1{
+
+        font-size:48px;
+
+    }
+
+
+    .page-header p{
+
+        font-size:15px;
+
+    }
+
+
+    .university-name h2{
+
+        font-size:21px;
+
+    }
+
+
+    .info-card,
+    .detail-box,
+    .future-box{
+
+        padding:22px;
+
+    }
+
+
+    .bottom-button{
+
+        min-width:90px;
+
+        font-size:13px;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- 🌙 ORBIT LIGHT -->
-
-<div class="orbits">
-
-    <span class="orbit"></span>
-    <span class="orbit"></span>
-    <span class="orbit"></span>
-
-</div>
-
-
 <!-- =========================
-     HEADER
+     NAVBAR
 ========================= -->
 
-<header>
+<nav>
 
-    <a href="./index.html" class="logo">
+    <div class="logo">
         🧀 My Portfolio
-    </a>
-
-    <nav>
-
-        <a href="./index.html">
-            หน้าแรก
-        </a>
-
-        <a href="./profile.html">
-            เกี่ยวกับฉัน
-        </a>
-
-        <a href="./education.html" class="active">
-            มหาวิทยาลัย
-        </a>
-
-        <a href="./activities.html">
-            กิจกรรม
-        </a>
-
-        <a href="./certificates.html">
-            เกียรติบัตร
-        </a>
-
-        <a href="./contact.html">
-            ติดต่อฉัน
-        </a>
-
-    </nav>
-
-</header>
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
-<main>
-
-
-    <div class="page-title">
-
-        <div class="small">
-            🌙 UNIVERSITY
-        </div>
-
-        <h1>
-            มหาวิทยาลัย
-        </h1>
-
-        <p>
-            เส้นทางการศึกษาที่ฉันอยากก้าวไป
-        </p>
-
     </div>
 
 
-    <!-- UNIVERSITY CARD -->
+    <ul class="nav-links">
+
+        <li>
+            <a href="./index.html">
+                หน้าแรก
+            </a>
+        </li>
+
+        <li>
+            <a href="./profile.html">
+                เกี่ยวกับฉัน
+            </a>
+        </li>
+
+        <li>
+            <a href="./education.html" class="active">
+                มหาวิทยาลัย
+            </a>
+        </li>
+
+        <li>
+            <a href="./activities.html">
+                กิจกรรม
+            </a>
+        </li>
+
+        <li>
+            <a href="./certificates.html">
+                เกียรติบัตร
+            </a>
+        </li>
+
+        <li>
+            <a href="./contact.html">
+                ติดต่อฉัน
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     PAGE HEADER
+========================= -->
+
+<section class="page-header">
+
+    <div class="page-number">
+        🌙 UNIVERSITY
+    </div>
+
+
+    <h1>
+        <span>มหาวิทยาลัย</span>
+    </h1>
+
+
+    <p>
+        เส้นทางการศึกษาที่ฉันอยากก้าวไป
+    </p>
+
+</section>
+
+
+<!-- =========================
+     UNIVERSITY
+========================= -->
+
+<section class="university-section">
+
 
     <div class="university-card">
 
 
-        <!-- 🏫 ตรามหาวิทยาลัย -->
+        <!-- UNIVERSITY LOGO -->
 
         <div class="university-logo">
 
             <img
                 src="./IMG_1484.webp"
-                alt="ตรามหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
+                alt="โลโก้มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
             >
 
         </div>
@@ -478,12 +877,12 @@ main{
         </div>
 
 
-        <!-- INFO -->
+        <!-- INFORMATION -->
 
         <div class="info-grid">
 
 
-            <div class="info-box">
+            <div class="info-card">
 
                 <h3>
                     🏫 คณะ
@@ -496,7 +895,7 @@ main{
             </div>
 
 
-            <div class="info-box">
+            <div class="info-card">
 
                 <h3>
                     📚 สาขา
@@ -509,7 +908,7 @@ main{
             </div>
 
 
-            <div class="info-box">
+            <div class="info-card">
 
                 <h3>
                     💼 ความสนใจ
@@ -522,10 +921,10 @@ main{
             </div>
 
 
-            <div class="info-box">
+            <div class="info-card">
 
                 <h3>
-                    🩷 ภาษา
+                    💗 ภาษา
                 </h3>
 
                 <p>
@@ -540,7 +939,7 @@ main{
 
         <!-- WHY -->
 
-        <div class="section">
+        <div class="detail-box">
 
             <h3>
                 ✦ ทำไมถึงสนใจด้านนี้
@@ -549,7 +948,8 @@ main{
             <p>
                 ฉันสนใจด้านธุรกิจและการค้า เพราะเป็นศาสตร์ที่สามารถนำไปประยุกต์ใช้ได้จริง
                 และสามารถต่อยอดร่วมกับทักษะภาษาจีนที่กำลังเรียนอยู่
-                โดยเฉพาะด้านการนำเข้า ส่งออก การจัดซื้อ และการประสานงานกับต่างประเทศ
+                โดยเฉพาะด้านการนำเข้า ส่งออก การจัดซื้อ
+                และการประสานงานกับต่างประเทศ
             </p>
 
         </div>
@@ -557,7 +957,7 @@ main{
 
         <!-- FUTURE -->
 
-        <div class="section">
+        <div class="future-box">
 
             <h3>
                 ✦ เป้าหมายในอนาคต
@@ -566,7 +966,8 @@ main{
             <p>
                 ต้องการนำความรู้ด้านธุรกิจและภาษาจีนไปใช้ในการทำงานจริง
                 สร้างประสบการณ์ด้านการค้าระหว่างประเทศ
-                และในอนาคตต้องการนำประสบการณ์ที่ได้รับมาต่อยอดเป็นธุรกิจของตัวเอง
+                และในอนาคตต้องการนำประสบการณ์ที่ได้รับมาต่อยอด
+                เป็นธุรกิจของตัวเอง
             </p>
 
         </div>
@@ -574,41 +975,72 @@ main{
 
     </div>
 
-
-    <!-- =========================
-         BOTTOM NAV
-    ========================= -->
-
-    <div class="bottom-nav">
-
-        <a href="./index.html">
-            🏠 หน้าแรก
-        </a>
-
-        <a href="./profile.html">
-            🩷 เกี่ยวกับฉัน
-        </a>
-
-        <a href="./education.html" class="active">
-            🧀 มหาวิทยาลัย
-        </a>
-
-        <a href="./activities.html">
-            🦋 กิจกรรม
-        </a>
-
-        <a href="./certificates.html">
-            🏆 เกียรติบัตร
-        </a>
-
-        <a href="./contact.html">
-            🥨 ติดต่อฉัน
-        </a>
-
-    </div>
+</section>
 
 
-</main>
+<!-- =========================
+     BOTTOM NAVIGATION
+========================= -->
+
+<div class="bottom-navigation">
+
+
+    <a href="./index.html" class="bottom-button">
+
+        🏠
+
+        <span>
+            หน้าแรก
+        </span>
+
+    </a>
+
+
+    <a href="./profile.html" class="bottom-button">
+
+        🩷
+
+        <span>
+            เกี่ยวกับฉัน
+        </span>
+
+    </a>
+
+
+    <a href="./education.html" class="bottom-button active">
+
+        🧀
+
+        <span>
+            มหาวิทยาลัย
+        </span>
+
+    </a>
+
+
+    <a href="./activities.html" class="bottom-button">
+
+        🦋
+
+        <span>
+            ผลงาน
+        </span>
+
+    </a>
+
+
+    <a href="./contact.html" class="bottom-button">
+
+        🥨
+
+        <span>
+            ติดต่อฉัน
+        </span>
+
+    </a>
+
+
+</div>
 
 
 </body>
