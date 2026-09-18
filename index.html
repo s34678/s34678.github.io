@@ -5,6 +5,1137 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>📷 My Portfolio | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    "Segoe UI",
+    Tahoma,
+    Geneva,
+    Verdana,
+    sans-serif;
+
+    color:#e5f3ff;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(
+        circle at 15% 35%,
+        rgba(38,101,145,0.32),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 85% 75%,
+        rgba(35,100,150,0.25),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #061b2d,
+        #09253b 45%,
+        #071d30
+    );
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:9999;
+
+    background:rgba(14,48,73,0.96);
+
+    border-bottom:
+    1px solid rgba(104,171,215,0.10);
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.18);
+
+    backdrop-filter:blur(15px);
+}
+
+.navbar{
+    width:min(1200px,94%);
+    min-height:125px;
+
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    padding:15px 0;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    color:#e8f5ff;
+
+    text-decoration:none;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+    transition:.3s;
+}
+
+.logo span{
+    color:#a9d8f5;
+}
+
+.logo:hover{
+    transform:translateY(-2px);
+}
+
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    flex-wrap:wrap;
+}
+
+nav a{
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#d2e6f5;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    padding:10px 22px;
+
+    border-radius:10px;
+
+    white-space:nowrap;
+
+    transition:all .3s ease;
+}
+
+nav a:hover{
+    background:rgba(66,143,194,0.25);
+
+    color:white;
+
+    transform:translateY(-2px);
+}
+
+nav a.active{
+    background:#3b88ba;
+
+    color:white;
+
+    box-shadow:
+    0 6px 18px rgba(48,132,185,0.25);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    position:relative;
+
+    min-height:calc(100vh - 125px);
+
+    padding:55px 20px 100px;
+
+    overflow:hidden;
+}
+
+.container{
+    width:min(1100px,100%);
+
+    margin:auto;
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:10;
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.decor{
+    position:absolute;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    opacity:.25;
+
+    animation:floatDecor 5s ease-in-out infinite;
+}
+
+@keyframes floatDecor{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+.decor-camera-left{
+    left:4%;
+    top:80px;
+    font-size:70px;
+}
+
+.decor-camera-right{
+    right:5%;
+    bottom:120px;
+    font-size:65px;
+    animation-delay:1s;
+}
+
+.decor-film{
+    right:3%;
+    top:430px;
+    font-size:55px;
+    animation-delay:2s;
+}
+
+.decor-star-left{
+    left:13%;
+    top:240px;
+    font-size:30px;
+    color:#80c9f4;
+}
+
+.decor-star-right{
+    right:14%;
+    top:310px;
+    font-size:32px;
+    color:#80c9f4;
+}
+
+.decor-star-bottom{
+    left:18%;
+    bottom:180px;
+    font-size:25px;
+    color:#80c9f4;
+}
+
+
+/* =========================
+   TOP DECORATION
+========================= */
+
+.top-decoration{
+    font-size:28px;
+
+    letter-spacing:8px;
+
+    margin-bottom:22px;
+
+    opacity:.95;
+
+    animation:floating 4s ease-in-out infinite;
+}
+
+@keyframes floating{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-area{
+    position:relative;
+
+    width:330px;
+
+    max-width:90vw;
+
+    margin:0 auto 25px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.photo-glow{
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    max-width:100vw;
+
+    border-radius:50%;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(62,143,195,.35),
+        rgba(37,104,150,.12) 45%,
+        transparent 70%
+    );
+
+    filter:blur(15px);
+
+    z-index:0;
+}
+
+
+/* รูปโปรไฟล์ */
+
+.profile-photo{
+    position:relative;
+
+    z-index:5;
+
+    width:290px;
+    height:370px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+
+    border:6px solid #4c9bc9;
+
+    background:#123b59;
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.35),
+    0 0 30px rgba(70,151,201,.15);
+
+    animation:photoFloat 5s ease-in-out infinite;
+
+    display:block;
+}
+
+@keyframes photoFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-8px);
+    }
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome{
+    color:#abc9dd;
+
+    font-size:20px;
+
+    margin-top:5px;
+
+    margin-bottom:25px;
+}
+
+
+/* =========================
+   CAMERA
+========================= */
+
+.camera-decoration{
+    font-size:45px;
+
+    letter-spacing:8px;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.hero-title{
+    font-size:clamp(36px,6vw,58px);
+
+    line-height:1.4;
+
+    font-weight:700;
+
+    color:#f1f8ff;
+
+    margin-bottom:8px;
+
+    text-shadow:
+    0 5px 20px rgba(0,0,0,.2);
+}
+
+.hero-title span{
+    color:#7fc5f2;
+}
+
+.hero-subtitle{
+    color:#b8cede;
+
+    font-size:clamp(18px,3vw,24px);
+
+    line-height:1.8;
+
+    margin-top:10px;
+}
+
+.hero-description{
+    color:#a9c2d4;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-top:5px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.profile-button{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        #428fc3,
+        #337eae
+    );
+
+    padding:14px 34px;
+
+    border-radius:12px;
+
+    font-size:19px;
+
+    font-weight:600;
+
+    margin-top:28px;
+
+    border:
+    1px solid rgba(139,204,239,.35);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.25);
+
+    transition:all .3s ease;
+}
+
+.profile-button:hover{
+    transform:translateY(-4px);
+
+    background:#4899ce;
+
+    box-shadow:
+    0 14px 30px rgba(0,0,0,.3);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro-section{
+    margin-top:75px;
+}
+
+.section-title{
+    font-size:34px;
+
+    color:#eaf5ff;
+
+    margin-bottom:25px;
+}
+
+.section-title span{
+    color:#80c7f2;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.info-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+    width:min(900px,100%);
+
+    margin:auto;
+}
+
+.info-card{
+    text-align:left;
+
+    background:rgba(21,61,90,.86);
+
+    border:
+    1px solid rgba(79,153,200,.38);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,.14);
+
+    transition:all .3s ease;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+
+    border-color:
+    rgba(104,190,239,.65);
+}
+
+.info-icon{
+    font-size:38px;
+
+    margin-bottom:12px;
+}
+
+.info-card h3{
+    color:#dff2ff;
+
+    font-size:25px;
+
+    margin-bottom:10px;
+}
+
+.info-card p{
+    color:#b5cad9;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   NICE CARD
+========================= */
+
+.nice-card{
+    width:min(650px,92%);
+
+    margin:35px auto 0;
+
+    padding:22px 25px;
+
+    background:rgba(20,59,87,.75);
+
+    border:
+    1px solid rgba(91,164,209,.35);
+
+    border-radius:20px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.13);
+}
+
+.nice-title{
+    color:#8acbf2;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+}
+
+.nice-decoration{
+    font-size:25px;
+
+    letter-spacing:5px;
+
+    opacity:.9;
+}
+
+
+/* =========================
+   BOTTOM
+========================= */
+
+.bottom-decoration{
+    margin-top:50px;
+
+    font-size:30px;
+
+    letter-spacing:9px;
+
+    opacity:.65;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+
+    padding:45px 20px;
+
+    background:rgba(8,31,48,.95);
+
+    border-top:
+    1px solid rgba(90,159,201,.15);
+}
+
+footer p{
+    color:#8faabd;
+
+    font-size:16px;
+
+    margin-bottom:12px;
+}
+
+footer h3{
+    color:#a9d9f4;
+
+    font-size:25px;
+
+    letter-spacing:3px;
+}
+
+.footer-decoration{
+    margin-top:15px;
+
+    font-size:25px;
+
+    letter-spacing:5px;
+
+    opacity:.8;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:850px){
+
+    .navbar{
+        min-height:115px;
+    }
+
+    .logo{
+        font-size:27px;
+    }
+
+    nav a{
+        font-size:16px;
+
+        padding:9px 15px;
+    }
+
+    main{
+        padding-top:40px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .decor{
+        opacity:.18;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+    header{
+        position:relative;
+    }
+
+    .navbar{
+        width:100%;
+
+        min-height:auto;
+
+        padding:14px 5px 10px;
+
+        gap:10px;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    nav{
+        width:100%;
+
+        overflow-x:auto;
+
+        justify-content:flex-start;
+
+        padding-bottom:4px;
+    }
+
+    nav a{
+        font-size:14px;
+
+        padding:9px 13px;
+    }
+
+    main{
+        padding:35px 15px 70px;
+    }
+
+    .top-decoration{
+        font-size:20px;
+
+        letter-spacing:3px;
+    }
+
+    .profile-photo{
+        width:235px;
+
+        height:300px;
+
+        border-radius:23px;
+
+        border-width:5px;
+    }
+
+    .photo-glow{
+        width:290px;
+        height:290px;
+    }
+
+    .camera-decoration{
+        font-size:32px;
+
+        letter-spacing:5px;
+    }
+
+    .hero-title{
+        font-size:35px;
+    }
+
+    .hero-subtitle{
+        font-size:17px;
+    }
+
+    .hero-description{
+        font-size:16px;
+    }
+
+    .profile-button{
+        font-size:17px;
+
+        padding:13px 25px;
+    }
+
+    .intro-section{
+        margin-top:55px;
+    }
+
+    .section-title{
+        font-size:29px;
+    }
+
+    .info-card{
+        padding:23px;
+
+        border-radius:18px;
+    }
+
+    .info-card h3{
+        font-size:22px;
+    }
+
+    .info-card p{
+        font-size:16px;
+    }
+
+    .nice-title{
+        font-size:22px;
+    }
+
+    .nice-decoration{
+        font-size:20px;
+
+        letter-spacing:3px;
+    }
+
+    .bottom-decoration{
+        font-size:21px;
+
+        letter-spacing:4px;
+    }
+
+    .decor-camera-left{
+        left:-20px;
+
+        top:180px;
+
+        font-size:45px;
+    }
+
+    .decor-camera-right{
+        right:-20px;
+
+        bottom:120px;
+
+        font-size:45px;
+    }
+
+    .decor-film{
+        right:-15px;
+
+        top:500px;
+
+        font-size:38px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+📷 <span>My Portfolio</span>
+</a>
+
+
+<nav>
+
+<a href="index.html" class="active">
+หน้าแรก
+</a>
+
+<a href="profile.html">
+เกี่ยวกับฉัน
+</a>
+
+<a href="education.html">
+การศึกษา
+</a>
+
+<a href="activities.html">
+ผลงาน
+</a>
+
+<a href="contact.html">
+ติดต่อฉัน
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<div class="decor decor-camera-left">
+📷
+</div>
+
+<div class="decor decor-camera-right">
+📸
+</div>
+
+<div class="decor decor-film">
+🎞️
+</div>
+
+<div class="decor decor-star-left">
+✦
+</div>
+
+<div class="decor decor-star-right">
+✧
+</div>
+
+<div class="decor decor-star-bottom">
+✦
+</div>
+
+
+<div class="container">
+
+
+<div class="top-decoration">
+📷　📸　🎞️　🔭
+</div>
+
+
+<!-- รูปโปรไฟล์ -->
+
+<div class="photo-area">
+
+<div class="photo-glow"></div>
+
+<img
+    class="profile-photo"
+    src="./IMG_3814.jpeg"
+    alt="รูปโปรไฟล์ของพัทธ์ธีรา"
+>
+
+</div>
+
+
+<div class="welcome">
+📸 Welcome to my Portfolio
+</div>
+
+
+<div class="camera-decoration">
+📷　📸　🎞️　🔭
+</div>
+
+
+<h1 class="hero-title">
+
+ยินดีต้อนรับสู่เว็บไซต์<br>
+
+<span>Portfolio ของฉัน</span>
+
+</h1>
+
+
+<p class="hero-subtitle">
+
+เรามาทำความรู้จักกันให้มากขึ้นกันเถอะ! ✨
+
+</p>
+
+
+<p class="hero-description">
+
+เว็บไซต์นี้รวบรวมข้อมูลเกี่ยวกับตัวฉัน
+การศึกษา ผลงาน กิจกรรม
+และเส้นทางการเรียนรู้ภาษาจีนของฉัน
+
+</p>
+
+
+<a
+href="profile.html"
+class="profile-button">
+
+ทำความรู้จักฉันเพิ่มเติม → 👋
+
+</a>
+
+
+<section class="intro-section">
+
+
+<h2 class="section-title">
+
+เกี่ยวกับ<span>ฉัน</span> 👋
+
+</h2>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<div class="info-icon">
+👩🏻‍🎓
+</div>
+
+<h3>
+พัทธ์ธีรา วรรณสวัสดิ์
+</h3>
+
+<p>
+
+นักเรียนชั้นมัธยมศึกษาปีที่ 6/8
+แผนการเรียนภาษาจีน
+มีความสนใจด้านภาษาจีน
+ธุรกิจ และการค้าระหว่างประเทศ
+
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<div class="info-icon">
+🇨🇳
+</div>
+
+<h3>
+ความสนใจ
+</h3>
+
+<p>
+
+ภาษาจีน • ธุรกิจ • การค้าระหว่างประเทศ
+• การนำเข้าและส่งออก
+• การสื่อสารระหว่างประเทศ
+และการนำภาษาไปประยุกต์ใช้ในอนาคต
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="nice-card">
+
+<div class="nice-title">
+nice to meet you ♡
+</div>
+
+<div class="nice-decoration">
+📷　✨　🎞️　🔭
+</div>
+
+</div>
+
+
+<div class="bottom-decoration">
+📷　✦　📸　✧　🎞️　✦　🔭
+</div>
+
+
+</section>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<p>
+♡ thank you for visiting my portfolio ♡
+</p>
+
+<h3>
+♡ PATTHTHIRA WANNAWASAT ♡
+</h3>
+
+<div class="footer-decoration">
+📷 ✦ 📸 ✧ 🎞️
+</div>
+
+<p style="margin-top:20px;">
+My Portfolio • 2026
+</p>
+
+</footer>
+
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
