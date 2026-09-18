@@ -36,80 +36,83 @@ a{
 
 
 /* =========================
-   RAIN EFFECT
+   🦋 BUTTERFLY EFFECT
 ========================= */
 
-.rain{
+.butterflies{
     position:fixed;
     inset:0;
     width:100%;
     height:100%;
-
-    pointer-events:none;
-
     overflow:hidden;
-
+    pointer-events:none;
     z-index:1;
 }
 
-.drop{
+.butterfly{
     position:absolute;
+    bottom:-60px;
 
-    top:-30px;
+    font-size:20px;
+    opacity:.45;
 
-    width:2px;
-    height:22px;
+    filter:
+        drop-shadow(0 0 5px rgba(150,200,255,.7))
+        drop-shadow(0 0 10px rgba(255,159,197,.35));
 
-    border-radius:50%;
-
-    background:linear-gradient(
-        to bottom,
-        rgba(150,210,255,0),
-        rgba(150,210,255,.75)
-    );
-
-    filter:blur(.2px);
-
-    animation:rainFall linear infinite;
+    animation:
+        butterflyFloat
+        13s
+        ease-in-out
+        infinite;
 }
 
-.drop::after{
-    content:"";
-
-    position:absolute;
-
-    bottom:-2px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:5px;
-    height:5px;
-
-    border-radius:50%;
-
-    background:rgba(170,220,255,.65);
-
-    filter:blur(1px);
-}
-
-@keyframes rainFall{
+@keyframes butterflyFloat{
 
     0%{
-        transform:translateY(-50px);
+        transform:
+            translateY(0)
+            translateX(0)
+            rotate(-8deg);
+
         opacity:0;
     }
 
     10%{
-        opacity:.8;
+        opacity:.45;
     }
 
-    90%{
-        opacity:.7;
+    30%{
+        transform:
+            translateY(-30vh)
+            translateX(35px)
+            rotate(8deg);
+    }
+
+    50%{
+        transform:
+            translateY(-50vh)
+            translateX(-25px)
+            rotate(-6deg);
+
+        opacity:.6;
+    }
+
+    70%{
+        transform:
+            translateY(-70vh)
+            translateX(40px)
+            rotate(7deg);
+
+        opacity:.45;
     }
 
     100%{
-        transform:translateY(110vh);
+        transform:
+            translateY(-115vh)
+            translateX(-20px)
+            rotate(-8deg);
+
         opacity:0;
     }
 
@@ -157,8 +160,6 @@ nav{
 
 nav a{
     color:#b8c8df;
-
-    text-decoration:none;
 
     font-size:15px;
 
@@ -589,8 +590,6 @@ main{
 
     color:#dbe7f7;
 
-    text-decoration:none;
-
     display:flex;
 
     flex-direction:column;
@@ -714,30 +713,53 @@ main{
 
 <body>
 
-
 <!-- =========================
-     RAIN
+     🦋 BUTTERFLIES
 ========================= -->
 
-<div class="rain">
+<div class="butterflies">
 
-    <span class="drop" style="left:3%; animation-duration:4.5s; animation-delay:-2s;"></span>
-    <span class="drop" style="left:8%; animation-duration:5.2s; animation-delay:-4s;"></span>
-    <span class="drop" style="left:13%; animation-duration:4s; animation-delay:-1s;"></span>
-    <span class="drop" style="left:18%; animation-duration:6s; animation-delay:-5s;"></span>
-    <span class="drop" style="left:23%; animation-duration:4.8s; animation-delay:-3s;"></span>
-    <span class="drop" style="left:28%; animation-duration:5.5s; animation-delay:-1.5s;"></span>
-    <span class="drop" style="left:34%; animation-duration:4.2s; animation-delay:-4.5s;"></span>
-    <span class="drop" style="left:40%; animation-duration:6.2s; animation-delay:-2.5s;"></span>
-    <span class="drop" style="left:46%; animation-duration:4.7s; animation-delay:-5.5s;"></span>
-    <span class="drop" style="left:52%; animation-duration:5.8s; animation-delay:-2s;"></span>
-    <span class="drop" style="left:58%; animation-duration:4.3s; animation-delay:-3.5s;"></span>
-    <span class="drop" style="left:64%; animation-duration:6.5s; animation-delay:-1s;"></span>
-    <span class="drop" style="left:70%; animation-duration:5s; animation-delay:-4s;"></span>
-    <span class="drop" style="left:76%; animation-duration:4.6s; animation-delay:-2.2s;"></span>
-    <span class="drop" style="left:82%; animation-duration:5.7s; animation-delay:-5s;"></span>
-    <span class="drop" style="left:88%; animation-duration:4.1s; animation-delay:-3s;"></span>
-    <span class="drop" style="left:94%; animation-duration:6s; animation-delay:-1.8s;"></span>
+    <span
+        class="butterfly"
+        style="left:4%;animation-delay:-2s;animation-duration:13s;">
+        🦋
+    </span>
+
+    <span
+        class="butterfly"
+        style="left:17%;animation-delay:-7s;animation-duration:15s;font-size:16px;">
+        🦋
+    </span>
+
+    <span
+        class="butterfly"
+        style="left:30%;animation-delay:-4s;animation-duration:12s;font-size:18px;">
+        🦋
+    </span>
+
+    <span
+        class="butterfly"
+        style="left:45%;animation-delay:-9s;animation-duration:16s;font-size:15px;">
+        🦋
+    </span>
+
+    <span
+        class="butterfly"
+        style="left:61%;animation-delay:-5s;animation-duration:14s;">
+        🦋
+    </span>
+
+    <span
+        class="butterfly"
+        style="left:76%;animation-delay:-10s;animation-duration:17s;font-size:17px;">
+        🦋
+    </span>
+
+    <span
+        class="butterfly"
+        style="left:91%;animation-delay:-3s;animation-duration:13s;font-size:19px;">
+        🦋
+    </span>
 
 </div>
 
@@ -800,11 +822,9 @@ main{
     </div>
 
 
-    <!-- PROFILE / ประวัติ -->
+    <!-- PROFILE -->
 
     <div class="profile-card">
-
-        <!-- รูปใหม่ 2 รูป -->
 
         <div class="history-images">
 
@@ -816,1006 +836,6 @@ main{
                 >
 
             </div>
-
-
-            <div class="history-circle">
-
-                <img
-                    src="./IMG_2136.jpeg"
-                    alt="รูปประวัติของพัทธ์ธีรา"
-                >
-
-            </div>
-
-        </div>
-
-
-        <div class="profile-name">
-
-            <h2>
-                พัทธ์ธีรา วรรณสวัสดิ์
-            </h2>
-
-            <div class="nickname">
-                (ยาหยี) 🩷
-            </div>
-
-            <p>
-                นักเรียนชั้นมัธยมศึกษาปีที่ 6
-                แผนการเรียนภาษาจีน
-                กำลังสนใจด้านธุรกิจ ภาษา และการค้าระหว่างประเทศ
-            </p>
-
-        </div>
-
-
-        <!-- ข้อมูลส่วนตัว -->
-
-        <div class="info-grid">
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    🩷 วันเกิด
-                </div>
-
-                <div class="info-text">
-                    6 กันยายน 2552
-                </div>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    🧀 แผนการเรียน
-                </div>
-
-                <div class="info-text">
-                    แผนการเรียนภาษาจีน
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ตัวตนของฉัน -->
-
-    <div class="section">
-
-        <h2 class="section-title">
-            🩷 <span>ตัวตนของฉัน</span>
-        </h2>
-
-        <div class="strength-grid">
-
-            <div class="strength-box">
-
-                <h3>
-                    🦋 จุดแข็ง
-                </h3>
-
-                <p>
-                    เข้าใจอารมณ์ผู้อื่น
-                    และสามารถจัดการงานหลายอย่างพร้อมกันได้
-                </p>
-
-            </div>
-
-
-            <div class="strength-box">
-
-                <h3>
-                    🥨 จุดอ่อน
-                </h3>
-
-                <p>
-                    บางครั้งหมดไฟง่าย
-                    และมีความคาดหวังกับตัวเองสูง
-                    จึงพยายามฝึกปรับตัวและจัดลำดับความสำคัญของงาน
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- การศึกษา -->
-
-    <div class="section">
-
-        <h2 class="section-title">
-            🧀 <span>การศึกษา</span>
-        </h2>
-
-        <div class="education-list">
-
-            <div class="education-item">
-
-                <h3>
-                    🩷 ระดับอนุบาล - ประถมศึกษา
-                </h3>
-
-                <p>
-                    โรงเรียนบุญประทีปวิทยาคาร
-                </p>
-
-            </div>
-
-
-            <div class="education-item">
-
-                <h3>
-                    🦋 ระดับมัธยมต้น
-                </h3>
-
-                <p>
-                    โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
-                </p>
-
-            </div>
-
-
-            <div class="education-item">
-
-                <h3>
-                    🥨 ระดับมัธยมศึกษาตอนปลาย
-                </h3>
-
-                <p>
-                    โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
-                    <br>
-                    แผนการเรียนภาษาจีน
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- สิ่งที่สนใจ -->
-
-    <div class="section">
-
-        <h2 class="section-title">
-            🦋 <span>สิ่งที่สนใจ</span>
-        </h2>
-
-        <div class="interest-grid">
-
-            <div class="interest-item">
-                <span>🧀</span>
-                ภาษาจีนและการเรียนรู้ภาษา
-            </div>
-
-            <div class="interest-item">
-                <span>🥨</span>
-                ธุรกิจและการบริหารจัดการ
-            </div>
-
-            <div class="interest-item">
-                <span>🩷</span>
-                การค้าระหว่างประเทศ
-            </div>
-
-            <div class="interest-item">
-                <span>🦋</span>
-                การนำเข้า ส่งออก และการประสานงาน
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- สิ่งที่อยากพัฒนา -->
-
-    <div class="section">
-
-        <h2 class="section-title">
-            🩷 <span>สิ่งที่อยากพัฒนา</span>
-        </h2>
-
-        <div class="development-list">
-
-            <div class="development-item">
-                🦋 พัฒนาทักษะภาษาจีนให้สามารถนำไปใช้ในการทำงานได้จริง
-            </div>
-
-            <div class="development-item">
-                🧀 พัฒนาทักษะการสื่อสารและการประสานงาน
-            </div>
-
-            <div class="development-item">
-                🥨 พัฒนาความรู้ด้านธุรกิจและการค้าระหว่างประเทศ
-            </div>
-
-            <div class="development-item">
-                🩷 พัฒนาความมั่นใจและการทำงานร่วมกับผู้อื่น
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- เป้าหมายในอนาคต -->
-
-    <div class="section">
-
-        <h2 class="section-title">
-            🦋 <span>เป้าหมายในอนาคต</span>
-        </h2>
-
-        <div class="goal-box">
-
-            <p>
-                ในอนาคตฉันต้องการนำความรู้ด้านธุรกิจและภาษาจีน
-                มาประยุกต์ใช้ในการทำงาน โดยเฉพาะงานที่เกี่ยวข้องกับ
-                การจัดซื้อ การนำเข้าส่งออก การประสานงานระหว่างประเทศ
-                และการสื่อสารกับผู้คนจากต่างประเทศ
-            </p>
-
-            <br>
-
-            <p>
-                นอกจากนี้ยังอยากเก็บเกี่ยวประสบการณ์จากการทำงาน
-                และนำความรู้ที่ได้รับมาต่อยอดเป็นธุรกิจของตัวเอง
-                ในอนาคต
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <!-- ความสนใจด้านอาชีพ -->
-
-    <div class="section">
-
-        <h2 class="section-title">
-            🧀 <span>ความสนใจด้านอาชีพ</span>
-        </h2>
-
-        <div class="interest-grid">
-
-            <div class="interest-item">
-                🩷 Marketing Specialists
-            </div>
-
-            <div class="interest-item">
-                🦋 Logistics Coordinator
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- BOTTOM NAVIGATION -->
-
-    <div class="bottom-navigation">
-
-        <a href="./index.html" class="bottom-button">
-
-            <div class="button-icon">
-                🏠
-            </div>
-
-            <span>
-                หน้าแรก
-            </span>
-
-        </a>
-
-
-        <a href="./profile.html" class="bottom-button active">
-
-            <div class="button-icon">
-                🩷
-            </div>
-
-            <span>
-                เกี่ยวกับฉัน
-            </span>
-
-        </a>
-
-
-        <a href="./education.html" class="bottom-button">
-
-            <div class="button-icon">
-                🧀
-            </div>
-
-            <span>
-                มหาวิทยาลัย
-            </span>
-
-        </a>
-
-
-        <a href="./activities.html" class="bottom-button">
-
-            <div class="button-icon">
-                🦋
-            </div>
-
-            <span>
-                กิจกรรม
-            </span>
-
-        </a>
-
-
-        <a href="./certificates.html" class="bottom-button">
-
-            <div class="button-icon">
-                🏆
-            </div>
-
-            <span>
-                เกียรติบัตร
-            </span>
-
-        </a>
-
-
-        <a href="./contact.html" class="bottom-button">
-
-            <div class="button-icon">
-                🥨
-            </div>
-
-            <span>
-                ติดต่อฉัน
-            </span>
-
-        </a>
-
-    </div>
-
-</main>
-
-</body>
-</html><!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>YEE. — เกี่ยวกับฉัน</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:'Kanit',sans-serif;
-    background:
-        radial-gradient(circle at 20% 20%,rgba(40,100,255,.18),transparent 30%),
-        radial-gradient(circle at 80% 70%,rgba(80,130,255,.12),transparent 30%),
-        #07111f;
-    color:#fff;
-    min-height:100vh;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    width:100%;
-    padding:22px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    border-bottom:1px solid rgba(120,170,255,.15);
-
-    background:rgba(5,15,30,.8);
-    backdrop-filter:blur(15px);
-
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.logo{
-    font-family:'Playfair Display',serif;
-    font-size:24px;
-    font-weight:700;
-    color:white;
-}
-
-nav{
-    display:flex;
-    gap:28px;
-    flex-wrap:wrap;
-}
-
-nav a{
-    color:#b8c8df;
-    text-decoration:none;
-    font-size:15px;
-    transition:.3s;
-}
-
-nav a:hover,
-nav a.active{
-    color:#72a8ff;
-}
-
-/* =========================
-   MAIN
-========================= */
-
-main{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:65px 0 60px;
-}
-
-/* =========================
-   TITLE
-========================= */
-
-.page-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.page-title .small{
-    color:#72a8ff;
-    font-size:15px;
-    letter-spacing:2px;
-}
-
-.page-title h1{
-    font-family:'Playfair Display',serif;
-    font-size:48px;
-    margin-top:8px;
-}
-
-.page-title p{
-    color:#9baec8;
-    margin-top:12px;
-    font-size:16px;
-}
-
-/* =========================
-   PROFILE CARD
-========================= */
-
-.profile-card{
-    background:rgba(13,29,52,.78);
-    border:1px solid rgba(100,150,255,.2);
-    border-radius:30px;
-    padding:32px;
-
-    box-shadow:
-        0 20px 60px rgba(0,0,0,.25),
-        0 0 35px rgba(40,100,255,.08);
-}
-
-/* =========================
-   รูปประวัติ 2 รูป
-========================= */
-
-.history-images{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:35px;
-    flex-wrap:wrap;
-    margin-bottom:30px;
-}
-
-.history-circle{
-    width:160px;
-    height:160px;
-    padding:5px;
-    border-radius:50%;
-
-    background:linear-gradient(
-        135deg,
-        #ff9fc5,
-        #a8c7ff,
-        #ffffff,
-        #ff9fc5
-    );
-
-    animation:historySpin 8s linear infinite;
-
-    box-shadow:
-        0 0 0 6px rgba(255,255,255,.05),
-        0 10px 30px rgba(0,0,0,.25);
-}
-
-.history-circle img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:50%;
-    display:block;
-
-    border:4px solid #071426;
-}
-
-/* ให้รูปที่สองหมุนคนละจังหวะ */
-
-.history-circle:nth-child(2){
-    animation-delay:-4s;
-}
-
-@keyframes historySpin{
-
-    0%{
-        transform:rotate(0deg);
-    }
-
-    100%{
-        transform:rotate(360deg);
-    }
-
-}
-
-/* =========================
-   PROFILE NAME
-========================= */
-
-.profile-name h2{
-    font-size:32px;
-    margin-bottom:8px;
-}
-
-.profile-name .nickname{
-    color:#72a8ff;
-    font-size:18px;
-    margin-bottom:20px;
-}
-
-.profile-name p{
-    color:#b7c6da;
-    line-height:1.9;
-}
-
-/* =========================
-   PERSONAL INFO
-========================= */
-
-.info-grid{
-    margin-top:35px;
-
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-
-    gap:15px;
-}
-
-.info-item{
-    background:rgba(7,18,33,.8);
-
-    border:1px solid rgba(120,170,255,.14);
-
-    border-radius:18px;
-
-    padding:20px;
-}
-
-.info-label{
-    color:#72a8ff;
-    font-size:14px;
-    margin-bottom:6px;
-}
-
-.info-text{
-    color:#fff;
-    font-size:16px;
-    line-height:1.7;
-}
-
-/* =========================
-   SECTION
-========================= */
-
-.section{
-    margin-top:25px;
-
-    background:rgba(13,29,52,.65);
-
-    border:1px solid rgba(100,150,255,.15);
-
-    border-radius:25px;
-
-    padding:30px;
-}
-
-.section-title{
-    font-size:24px;
-    margin-bottom:18px;
-}
-
-.section-title span{
-    color:#72a8ff;
-}
-
-.section p{
-    color:#b7c6da;
-    line-height:1.9;
-}
-
-/* =========================
-   EDUCATION
-========================= */
-
-.education-list{
-    display:grid;
-    gap:15px;
-}
-
-.education-item{
-    background:rgba(7,18,33,.7);
-
-    border-radius:18px;
-
-    padding:20px;
-
-    border-left:3px solid #72a8ff;
-}
-
-.education-item h3{
-    font-size:18px;
-    margin-bottom:6px;
-}
-
-.education-item p{
-    color:#9fb1c8;
-    font-size:15px;
-}
-
-/* =========================
-   INTEREST
-========================= */
-
-.interest-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.interest-item{
-    background:rgba(7,18,33,.7);
-
-    border:1px solid rgba(120,170,255,.12);
-
-    border-radius:18px;
-
-    padding:20px;
-
-    color:#dbe7f7;
-
-    line-height:1.8;
-}
-
-.interest-item span{
-    font-size:25px;
-    display:block;
-    margin-bottom:8px;
-}
-
-/* =========================
-   DEVELOPMENT
-========================= */
-
-.development-list{
-    display:grid;
-    gap:12px;
-}
-
-.development-item{
-    background:rgba(7,18,33,.7);
-
-    padding:16px 20px;
-
-    border-radius:15px;
-
-    border-left:3px solid #72a8ff;
-
-    color:#d5e0ef;
-}
-
-/* =========================
-   GOAL
-========================= */
-
-.goal-box{
-    background:
-        linear-gradient(
-            135deg,
-            rgba(40,90,180,.18),
-            rgba(13,29,52,.7)
-        );
-
-    border:1px solid rgba(120,170,255,.18);
-
-    border-radius:20px;
-
-    padding:25px;
-}
-
-.goal-box p{
-    color:#c5d2e3;
-    line-height:2;
-}
-
-/* =========================
-   STRENGTH / WEAKNESS
-========================= */
-
-.strength-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
-}
-
-.strength-box{
-    background:rgba(7,18,33,.7);
-
-    border-radius:18px;
-
-    padding:22px;
-}
-
-.strength-box h3{
-    color:#72a8ff;
-    margin-bottom:8px;
-}
-
-.strength-box p{
-    font-size:15px;
-}
-
-/* =========================
-   BOTTOM NAVIGATION
-========================= */
-
-.bottom-navigation{
-    margin-top:55px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.bottom-button{
-    min-width:125px;
-
-    padding:15px 20px;
-
-    border-radius:18px;
-
-    background:rgba(13,29,52,.8);
-
-    border:1px solid rgba(120,170,255,.2);
-
-    color:#dbe7f7;
-
-    text-decoration:none;
-
-    display:flex;
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    gap:5px;
-
-    transition:.3s;
-}
-
-.bottom-button span{
-    font-family:'Kanit',sans-serif;
-    font-size:14px;
-}
-
-.bottom-button:hover,
-.bottom-button.active{
-    transform:translateY(-4px);
-
-    border-color:#72a8ff;
-
-    color:#72a8ff;
-
-    box-shadow:
-        0 10px 30px rgba(50,120,255,.18);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    header{
-        padding:18px 5%;
-        flex-direction:column;
-        gap:15px;
-    }
-
-    nav{
-        gap:13px;
-        flex-wrap:wrap;
-        justify-content:center;
-    }
-
-    nav a{
-        font-size:13px;
-    }
-
-    main{
-        width:92%;
-        padding-top:50px;
-    }
-
-    .page-title h1{
-        font-size:38px;
-    }
-
-    .profile-card{
-        padding:20px;
-        border-radius:22px;
-    }
-
-    .profile-name{
-        text-align:center;
-    }
-
-    .profile-name h2{
-        font-size:26px;
-    }
-
-    .info-grid{
-        grid-template-columns:1fr;
-    }
-
-    .interest-grid{
-        grid-template-columns:1fr;
-    }
-
-    .strength-grid{
-        grid-template-columns:1fr;
-    }
-
-    .section{
-        padding:22px;
-    }
-
-    /* รูปประวัติบนมือถือ */
-
-    .history-images{
-        gap:20px;
-    }
-
-    .history-circle{
-        width:125px;
-        height:125px;
-    }
-
-    .bottom-navigation{
-        gap:10px;
-    }
-
-    .bottom-button{
-        min-width:105px;
-        padding:12px 15px;
-    }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-    <div class="logo">
-        🧀 My Portfolio
-    </div>
-
-    <nav>
-
-        <a href="./index.html">
-            หน้าแรก
-        </a>
-
-        <a href="./profile.html" class="active">
-            เกี่ยวกับฉัน
-        </a>
-
-        <a href="./education.html">
-            มหาวิทยาลัย
-        </a>
-
-        <a href="./activities.html">
-            กิจกรรม
-        </a>
-
-        <a href="./certificates.html">
-            เกียรติบัตร
-        </a>
-
-        <a href="./contact.html">
-            ติดต่อฉัน
-        </a>
-
-    </nav>
-
-</header>
-
-<main>
-
-    <!-- TITLE -->
-
-    <div class="page-title">
-
-        <div class="small">
-            🦋 ABOUT ME
-        </div>
-
-        <h1>
-            เกี่ยวกับฉัน
-        </h1>
-
-        <p>
-            มาทำความรู้จักตัวฉันให้มากขึ้น
-        </p>
-
-    </div>
-
-
-    <!-- PROFILE / ประวัติ -->
-
-    <div class="profile-card">
-
-        <!-- รูปใหม่ 2 รูป -->
-
-        <div class="history-images">
-
-            <div class="history-circle">
-
-                <img
-                    src="./IMG_4267.jpeg"
-                    alt="รูปประวัติของพัทธ์ธีรา"
-                >
-
-            </div>
-
 
             <div class="history-circle">
 
