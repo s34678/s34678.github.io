@@ -2,14 +2,16 @@
 <html lang="th">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>YEE. — ผลงาน</title>
+    <title>YEE. — กิจกรรม</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -18,10 +20,12 @@
 
         body {
             font-family: 'Kanit', sans-serif;
+
             background:
                 radial-gradient(circle at top left, #172b4d 0%, transparent 35%),
                 radial-gradient(circle at bottom right, #101d38 0%, transparent 40%),
                 #071426;
+
             color: #ffffff;
             min-height: 100vh;
         }
@@ -31,19 +35,25 @@
             color: inherit;
         }
 
+
         /* =========================
-           Header
+           HEADER
         ========================= */
 
         header {
             width: 100%;
             padding: 22px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             border-bottom: 1px solid rgba(255,255,255,0.08);
+
             background: rgba(7,20,38,0.85);
+
             backdrop-filter: blur(10px);
+
             position: sticky;
             top: 0;
             z-index: 100;
@@ -73,8 +83,9 @@
             color: #ff9fc5;
         }
 
+
         /* =========================
-           Main
+           MAIN
         ========================= */
 
         main {
@@ -84,9 +95,21 @@
             padding: 70px 0;
         }
 
+
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
         .page-title {
             text-align: center;
             margin-bottom: 50px;
+        }
+
+        .page-title .small {
+            color: #ff9fc5;
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
         }
 
         .page-title h1 {
@@ -100,8 +123,9 @@
             font-size: 17px;
         }
 
+
         /* =========================
-           Activities
+           ACTIVITIES
         ========================= */
 
         .activities {
@@ -112,24 +136,42 @@
 
         .activity-card {
             background: rgba(255,255,255,0.06);
+
             border: 1px solid rgba(255,255,255,0.09);
+
             border-radius: 22px;
+
             overflow: hidden;
+
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
             transition: 0.3s;
         }
 
         .activity-card:hover {
             transform: translateY(-5px);
+
             border-color: rgba(255,159,197,0.35);
         }
+
+
+        /* =========================
+           IMAGE
+        ========================= */
 
         .activity-image {
             width: 100%;
             height: 280px;
+
             object-fit: cover;
+
             display: block;
         }
+
+
+        /* =========================
+           CONTENT
+        ========================= */
 
         .activity-content {
             padding: 25px;
@@ -137,50 +179,72 @@
 
         .activity-number {
             color: #ff9fc5;
+
             font-size: 14px;
+
             margin-bottom: 8px;
         }
 
         .activity-content h3 {
             font-size: 21px;
+
             font-weight: 500;
+
             line-height: 1.5;
+
             margin-bottom: 14px;
         }
 
         .activity-content p {
             color: #c2cedd;
+
             font-size: 15px;
+
             line-height: 1.9;
         }
 
+
         /* =========================
-           Bottom Navigation
+           BOTTOM NAVIGATION
         ========================= */
 
         .bottom-nav {
             display: flex;
+
             justify-content: center;
-            gap: 20px;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
             margin-top: 60px;
         }
 
         .bottom-nav a {
             padding: 12px 24px;
+
             border-radius: 30px;
+
             background: rgba(255,255,255,0.07);
+
             border: 1px solid rgba(255,255,255,0.1);
+
             color: #d9e3f0;
+
             transition: 0.3s;
         }
 
         .bottom-nav a:hover {
             background: rgba(255,159,197,0.15);
+
             color: #ff9fc5;
         }
 
+
         /* =========================
-           Responsive
+           RESPONSIVE
         ========================= */
 
         @media (max-width: 850px) {
@@ -204,6 +268,7 @@
                 font-size: 40px;
             }
         }
+
 
         @media (max-width: 500px) {
 
@@ -236,13 +301,17 @@
                 font-size: 14px;
             }
         }
+
     </style>
+
 </head>
+
 
 <body>
 
+
     <!-- =========================
-         Header
+         HEADER
     ========================= -->
 
     <header>
@@ -251,36 +320,68 @@
             🧀 My Portfolio
         </a>
 
+
         <nav>
-            <a href="./index.html">หน้าแรก</a>
-            <a href="./profile.html">เกี่ยวกับฉัน</a>
-            <a href="./education.html">มหาวิทยาลัย</a>
-            <a href="./activities.html" class="active">ผลงาน</a>
-            <a href="./contact.html">ติดต่อฉัน</a>
+
+            <a href="./index.html">
+                หน้าแรก
+            </a>
+
+            <a href="./profile.html">
+                เกี่ยวกับฉัน
+            </a>
+
+            <a href="./education.html">
+                มหาวิทยาลัย
+            </a>
+
+            <a href="./activities.html" class="active">
+                กิจกรรม
+            </a>
+
+            <a href="./certificates.html">
+                เกียรติบัตร
+            </a>
+
+            <a href="./contact.html">
+                ติดต่อฉัน
+            </a>
+
         </nav>
 
     </header>
 
 
+
     <!-- =========================
-         Main
+         MAIN
     ========================= -->
 
     <main>
 
+
+        <!-- PAGE TITLE -->
+
         <div class="page-title">
 
-            <h1>ผลงาน</h1>
+            <div class="small">
+                🦋 MY ACTIVITIES
+            </div>
+
+            <h1>
+                กิจกรรม
+            </h1>
 
             <p>
-                กิจกรรม ประสบการณ์ และผลงานที่สะท้อนการเรียนรู้ของฉัน 🩷
+                กิจกรรม ประสบการณ์ และการเรียนรู้ที่สะท้อนตัวตนของฉัน 🩷
             </p>
 
         </div>
 
 
+
         <!-- =========================
-             Activities
+             ACTIVITIES
         ========================= -->
 
         <div class="activities">
@@ -320,6 +421,7 @@
             </div>
 
 
+
             <!-- กิจกรรมที่ 2 -->
 
             <div class="activity-card">
@@ -351,6 +453,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- กิจกรรมที่ 3 -->
@@ -387,6 +490,7 @@
             </div>
 
 
+
             <!-- กิจกรรมที่ 4 -->
 
             <div class="activity-card">
@@ -420,13 +524,14 @@
             </div>
 
 
+
             <!-- กิจกรรมที่ 5 -->
 
             <div class="activity-card">
 
                 <img
                     src="./IMG_0585.jpeg"
-                    alt="การอบรมและทดสอบความสามารถภาษาจีน HSK4"
+                    alt="การอบรมและทดสอบความสามารถภาษาจีนระดับ HSK4"
                     class="activity-image"
                 >
 
@@ -454,13 +559,14 @@
             </div>
 
 
+
             <!-- กิจกรรมที่ 6 -->
 
             <div class="activity-card">
 
                 <img
                     src="./JKP09702.jpeg"
-                    alt="Language Boot Power up your English Chinese Japanese Korean"
+                    alt="Language Boot: Power up your English Chinese Japanese Korean"
                     class="activity-image"
                 >
 
@@ -475,8 +581,8 @@
                     </h3>
 
                     <p>
-                        เข้าร่วมกิจกรรมภาษาต่างประเทศ Language Boot:
-                        Power up your English, Chinese, Japanese & Korean
+                        เข้าร่วมกิจกรรมภาษาต่างประเทศ
+                        Language Boot: Power up your English, Chinese, Japanese & Korean
                         ประจำปีการศึกษา 2569
                         ได้พัฒนาทักษะการสื่อสารหลายภาษา
                         เรียนรู้วัฒนธรรมประเทศต่างๆ
@@ -488,13 +594,14 @@
             </div>
 
 
+
             <!-- กิจกรรมที่ 7 -->
 
             <div class="activity-card">
 
                 <img
                     src="./IMG_1195.jpeg"
-                    alt="HSK Mock Test ณ มหาวิทยาลัยธุรกิจบัณฑิตย์"
+                    alt="HSK Mock Test ประจำปีการศึกษา 2569"
                     class="activity-image"
                 >
 
@@ -522,13 +629,14 @@
             </div>
 
 
+
             <!-- กิจกรรมที่ 8 -->
 
             <div class="activity-card">
 
                 <img
                     src="./IMG_2208.jpeg"
-                    alt="การแข่งขันวรรณคดี On Air พากย์เสียงวรรณคดี"
+                    alt="วรรณคดี On Air พากย์เสียงวรรณคดี"
                     class="activity-image"
                 >
 
@@ -556,6 +664,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- กิจกรรมที่ 9 -->
@@ -589,6 +698,7 @@
                 </div>
 
             </div>
+
 
 
             <!-- กิจกรรมที่ 10 -->
@@ -628,21 +738,39 @@
         </div>
 
 
+
         <!-- =========================
-             Bottom Navigation
+             BOTTOM NAVIGATION
         ========================= -->
 
         <div class="bottom-nav">
 
+            <a href="./index.html">
+                🏠 หน้าแรก
+            </a>
+
+            <a href="./profile.html">
+                🩷 เกี่ยวกับฉัน
+            </a>
+
             <a href="./education.html">
-                ← มหาวิทยาลัย
+                🧀 มหาวิทยาลัย
+            </a>
+
+            <a href="./activities.html">
+                🦋 กิจกรรม
+            </a>
+
+            <a href="./certificates.html">
+                🏆 เกียรติบัตร
             </a>
 
             <a href="./contact.html">
-                ติดต่อฉัน →
+                🥨 ติดต่อฉัน
             </a>
 
         </div>
+
 
     </main>
 
