@@ -2,6 +2,1496 @@
 <html lang="th">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เกี่ยวกับฉัน | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(45, 95, 180, 0.25), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(70, 120, 220, 0.18), transparent 30%),
+                #071426;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(5, 17, 32, 0.92);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            margin-left: 5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: #aebbd0;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #72a8ff;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 100%;
+        }
+
+        .container {
+            width: min(1050px, 90%);
+            margin: auto;
+            padding: 60px 0 70px;
+        }
+
+        /* =========================
+           DECORATION
+        ========================= */
+
+        .decor {
+            position: fixed;
+            font-size: 27px;
+            opacity: 0.5;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .decor-one {
+            top: 25%;
+            left: 3%;
+        }
+
+        .decor-two {
+            top: 40%;
+            right: 3%;
+        }
+
+        .decor-three {
+            bottom: 20%;
+            left: 5%;
+        }
+
+        .decor-four {
+            bottom: 12%;
+            right: 5%;
+        }
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 45px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .small-title {
+            color: #9bc2ff;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .page-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 65px);
+            margin-bottom: 12px;
+        }
+
+        .page-title h1 span {
+            color: #72a8ff;
+        }
+
+        .page-title p {
+            color: #9aaac0;
+            font-size: 15px;
+        }
+
+        /* =========================
+           PROFILE BOX
+        ========================= */
+
+        .profile-box {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 45px;
+            align-items: center;
+
+            padding: 35px;
+
+            background: rgba(15, 35, 60, 0.78);
+            border: 1px solid rgba(120, 165, 230, 0.18);
+            border-radius: 30px;
+
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+
+            position: relative;
+            z-index: 1;
+        }
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        .photo-area {
+            width: 240px;
+            height: 290px;
+            position: relative;
+            margin: auto;
+        }
+
+        .photo-glow {
+            position: absolute;
+            inset: -20px;
+            border-radius: 40px;
+            background: rgba(70,130,255,0.22);
+            filter: blur(35px);
+        }
+
+        .profile-photo {
+            position: relative;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            display: block;
+
+            border-radius: 35px;
+
+            border: 3px solid rgba(120,170,255,0.8);
+
+            box-shadow:
+                0 0 30px rgba(50,120,255,0.3),
+                0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        /* =========================
+           PERSONAL INFORMATION
+        ========================= */
+
+        .profile-text h2 {
+            font-size: 29px;
+            font-weight: 500;
+            margin-bottom: 18px;
+        }
+
+        .profile-text h2 span {
+            color: #72a8ff;
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .personal-item {
+            padding: 12px 15px;
+
+            background: rgba(70, 130, 230, 0.10);
+            border: 1px solid rgba(110,165,255,0.16);
+            border-radius: 15px;
+
+            color: #b9c9df;
+            font-size: 14px;
+        }
+
+        .personal-item strong {
+            color: #9bc2ff;
+            font-weight: 500;
+        }
+
+        .strength-box,
+        .weakness-box {
+            margin-top: 12px;
+            padding: 14px 16px;
+
+            border-radius: 17px;
+
+            background: rgba(70, 130, 230, 0.10);
+            border: 1px solid rgba(110,165,255,0.15);
+        }
+
+        .strength-box strong {
+            color: #72a8ff;
+        }
+
+        .weakness-box strong {
+            color: #9bc2ff;
+        }
+
+        .strength-box p,
+        .weakness-box p {
+            color: #b5c2d3;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-top: 4px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .section-title span {
+            color: #72a8ff;
+        }
+
+        /* =========================
+           INFORMATION CARDS
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .info-card {
+            padding: 28px;
+
+            background: rgba(15, 35, 60, 0.72);
+
+            border: 1px solid rgba(120,165,230,0.15);
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100,160,255,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+        }
+
+        .info-icon {
+            font-size: 32px;
+            margin-bottom: 13px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #aebbd0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 12px;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-item {
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(120,165,230,0.12);
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .education-level {
+            color: #9bc2ff;
+            font-weight: 500;
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .education-school {
+            color: #b5c2d3;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* =========================
+           INTEREST
+        ========================= */
+
+        .interest-box {
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35,75,135,0.35),
+                    rgba(12,30,55,0.75)
+                );
+
+            border: 1px solid rgba(110,165,255,0.18);
+            border-radius: 25px;
+        }
+
+        .interest-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest {
+            padding: 10px 18px;
+
+            border-radius: 25px;
+
+            background: rgba(70,130,230,0.14);
+            border: 1px solid rgba(110,165,255,0.2);
+
+            color: #b9d3ff;
+            font-size: 14px;
+        }
+
+        /* =========================
+           END
+        ========================= */
+
+        .nice-card {
+            margin-top: 55px;
+            padding: 35px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35,75,135,0.35),
+                    rgba(12,30,55,0.75)
+                );
+
+            border: 1px solid rgba(110,165,255,0.18);
+        }
+
+        .nice-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: #9bc2ff;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 26px;
+            }
+
+            nav {
+                gap: 14px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .container {
+                width: 90%;
+                padding-top: 40px;
+            }
+
+            .profile-box {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 25px;
+            }
+
+            .photo-area {
+                width: 200px;
+                height: 245px;
+            }
+
+            .profile-text {
+                text-align: center;
+            }
+
+            .profile-text h2 {
+                font-size: 24px;
+            }
+
+            .personal-info {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .strength-box,
+            .weakness-box {
+                text-align: left;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 43px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="./index.html" class="logo">
+            🧀 <span>My Portfolio</span>
+        </a>
+
+        <nav>
+
+            <a href="./index.html">
+                หน้าแรก
+            </a>
+
+            <a href="./profile.html" class="active">
+                เกี่ยวกับฉัน
+            </a>
+
+            <a href="./education.html">
+                การศึกษา
+            </a>
+
+            <a href="./activities.html">
+                ผลงาน
+            </a>
+
+            <a href="./contact.html">
+                ติดต่อฉัน
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
+
+        <div class="container">
+
+
+            <!-- DECORATION -->
+
+            <div class="decor decor-one">🦋</div>
+            <div class="decor decor-two">🩷</div>
+            <div class="decor decor-three">🥨</div>
+            <div class="decor decor-four">🧀</div>
+
+
+            <!-- PAGE TITLE -->
+
+            <div class="page-title">
+
+                <div class="small-title">
+                    🩷 GET TO KNOW ME
+                </div>
+
+                <h1>
+                    เกี่ยวกับ<span>ฉัน</span> 🦋
+                </h1>
+
+                <p>
+                    มาทำความรู้จักตัวตน ความสนใจ และเป้าหมายของฉันกัน
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 PROFILE BOX
+            ========================= -->
+
+            <div class="profile-box">
+
+
+                <!-- PHOTO -->
+
+                <div class="photo-area">
+
+                    <div class="photo-glow"></div>
+
+                    <img
+                        class="profile-photo"
+                        src="./IMG_3814.jpeg"
+                        alt="รูปโปรไฟล์ของพัทธ์ธีรา"
+                    >
+
+                </div>
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <div class="profile-text">
+
+                    <h2>
+                        พัทธ์ธีรา <span>วรรณสวัสดิ์ (ยาหยี)</span>
+                    </h2>
+
+
+                    <div class="personal-info">
+
+                        <div class="personal-item">
+                            <strong>วันเกิด:</strong>
+                            6 กันยายน 2552
+                        </div>
+
+                        <div class="personal-item">
+                            <strong>อายุ:</strong>
+                            17 ปี
+                        </div>
+
+                        <div class="personal-item">
+                            <strong>ราศี:</strong>
+                            สิงห์
+                        </div>
+
+                        <div class="personal-item">
+                            <strong>น้ำหนัก:</strong>
+                            37 กก.
+                        </div>
+
+                        <div class="personal-item">
+                            <strong>ส่วนสูง:</strong>
+                            156 ซม.
+                        </div>
+
+                    </div>
+
+
+                    <div class="strength-box">
+
+                        <strong>
+                            🩷 จุดแข็ง
+                        </strong>
+
+                        <p>
+                            เข้าใจอารมณ์ผู้อื่น
+                            และสามารถทำอะไรหลาย ๆ อย่างพร้อมกันได้
+                        </p>
+
+                    </div>
+
+
+                    <div class="weakness-box">
+
+                        <strong>
+                            🦋 จุดอ่อน
+                        </strong>
+
+                        <p>
+                            หมดไฟง่าย และติดความสมบูรณ์แบบ
+                            ทุกอย่างต้องเป็นไปตามแผนเสมอ
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 INFORMATION
+            ========================= -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    ข้อมูล<span>ด้านการเรียนและเป้าหมาย</span> 🩷
+                </h2>
+
+
+                <div class="info-grid">
+
+
+                    <!-- EDUCATION -->
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🏫
+                        </div>
+
+                        <h3>
+                            การศึกษา
+                        </h3>
+
+
+                        <div class="education-item">
+
+                            <div class="education-level">
+                                🏫 ระดับอนุบาล - ประถมศึกษา
+                            </div>
+
+                            <div class="education-school">
+                                โรงเรียนบุญประทีปวิทยาคาร
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="education-level">
+                                🏫 ระดับมัธยมต้น
+                            </div>
+
+                            <div class="education-school">
+                                โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="education-level">
+                                🏫 ระดับมัธยมศึกษาตอนปลาย
+                            </div>
+
+                            <div class="education-school">
+                                โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- INTEREST -->
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🥨
+                        </div>
+
+                        <h3>
+                            สิ่งที่สนใจ
+                        </h3>
+
+                        <p>
+                            ภาษาจีน ธุรกิจ
+                            การค้าระหว่างประเทศ
+                            การนำเข้าและส่งออก
+                            และการสื่อสารระหว่างประเทศ
+                        </p>
+
+                    </div>
+
+
+                    <!-- DEVELOPMENT -->
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🧀
+                        </div>
+
+                        <h3>
+                            สิ่งที่อยากพัฒนา
+                        </h3>
+
+                        <p>
+                            ต้องการพัฒนาทักษะภาษาจีน
+                            การสื่อสาร
+                            การทำงานร่วมกับผู้อื่น
+                            รวมถึงความรู้ด้านธุรกิจ
+                            และการนำภาษาไปใช้ในสถานการณ์จริง
+                        </p>
+
+                    </div>
+
+
+                    <!-- FUTURE GOAL -->
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🩷
+                        </div>
+
+                        <h3>
+                            เป้าหมายในอนาคต
+                        </h3>
+
+                        <p>
+                            ต้องการนำความรู้ด้านภาษาจีน
+                            มาประยุกต์ใช้ร่วมกับความรู้ด้านธุรกิจ
+                            เพื่อพัฒนาตัวเองและต่อยอดสู่การเรียนต่อ
+                            และการทำงานที่เกี่ยวข้องกับธุรกิจระหว่างประเทศ
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 INTERESTS
+            ========================= -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    ความ<span>สนใจ</span> 🦋
+                </h2>
+
+
+                <div class="interest-box">
+
+                    <div class="interest-list">
+
+
+                        <div class="interest">
+                            🧀 ภาษาจีน
+                        </div>
+
+
+                        <div class="interest">
+                            🥨 ธุรกิจ
+                        </div>
+
+
+                        <div class="interest">
+                            🩷 การค้าระหว่างประเทศ
+                        </div>
+
+
+                        <div class="interest">
+                            🦋 การนำเข้าและส่งออก
+                        </div>
+
+
+                        <div class="interest">
+                            🧀 การสื่อสารระหว่างประเทศ
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 END
+            ========================= -->
+
+            <div class="nice-card">
+
+                <div class="nice-title">
+                    nice to meet you
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="th">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>เกี่ยวกับฉัน | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Kanit',sans-serif;
+    background:
+        radial-gradient(circle at 10% 20%,rgba(45,95,180,.25),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(70,120,220,.18),transparent 30%),
+        #071426;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:rgba(5,17,32,.95);
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:21px;
+    font-weight:600;
+}
+
+.logo span{
+    margin-left:6px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:#aebbd0;
+    text-decoration:none;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#72a8ff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+    width:min(1050px,90%);
+    margin:auto;
+    padding:55px 0 70px;
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.top-decoration{
+    text-align:center;
+    font-size:25px;
+    letter-spacing:10px;
+    margin-bottom:25px;
+}
+
+.decor{
+    position:fixed;
+    font-size:28px;
+    opacity:.5;
+    pointer-events:none;
+}
+
+.decor-one{
+    top:25%;
+    left:3%;
+}
+
+.decor-two{
+    top:40%;
+    right:3%;
+}
+
+.decor-three{
+    bottom:20%;
+    left:5%;
+}
+
+.decor-four{
+    bottom:12%;
+    right:5%;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.page-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.small-title{
+    color:#9bc2ff;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.page-title h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(42px,7vw,65px);
+    margin-bottom:12px;
+}
+
+.page-title h1 span{
+    color:#72a8ff;
+}
+
+.page-title p{
+    color:#9aaac0;
+    font-size:15px;
+}
+
+
+/* =========================
+   PROFILE BOX
+========================= */
+
+.profile-box{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:45px;
+    align-items:center;
+
+    padding:38px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,75,135,.55),
+            rgba(12,30,55,.85)
+        );
+
+    border:1px solid rgba(120,165,230,.25);
+    border-radius:30px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.25);
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-area{
+    width:240px;
+    height:290px;
+    position:relative;
+    margin:auto;
+}
+
+.photo-glow{
+    position:absolute;
+    inset:-20px;
+    border-radius:40px;
+    background:rgba(70,130,255,.22);
+    filter:blur(35px);
+}
+
+.profile-photo{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    display:block;
+
+    border-radius:35px;
+
+    border:3px solid rgba(120,170,255,.8);
+
+    box-shadow:
+        0 0 30px rgba(50,120,255,.3),
+        0 20px 60px rgba(0,0,0,.4);
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.profile-text h2{
+    font-size:30px;
+    font-weight:500;
+    margin-bottom:22px;
+}
+
+.profile-text h2 span{
+    color:#72a8ff;
+}
+
+
+/* =========================
+   INFORMATION
+========================= */
+
+.personal-info{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.info-line{
+    padding:12px 16px;
+
+    background:rgba(90,135,210,.12);
+
+    border:1px solid rgba(120,165,230,.15);
+
+    border-radius:15px;
+
+    color:#d5dfed;
+
+    font-size:16px;
+    line-height:1.7;
+}
+
+.info-line strong{
+    color:#9bc2ff;
+    font-weight:500;
+}
+
+
+/* =========================
+   STRENGTH / WEAKNESS
+========================= */
+
+.point-box{
+    padding:17px 18px;
+
+    border-radius:18px;
+
+    background:rgba(5,20,40,.35);
+
+    border:1px solid rgba(120,165,230,.15);
+}
+
+.point-title{
+    font-size:17px;
+    color:#9bc2ff;
+    margin-bottom:7px;
+}
+
+.point-text{
+    color:#c1ccdb;
+    font-size:15px;
+    line-height:1.8;
+}
+
+
+/* =========================
+   END
+========================= */
+
+.nice-card{
+    margin-top:55px;
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,75,135,.35),
+            rgba(12,30,55,.75)
+        );
+
+    border:1px solid rgba(110,165,255,.18);
+}
+
+.nice-title{
+    font-family:'Playfair Display',serif;
+    font-size:27px;
+    color:#9bc2ff;
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        padding:18px 5%;
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        gap:14px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .container{
+        width:90%;
+        padding-top:40px;
+    }
+
+    .top-decoration{
+        font-size:21px;
+        letter-spacing:6px;
+    }
+
+    .profile-box{
+        grid-template-columns:1fr;
+        gap:30px;
+        padding:25px;
+    }
+
+    .photo-area{
+        width:200px;
+        height:245px;
+    }
+
+    .profile-text{
+        text-align:left;
+    }
+
+    .profile-text h2{
+        text-align:center;
+        font-size:25px;
+    }
+
+    .info-line{
+        font-size:14px;
+    }
+
+    .point-text{
+        font-size:14px;
+    }
+
+    .page-title h1{
+        font-size:43px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <a href="./index.html" class="logo">
+        🧀 <span>My Portfolio</span>
+    </a>
+
+    <nav>
+
+        <a href="./index.html">
+            หน้าแรก
+        </a>
+
+        <a href="./profile.html" class="active">
+            เกี่ยวกับฉัน
+        </a>
+
+        <a href="./education.html">
+            การศึกษา
+        </a>
+
+        <a href="./activities.html">
+            ผลงาน
+        </a>
+
+        <a href="./contact.html">
+            ติดต่อฉัน
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main>
+
+<div class="container">
+
+
+    <!-- DECORATION -->
+
+    <div class="decor decor-one">🦋</div>
+
+    <div class="decor decor-two">🩷</div>
+
+    <div class="decor decor-three">🥨</div>
+
+    <div class="decor decor-four">🧀</div>
+
+
+    <div class="top-decoration">
+        🧀　🥨　🩷　🦋
+    </div>
+
+
+    <!-- TITLE -->
+
+    <div class="page-title">
+
+        <div class="small-title">
+            🩷 GET TO KNOW ME
+        </div>
+
+        <h1>
+            เกี่ยวกับ<span>ฉัน</span> 🦋
+        </h1>
+
+        <p>
+            มาทำความรู้จักตัวตนของฉันกัน
+        </p>
+
+    </div>
+
+
+    <!-- BIG PROFILE BOX -->
+
+    <div class="profile-box">
+
+
+        <!-- PHOTO -->
+
+        <div class="photo-area">
+
+            <div class="photo-glow"></div>
+
+            <img
+                class="profile-photo"
+                src="./IMG_3814.jpeg"
+                alt="รูปโปรไฟล์ของพัทธ์ธีรา"
+            >
+
+        </div>
+
+
+        <!-- PERSONAL INFORMATION -->
+
+        <div class="profile-text">
+
+
+            <h2>
+                พัทธ์ธีรา <span>วรรณสวัสดิ์(ยาหยี)</span>
+            </h2>
+
+
+            <div class="personal-info">
+
+
+                <div class="info-line">
+                    <strong>วันเกิด:</strong>
+                    6 กันยายน 2552
+                </div>
+
+
+                <div class="info-line">
+                    <strong>อายุ:</strong>
+                    17 ปี
+                    &nbsp;&nbsp;
+                    <strong>ราศี:</strong>
+                    สิงห์
+                </div>
+
+
+                <div class="info-line">
+                    <strong>น้ำหนัก:</strong>
+                    37 กก.
+                    &nbsp;&nbsp;
+                    <strong>ส่วนสูง:</strong>
+                    156 ซม.
+                </div>
+
+
+                <div class="point-box">
+
+                    <div class="point-title">
+                        🩷 จุดแข็ง
+                    </div>
+
+                    <div class="point-text">
+                        เข้าใจอารมณ์ผู้อื่น
+                        และทำอะไรหลาย ๆ อย่างพร้อมกันได้
+                    </div>
+
+                </div>
+
+
+                <div class="point-box">
+
+                    <div class="point-title">
+                        🦋 จุดอ่อน
+                    </div>
+
+                    <div class="point-text">
+                        หมดไฟง่าย
+                        และติดความสมบูรณ์แบบ
+                        ทุกอย่างต้องเป็นไปตามแผนเสมอ
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- END -->
+
+    <div class="nice-card">
+
+        <div class="nice-title">
+            nice to miss you
+        </div>
+
+    </div>
+
+
+</div>
+
+</main>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="th">
+
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
