@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,221 +10,526 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Kanit',sans-serif;
+    background:
+        radial-gradient(circle at top left,#172b4d 0%,transparent 35%),
+        radial-gradient(circle at bottom right,#101d38 0%,transparent 40%),
+        #071426;
     color:#fff;
     min-height:100vh;
-    overflow-x:hidden;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(40,100,255,.2),transparent 30%),
-    #07111f;
-}
-a{text-decoration:none;color:inherit}
-
-header{
-    position:sticky;top:0;z-index:100;
-    padding:22px 7%;
-    display:flex;justify-content:space-between;align-items:center;
-    background:rgba(5,15,30,.85);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(120,170,255,.15);
-}
-.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
-nav{display:flex;gap:28px;flex-wrap:wrap}
-nav a{color:#b8c8df;font-size:15px}
-nav a:hover,nav a.active{color:#72a8ff}
-
-main{
-    position:relative;
-    z-index:2;
-    width:90%;
-    max-width:1000px;
-    margin:auto;
-    padding:65px 0;
 }
 
-/* ฟองอากาศ */
-.bubbles{
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+
+/* =========================
+   🌙 ORBIT LIGHT
+========================= */
+
+.orbits{
     position:fixed;
     inset:0;
     overflow:hidden;
     pointer-events:none;
     z-index:0;
 }
-.bubble{
+
+.orbit{
     position:absolute;
-    bottom:-100px;
-    width:35px;height:35px;
-    border:2px solid rgba(150,210,255,.4);
+    width:180px;
+    height:180px;
+    border:1px solid rgba(168,199,255,.13);
     border-radius:50%;
-    background:rgba(130,190,255,.06);
-    box-shadow:inset 0 0 12px rgba(255,255,255,.15),0 0 15px rgba(100,180,255,.1);
-    animation:float 10s linear infinite;
-}
-@keyframes float{
-    0%{transform:translateY(0) translateX(0);opacity:0}
-    10%{opacity:.8}
-    50%{transform:translateY(-55vh) translateX(25px)}
-    100%{transform:translateY(-115vh) translateX(-25px);opacity:0}
+    animation:orbitMove 18s linear infinite;
 }
 
-.title{text-align:center;margin-bottom:40px}
-.title small{color:#72a8ff;letter-spacing:2px}
-.title h1{font-family:'Playfair Display',serif;font-size:48px;margin:8px}
-.title p{color:#9baec8}
+.orbit::after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#a8c7ff;
+    box-shadow:
+        0 0 8px #a8c7ff,
+        0 0 18px rgba(168,199,255,.8);
+    top:-3px;
+    left:50%;
+}
 
-.card{
-    background:rgba(13,29,52,.82);
-    border:1px solid rgba(100,150,255,.2);
-    border-radius:30px;
-    padding:35px;
+.orbit:nth-child(1){
+    left:-60px;
+    top:18%;
+}
+
+.orbit:nth-child(2){
+    right:-80px;
+    top:45%;
+    width:230px;
+    height:230px;
+    animation-duration:23s;
+    animation-direction:reverse;
+}
+
+.orbit:nth-child(3){
+    left:35%;
+    bottom:-100px;
+    width:200px;
+    height:200px;
+    animation-duration:20s;
+}
+
+@keyframes orbitMove{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    background:rgba(7,20,38,.9);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:25px;
+    font-weight:700;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+nav a{
+    color:#c7d4e8;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#ff9fc5;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    width:92%;
+    max-width:900px;
+    margin:auto;
+    padding:65px 0;
+    position:relative;
+    z-index:2;
+}
+
+.page-title{
     text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
+    margin-bottom:40px;
 }
-.uni-img{
-    width:190px;height:190px;
-    margin:0 auto 25px;
-    padding:8px;
-    border-radius:30px;
-    background:linear-gradient(135deg,#72a8ff,#fff,#ff9fc5);
-    box-shadow:0 0 30px rgba(100,170,255,.2);
-}
-.uni-img img{width:100%;height:100%;object-fit:contain;border-radius:22px;background:#fff}
 
-.card h2{font-size:28px;margin-bottom:10px}
-.card h3{color:#72a8ff;font-size:21px;margin:8px}
-.card p{color:#b7c6da;line-height:1.9}
+.page-title .small{
+    color:#ff9fc5;
+    letter-spacing:2px;
+    font-size:15px;
+}
+
+.page-title h1{
+    font-family:'Playfair Display',serif;
+    font-size:48px;
+    margin:8px 0;
+}
+
+.page-title p{
+    color:#aebdd1;
+}
+
+
+/* =========================
+   UNIVERSITY CARD
+========================= */
+
+.university-card{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.university-image{
+    width:100%;
+    max-width:650px;
+    height:280px;
+    margin:0 auto 30px;
+    overflow:hidden;
+    border-radius:20px;
+    border:2px solid rgba(168,199,255,.25);
+}
+
+.university-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.university-name{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.university-name h2{
+    font-size:25px;
+    color:#fff;
+    margin-bottom:8px;
+}
+
+.university-name p{
+    color:#a8c7ff;
+    font-size:17px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:25px;
+}
+
+.info-box{
+    padding:20px;
+    background:rgba(255,255,255,.045);
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.info-box h3{
+    color:#ff9fc5;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.info-box p{
+    color:#d2dbea;
+    line-height:1.7;
+}
+
+
+/* =========================
+   CONTENT SECTIONS
+========================= */
 
 .section{
     margin-top:25px;
-    background:rgba(13,29,52,.72);
-    border:1px solid rgba(100,150,255,.15);
-    border-radius:25px;
-    padding:30px;
+    padding:25px;
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:20px;
 }
-.section h2{color:#72a8ff;margin-bottom:12px}
-.section p{color:#b7c6da;line-height:1.9}
 
-.bottom-navigation{
-    margin-top:40px;
-    display:flex;justify-content:center;gap:12px;flex-wrap:wrap;
+.section h3{
+    color:#ff9fc5;
+    margin-bottom:10px;
+    font-size:20px;
 }
-.bottom-button{
-    min-width:110px;padding:13px 15px;text-align:center;
-    border-radius:16px;
-    background:rgba(13,29,52,.85);
-    border:1px solid rgba(120,170,255,.2);
+
+.section p{
+    color:#d2dbea;
+    line-height:1.8;
+}
+
+
+/* =========================
+   BOTTOM NAV
+========================= */
+
+.bottom-nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:50px;
+}
+
+.bottom-nav a{
+    padding:10px 18px;
+    border-radius:30px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.1);
+    color:#d9e3f0;
     transition:.3s;
 }
-.bottom-button:hover{transform:translateY(-4px);border-color:#72a8ff;color:#72a8ff}
 
-@media(max-width:768px){
-    header{flex-direction:column;gap:15px;padding:18px 5%}
-    nav{gap:13px;justify-content:center}
-    nav a{font-size:13px}
-    main{padding-top:45px}
-    .title h1{font-size:38px}
-    .card{padding:22px}
+.bottom-nav a:hover,
+.bottom-nav a.active{
+    color:#ff9fc5;
+    background:rgba(255,159,197,.12);
 }
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:13px;
+    }
+
+    .page-title h1{
+        font-size:38px;
+    }
+
+    .university-card{
+        padding:20px;
+    }
+
+    .university-image{
+        height:210px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<div class="bubbles">
-    <span class="bubble" style="left:5%;animation-duration:9s"></span>
-    <span class="bubble" style="left:15%;width:22px;height:22px;animation-duration:12s;animation-delay:-4s"></span>
-    <span class="bubble" style="left:27%;width:45px;height:45px;animation-duration:11s;animation-delay:-6s"></span>
-    <span class="bubble" style="left:40%;width:25px;height:25px;animation-duration:10s;animation-delay:-2s"></span>
-    <span class="bubble" style="left:52%;width:50px;height:50px;animation-duration:13s;animation-delay:-8s"></span>
-    <span class="bubble" style="left:67%;width:28px;height:28px;animation-duration:9s;animation-delay:-3s"></span>
-    <span class="bubble" style="left:80%;width:42px;height:42px;animation-duration:12s;animation-delay:-7s"></span>
-    <span class="bubble" style="left:93%;width:23px;height:23px;animation-duration:10s;animation-delay:-5s"></span>
+<!-- 🌙 ORBIT -->
+
+<div class="orbits">
+
+    <span class="orbit"></span>
+    <span class="orbit"></span>
+    <span class="orbit"></span>
+
 </div>
 
+
 <header>
-<div class="logo">🧀 My Portfolio</div>
-<nav>
-<a href="./index.html">หน้าแรก</a>
-<a href="./profile.html">เกี่ยวกับฉัน</a>
-<a href="./education.html" class="active">มหาวิทยาลัย</a>
-<a href="./activities.html">กิจกรรม</a>
-<a href="./certificates.html">เกียรติบัตร</a>
-<a href="./contact.html">ติดต่อฉัน</a>
-</nav>
+
+    <a href="./index.html" class="logo">
+        🧀 My Portfolio
+    </a>
+
+    <nav>
+
+        <a href="./index.html">หน้าแรก</a>
+
+        <a href="./profile.html">เกี่ยวกับฉัน</a>
+
+        <a href="./education.html" class="active">มหาวิทยาลัย</a>
+
+        <a href="./activities.html">กิจกรรม</a>
+
+        <a href="./certificates.html">เกียรติบัตร</a>
+
+        <a href="./contact.html">ติดต่อฉัน</a>
+
+    </nav>
+
 </header>
+
 
 <main>
 
-<div class="title">
-<small>🦋 UNIVERSITY</small>
-<h1>มหาวิทยาลัย</h1>
-<p>เส้นทางการศึกษาที่ฉันสนใจ</p>
-</div>
+    <div class="page-title">
 
-<div class="card">
+        <div class="small">
+            🌙 UNIVERSITY
+        </div>
 
-<div class="uni-img">
-<img src="./IMG_1484.webp" alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ">
-</div>
+        <h1>
+            มหาวิทยาลัย
+        </h1>
 
-<h2>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</h2>
+        <p>
+            เส้นทางการศึกษาที่ฉันอยากก้าวไป
+        </p>
 
-<h3>มจพ. วิทยาเขตปราจีนบุรี</h3>
+    </div>
 
-<p>
-คณะบริหารธุรกิจและอุตสาหกรรมบริการ
-</p>
 
-<h3>บริหารธุรกิจอุตสาหกรรมและการค้า</h3>
+    <div class="university-card">
 
-</div>
+        <div class="university-image">
 
-<div class="section">
-<h2>🩷 สิ่งที่สนใจ</h2>
-<p>
-สนใจด้านธุรกิจ การค้า และการจัดการ
-รวมถึงการนำความรู้ด้านภาษาจีนมาประยุกต์ใช้กับการทำงาน
-</p>
-</div>
+            <img
+                src="./IMG_1484.webp"
+                alt="มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ"
+            >
 
-<div class="section">
-<h2>🧀 ภาษาและการสื่อสาร</h2>
-<p>
-ภาษาจีนและการสื่อสารระหว่างประเทศ
-โดยต้องการพัฒนาทักษะภาษาให้สามารถนำไปใช้ในบริบทธุรกิจได้จริง
-</p>
-</div>
+        </div>
 
-<div class="section">
-<h2>🦋 ทำไมถึงสนใจด้านนี้</h2>
-<p>
-ฉันสนใจการเรียนด้านธุรกิจเพราะต้องการเข้าใจการทำงานของธุรกิจ
-การค้า และการจัดการ และต้องการนำพื้นฐานภาษาจีนที่เรียนมา
-ต่อยอดกับการทำงานในอนาคต
-</p>
-</div>
 
-<div class="section">
-<h2>🥨 เป้าหมายในอนาคต</h2>
-<p>
-ต้องการนำความรู้ด้านธุรกิจและภาษาจีนไปใช้ในการทำงาน
-โดยเฉพาะด้านการจัดซื้อ การนำเข้า–ส่งออก
-การประสานงานระหว่างประเทศ และการสื่อสารกับชาวต่างชาติ
-ก่อนนำประสบการณ์ไปต่อยอดในอนาคต
-</p>
-</div>
+        <div class="university-name">
 
-<div class="bottom-navigation">
-<a class="bottom-button" href="./index.html">🏠<br>หน้าแรก</a>
-<a class="bottom-button" href="./profile.html">🩷<br>เกี่ยวกับฉัน</a>
-<a class="bottom-button" href="./education.html">🧀<br>มหาวิทยาลัย</a>
-<a class="bottom-button" href="./activities.html">🦋<br>กิจกรรม</a>
-<a class="bottom-button" href="./certificates.html">🏆<br>เกียรติบัตร</a>
-<a class="bottom-button" href="./contact.html">🥨<br>ติดต่อฉัน</a>
-</div>
+            <h2>
+                มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+            </h2>
+
+            <p>
+                มจพ. วิทยาเขตปราจีนบุรี
+            </p>
+
+        </div>
+
+
+        <div class="info-grid">
+
+            <div class="info-box">
+
+                <h3>
+                    🏫 คณะ
+                </h3>
+
+                <p>
+                    คณะบริหารธุรกิจและอุตสาหกรรมบริการ
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>
+                    📚 สาขา
+                </h3>
+
+                <p>
+                    บริหารธุรกิจอุตสาหกรรมและการค้า
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>
+                    💼 ความสนใจ
+                </h3>
+
+                <p>
+                    ธุรกิจ การค้า และการจัดการ
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <h3>
+                    🩷 ภาษา
+                </h3>
+
+                <p>
+                    ภาษาจีนและการสื่อสารระหว่างประเทศ
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h3>
+                ✦ ทำไมถึงสนใจด้านนี้
+            </h3>
+
+            <p>
+                ฉันสนใจด้านธุรกิจและการค้า เพราะเป็นศาสตร์ที่สามารถนำไปประยุกต์ใช้ได้จริง
+                และสามารถต่อยอดร่วมกับทักษะภาษาจีนที่กำลังเรียนอยู่
+                โดยเฉพาะด้านการนำเข้า ส่งออก การจัดซื้อ และการประสานงานกับต่างประเทศ
+            </p>
+
+        </div>
+
+
+        <div class="section">
+
+            <h3>
+                ✦ เป้าหมายในอนาคต
+            </h3>
+
+            <p>
+                ต้องการนำความรู้ด้านธุรกิจและภาษาจีนไปใช้ในการทำงานจริง
+                สร้างประสบการณ์ด้านการค้าระหว่างประเทศ
+                และในอนาคตต้องการนำประสบการณ์ที่ได้รับมาต่อยอดเป็นธุรกิจของตัวเอง
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="bottom-nav">
+
+        <a href="./index.html">🏠 หน้าแรก</a>
+
+        <a href="./profile.html">🩷 เกี่ยวกับฉัน</a>
+
+        <a href="./education.html" class="active">🧀 มหาวิทยาลัย</a>
+
+        <a href="./activities.html">🦋 กิจกรรม</a>
+
+        <a href="./certificates.html">🏆 เกียรติบัตร</a>
+
+        <a href="./contact.html">🥨 ติดต่อฉัน</a>
+
+    </div>
 
 </main>
+
 </body>
 </html>
