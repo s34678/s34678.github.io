@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YEE. — ผลงาน</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background:
+        radial-gradient(circle at top left, #263d68 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #351f4f 0%, transparent 35%),
+        #07111f;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+header {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(7,17,31,0.75);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #cbd5e1;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ff9fcf;
+}
+
+
+/* =========================
+   Main
+========================= */
+
+main {
+    width: 86%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 0;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.page-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.page-title p {
+    color: #aebbd0;
+    font-size: 17px;
+}
+
+
+/* =========================
+   Section Title
+========================= */
+
+.section-title {
+    font-size: 28px;
+    margin: 45px 0 25px;
+    color: #ffb4d8;
+}
+
+.section-title span {
+    margin-right: 8px;
+}
+
+
+/* =========================
+   Activities
+========================= */
+
+.activities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.activity-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,159,207,0.5);
+    background: rgba(255,255,255,0.09);
+}
+
+.activity-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.activity-content {
+    padding: 24px;
+}
+
+.activity-content h3 {
+    font-size: 21px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.activity-content p {
+    color: #b8c4d6;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+
+/* =========================
+   Certificates
+========================= */
+
+.certificates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.certificate {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.certificate:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,159,207,0.5);
+}
+
+.certificate img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.certificate h3 {
+    font-size: 17px;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.certificate p {
+    color: #aebbd0;
+    font-size: 14px;
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   Skills
+========================= */
+
+.skills-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.skill .emoji {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.skill h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.skill p {
+    color: #aebbd0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   Bottom Navigation
+========================= */
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.bottom-nav a {
+    color: #ffb4d8;
+    transition: 0.3s;
+}
+
+.bottom-nav a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    main {
+        width: 90%;
+        padding: 50px 0;
+    }
+
+    .page-title h1 {
+        font-size: 38px;
+    }
+
+    .activities {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-box {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav {
+        gap: 20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="./index.html" class="logo">
+        🧀 My Portfolio
+    </a>
+
+    <nav>
+
+        <a href="./index.html">
+            หน้าแรก
+        </a>
+
+        <a href="./profile.html">
+            เกี่ยวกับฉัน
+        </a>
+
+        <a href="./education.html">
+            มหาวิทยาลัย
+        </a>
+
+        <a href="./activities.html" class="active">
+            ผลงาน
+        </a>
+
+        <a href="./contact.html">
+            ติดต่อฉัน
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+    <!-- =========================
+         Page Title
+    ========================== -->
+
+    <section class="page-title">
+
+        <h1>
+            ผลงาน
+        </h1>
+
+        <p>
+            กิจกรรม ประสบการณ์ และผลงานที่สะท้อนการเรียนรู้ของฉัน 🩷
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         Activities
+    ========================== -->
+
+    <h2 class="section-title">
+        <span>🦋</span>
+        กิจกรรมและประสบการณ์
+    </h2>
+
+
+    <div class="activities">
+
+
+        <!-- กิจกรรม 1 -->
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0584.jpeg"
+                alt="กิจกรรมภาษาจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    การแข่งขันด้านภาษาจีน
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมการแข่งขันด้านภาษาจีน
+                    ณ สถาบันขงจื่อและกิจกรรมภาษาจีนในจังหวัดระยอง
+                    ได้ฝึกทักษะการใช้ภาษา การทำงานร่วมกับผู้อื่น
+                    และเพิ่มความมั่นใจในการแสดงออก
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- กิจกรรม 2 -->
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0585.jpeg"
+                alt="กิจกรรมค่ายภาษาจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    ค่ายและกิจกรรมแลกเปลี่ยนภาษาจีน
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมค่ายภาษาจีนและกิจกรรมแลกเปลี่ยน
+                    เพื่อเรียนรู้ภาษาและวัฒนธรรมจีน
+                    พร้อมฝึกการสื่อสารและการทำงานร่วมกับผู้อื่น
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- กิจกรรม 3 : ตรุษจีน 2567 -->
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0958.jpeg"
+                alt="กิจกรรมวันตรุษจีน ประจำปีการศึกษา 2567"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    กิจกรรมวันตรุษจีน ประจำปีการศึกษา 2567
+                </h3>
+
+                <p>
+                    รับผิดชอบการจัดบูทอาหารจีนในพิธีเปิดงานเทศกาลวันตรุษจีน
+                    ประจำปีการศึกษา 2567 ได้ฝึกฝนการวางแผนการดำเนินงาน
+                    การจัดการทรัพยากร การสื่อสารและให้ข้อมูลสินค้าเป็นภาษาจีน
+                    แก่ผู้มาเยือน
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- กิจกรรม 4 -->
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0586.jpeg"
+                alt="กิจกรรมบูธภาษาจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    กิจกรรมบูธภาษาจีน
+                </h3>
+
+                <p>
+                    ร่วมจัดบูธกิจกรรมเกี่ยวกับภาษาจีน
+                    ได้ฝึกการนำเสนอข้อมูล การสื่อสารกับผู้เข้าร่วมกิจกรรม
+                    และการทำงานร่วมกับสมาชิกในทีม
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         Certificates
+    ========================== -->
+
+    <h2 class="section-title">
+        <span>🎓</span>
+        เกียรติบัตรและการอบรม
+    </h2>
+
+
+    <div class="certificates">
+
+
+        <!-- เกียรติบัตร 1 -->
+
+        <div class="certificate">
+
+            <img
+                src="./certificate1.jpeg"
+                alt="เกียรติบัตร"
+            >
+
+            <h3>
+                การอบรมและพัฒนาทักษะภาษาจีน
+            </h3>
+
+            <p>
+                เกียรติบัตรจากการเข้าร่วมกิจกรรม
+                และการอบรมด้านภาษาจีน
+            </p>
+
+        </div>
+
+
+
+        <!-- เกียรติบัตร 2 -->
+
+        <div class="certificate">
+
+            <img
+                src="./certificate2.jpeg"
+                alt="เกียรติบัตร"
+            >
+
+            <h3>
+                กิจกรรม HSK
+            </h3>
+
+            <p>
+                เข้าร่วมกิจกรรมอบรมและเตรียมความพร้อม
+                สำหรับการทดสอบวัดระดับภาษาจีน
+            </p>
+
+        </div>
+
+
+
+        <!-- เกียรติบัตร 3 -->
+
+        <div class="certificate">
+
+            <img
+                src="./certificate3.jpeg"
+                alt="เกียรติบัตร"
+            >
+
+            <h3>
+                CAT Camp
+            </h3>
+
+            <p>
+                เข้าร่วมกิจกรรมค่ายเพื่อพัฒนาทักษะ
+                และประสบการณ์การเรียนรู้
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         Skills
+    ========================== -->
+
+    <h2 class="section-title">
+        <span>🩷</span>
+        ทักษะที่ได้พัฒนา
+    </h2>
+
+
+    <div class="skills-box">
+
+
+        <div class="skill">
+
+            <div class="emoji">
+                🇨🇳
+            </div>
+
+            <h3>
+                ภาษาจีน
+            </h3>
+
+            <p>
+                พัฒนาทักษะด้านภาษาและการสื่อสาร
+                ผ่านกิจกรรมและการเรียนรู้จากประสบการณ์จริง
+            </p>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <div class="emoji">
+                🤝
+            </div>
+
+            <h3>
+                การทำงานเป็นทีม
+            </h3>
+
+            <p>
+                เรียนรู้การแบ่งหน้าที่
+                การประสานงาน และการทำงานร่วมกับผู้อื่น
+            </p>
+
+        </div>
+
+
+
+        <div class="skill">
+
+            <div class="emoji">
+                💼
+            </div>
+
+            <h3>
+                ทักษะด้านธุรกิจ
+            </h3>
+
+            <p>
+                สนใจการค้า การจัดการ
+                การสื่อสารทางธุรกิจ และการทำงานระหว่างประเทศ
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================
+         Bottom Navigation
+    ========================== -->
+
+    <div class="bottom-nav">
+
+        <a href="./education.html">
+            ← มหาวิทยาลัย
+        </a>
+
+        <a href="./contact.html">
+            ติดต่อฉัน →
+        </a>
+
+    </div>
+
+
+</main>
+
+
+</body>
+</html><!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>YEE. — ผลงาน</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    background:
+        radial-gradient(circle at top left, #263d68 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #351f4f 0%, transparent 35%),
+        #07111f;
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   Header
+========================= */
+
+header {
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    background: rgba(7,17,31,0.75);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: #cbd5e1;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #ff9fcf;
+}
+
+/* =========================
+   Main
+========================= */
+
+main {
+    width: 86%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 0;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.page-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.page-title p {
+    color: #aebbd0;
+    font-size: 17px;
+}
+
+/* =========================
+   Section
+========================= */
+
+.section-title {
+    font-size: 28px;
+    margin: 45px 0 25px;
+    color: #ffb4d8;
+}
+
+.section-title span {
+    margin-right: 8px;
+}
+
+/* =========================
+   Activity Cards
+========================= */
+
+.activities {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.activity-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 22px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,159,207,0.5);
+    background: rgba(255,255,255,0.09);
+}
+
+.activity-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.activity-content {
+    padding: 24px;
+}
+
+.activity-content h3 {
+    font-size: 21px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.activity-content p {
+    color: #b8c4d6;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* =========================
+   Certificate
+========================= */
+
+.certificates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.certificate {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.certificate:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255,159,207,0.5);
+}
+
+.certificate img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.certificate h3 {
+    font-size: 17px;
+    margin-top: 15px;
+    color: #ffffff;
+}
+
+.certificate p {
+    color: #aebbd0;
+    font-size: 14px;
+    margin-top: 5px;
+    line-height: 1.6;
+}
+
+/* =========================
+   Skills
+========================= */
+
+.skills-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    padding: 22px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+}
+
+.skill .emoji {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.skill h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.skill p {
+    color: #aebbd0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================
+   Bottom Navigation
+========================= */
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.bottom-nav a {
+    color: #ffb4d8;
+    transition: 0.3s;
+}
+
+.bottom-nav a:hover {
+    color: #ffffff;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 18px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    main {
+        width: 90%;
+        padding: 50px 0;
+    }
+
+    .page-title h1 {
+        font-size: 38px;
+    }
+
+    .activities {
+        grid-template-columns: 1fr;
+    }
+
+    .certificates {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-box {
+        grid-template-columns: 1fr;
+    }
+
+    .bottom-nav {
+        gap: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <a href="./index.html" class="logo">
+        🧀 My Portfolio
+    </a>
+
+    <nav>
+        <a href="./index.html">หน้าแรก</a>
+        <a href="./profile.html">เกี่ยวกับฉัน</a>
+        <a href="./education.html">มหาวิทยาลัย</a>
+        <a href="./activities.html" class="active">ผลงาน</a>
+        <a href="./contact.html">ติดต่อฉัน</a>
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- =========================
+         Page Title
+    ========================== -->
+
+    <section class="page-title">
+
+        <h1>ผลงาน</h1>
+
+        <p>
+            กิจกรรม ประสบการณ์ และผลงานที่สะท้อนการเรียนรู้ของฉัน 🩷
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         Activities
+    ========================== -->
+
+    <h2 class="section-title">
+        <span>🦋</span> กิจกรรมและประสบการณ์
+    </h2>
+
+    <div class="activities">
+
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0584.jpeg"
+                alt="กิจกรรมภาษาจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    การแข่งขันด้านภาษาจีน
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมการแข่งขันด้านภาษาจีน
+                    ณ สถาบันขงจื่อและกิจกรรมภาษาจีนในจังหวัดระยอง
+                    ได้ฝึกทักษะการใช้ภาษา การทำงานร่วมกับผู้อื่น
+                    และเพิ่มความมั่นใจในการแสดงออก
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0585.jpeg"
+                alt="กิจกรรมค่ายภาษาจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    ค่ายและกิจกรรมแลกเปลี่ยนภาษาจีน
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมค่ายภาษาจีนและกิจกรรมแลกเปลี่ยน
+                    เพื่อเรียนรู้ภาษาและวัฒนธรรมจีน
+                    พร้อมฝึกการสื่อสารและการทำงานร่วมกับผู้อื่น
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0586.jpeg"
+                alt="กิจกรรมวันตรุษจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    กิจกรรมวันตรุษจีน
+                </h3>
+
+                <p>
+                    มีส่วนร่วมในการจัดกิจกรรมวันตรุษจีน
+                    ทั้งการแสดงและการออกบูธอาหาร
+                    ได้เรียนรู้การวางแผน การแบ่งหน้าที่
+                    และการทำงานเป็นทีม
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <img
+                src="./IMG_0587.jpeg"
+                alt="กิจกรรมบูธภาษาจีน"
+                class="activity-image"
+            >
+
+            <div class="activity-content">
+
+                <h3>
+                    กิจกรรมบูธภาษาจีน
+                </h3>
+
+                <p>
+                    ร่วมจัดบูธกิจกรรมเกี่ยวกับภาษาจีน
+                    ได้ฝึกการนำเสนอข้อมูล การสื่อสารกับผู้เข้าร่วมกิจกรรม
+                    และการทำงานร่วมกับสมาชิกในทีม
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         Certificates
+    ========================== -->
+
+    <h2 class="section-title">
+        <span>🎓</span> เกียรติบัตรและการอบรม
+    </h2>
+
+    <div class="certificates">
+
+
+        <div class="certificate">
+
+            <img
+                src="./certificate1.jpeg"
+                alt="เกียรติบัตร"
+            >
+
+            <h3>
+                การอบรมและพัฒนาทักษะภาษาจีน
+            </h3>
+
+            <p>
+                เกียรติบัตรจากการเข้าร่วมกิจกรรม
+                และการอบรมด้านภาษาจีน
+            </p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <img
+                src="./certificate2.jpeg"
+                alt="เกียรติบัตร"
+            >
+
+            <h3>
+                กิจกรรม HSK
+            </h3>
+
+            <p>
+                เข้าร่วมกิจกรรมอบรมและเตรียมความพร้อม
+                สำหรับการทดสอบวัดระดับภาษาจีน
+            </p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <img
+                src="./certificate3.jpeg"
+                alt="เกียรติบัตร"
+            >
+
+            <h3>
+                CAT Camp
+            </h3>
+
+            <p>
+                เข้าร่วมกิจกรรมค่ายเพื่อพัฒนาทักษะ
+                และประสบการณ์การเรียนรู้
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         Skills
+    ========================== -->
+
+    <h2 class="section-title">
+        <span>🩷</span> ทักษะที่ได้พัฒนา
+    </h2>
+
+    <div class="skills-box">
+
+
+        <div class="skill">
+
+            <div class="emoji">🇨🇳</div>
+
+            <h3>
+                ภาษาจีน
+            </h3>
+
+            <p>
+                พัฒนาทักษะด้านภาษาและการสื่อสาร
+                ผ่านกิจกรรมและการเรียนรู้จากประสบการณ์จริง
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="emoji">🤝</div>
+
+            <h3>
+                การทำงานเป็นทีม
+            </h3>
+
+            <p>
+                เรียนรู้การแบ่งหน้าที่
+                การประสานงาน และการทำงานร่วมกับผู้อื่น
+            </p>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="emoji">💼</div>
+
+            <h3>
+                ทักษะด้านธุรกิจ
+            </h3>
+
+            <p>
+                สนใจการค้า การจัดการ
+                การสื่อสารทางธุรกิจ และการทำงานระหว่างประเทศ
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         Bottom Navigation
+    ========================== -->
+
+    <div class="bottom-nav">
+
+        <a href="./education.html">
+            ← มหาวิทยาลัย
+        </a>
+
+        <a href="./contact.html">
+            ติดต่อฉัน →
+        </a>
+
+    </div>
+
+</main>
+
+</body>
+</html>
