@@ -2,7 +2,6 @@
 <html lang="th">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,28 +11,18 @@
 
 <style>
 
-/* =========================
-   RESET
-========================= */
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     font-family:'Kanit',sans-serif;
-
     background:
         radial-gradient(circle at top left,#172b4d 0%,transparent 35%),
         radial-gradient(circle at bottom right,#101d38 0%,transparent 40%),
         #071426;
-
     color:#fff;
     min-height:100vh;
 }
@@ -45,85 +34,102 @@ a{
 
 
 /* =========================
-   BUTTERFLY BACKGROUND
+   🎈 BALLOONS
 ========================= */
 
-.butterflies{
+.balloons{
     position:fixed;
     inset:0;
-    width:100%;
-    height:100%;
-
     overflow:hidden;
     pointer-events:none;
-
     z-index:0;
 }
 
-.butterfly{
+.balloon{
     position:absolute;
-    bottom:-60px;
-
-    font-size:20px;
-    opacity:.4;
-
-    filter:
-        drop-shadow(0 0 5px rgba(150,200,255,.7))
-        drop-shadow(0 0 10px rgba(255,159,197,.35));
-
-    animation:
-        butterflyFloat
-        14s
-        ease-in-out
-        infinite;
+    bottom:-100px;
+    width:28px;
+    height:35px;
+    border-radius:50% 50% 45% 45%;
+    background:rgba(168,199,255,.10);
+    border:1px solid rgba(168,199,255,.25);
+    box-shadow:0 0 15px rgba(168,199,255,.12);
+    animation:balloonFloat 13s ease-in-out infinite;
 }
 
-@keyframes butterflyFloat{
+.balloon::after{
+    content:"";
+    position:absolute;
+    width:1px;
+    height:50px;
+    background:rgba(255,255,255,.15);
+    left:50%;
+    top:33px;
+}
+
+.balloon:nth-child(1){
+    left:6%;
+    animation-delay:-2s;
+}
+
+.balloon:nth-child(2){
+    left:20%;
+    width:22px;
+    height:29px;
+    animation-delay:-8s;
+}
+
+.balloon:nth-child(3){
+    left:36%;
+    animation-delay:-5s;
+}
+
+.balloon:nth-child(4){
+    left:53%;
+    width:24px;
+    height:31px;
+    animation-delay:-10s;
+}
+
+.balloon:nth-child(5){
+    left:69%;
+    animation-delay:-4s;
+}
+
+.balloon:nth-child(6){
+    left:84%;
+    width:23px;
+    height:30px;
+    animation-delay:-7s;
+}
+
+.balloon:nth-child(7){
+    left:94%;
+    animation-delay:-11s;
+}
+
+@keyframes balloonFloat{
 
     0%{
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(-8deg);
-
+        transform:translateY(0) translateX(0);
         opacity:0;
     }
 
-    10%{
+    12%{
         opacity:.45;
-    }
-
-    30%{
-        transform:
-            translateY(-30vh)
-            translateX(35px)
-            rotate(8deg);
     }
 
     50%{
-        transform:
-            translateY(-55vh)
-            translateX(-25px)
-            rotate(-6deg);
-
-        opacity:.6;
+        transform:translateY(-55vh) translateX(25px);
+        opacity:.4;
     }
 
-    70%{
-        transform:
-            translateY(-75vh)
-            translateX(40px)
-            rotate(7deg);
-
-        opacity:.45;
+    75%{
+        transform:translateY(-80vh) translateX(-20px);
     }
 
     100%{
-        transform:
-            translateY(-120vh)
-            translateX(-20px)
-            rotate(-8deg);
-
+        transform:translateY(-120vh) translateX(20px);
         opacity:0;
     }
 
@@ -136,47 +142,33 @@ a{
 
 header{
     width:100%;
-
     padding:22px 7%;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     border-bottom:1px solid rgba(255,255,255,.08);
-
     background:rgba(7,20,38,.9);
-
     backdrop-filter:blur(10px);
-
     position:sticky;
     top:0;
-
     z-index:100;
 }
 
 .logo{
     font-family:'Playfair Display',serif;
-
     font-size:25px;
     font-weight:700;
-
-    color:#fff;
 }
 
 nav{
     display:flex;
-
     gap:25px;
-
     align-items:center;
 }
 
 nav a{
     color:#c7d4e8;
-
     font-size:15px;
-
     transition:.3s;
 }
 
@@ -191,177 +183,118 @@ nav a.active{
 ========================= */
 
 main{
-    width:86%;
-    max-width:1200px;
-
+    width:92%;
+    max-width:1100px;
     margin:auto;
-
-    padding:70px 0;
-
+    padding:60px 0;
     position:relative;
-
     z-index:2;
 }
 
-
-/* =========================
-   PAGE TITLE
-========================= */
-
 .page-title{
     text-align:center;
-
-    margin-bottom:50px;
+    margin-bottom:40px;
 }
 
 .page-title .small{
     color:#ff9fc5;
-
-    font-size:15px;
-
     letter-spacing:2px;
-
-    margin-bottom:8px;
 }
 
 .page-title h1{
     font-family:'Playfair Display',serif;
-
     font-size:48px;
-
-    margin-bottom:12px;
+    margin:8px 0;
 }
 
 .page-title p{
     color:#aebdd1;
-
-    font-size:17px;
 }
 
 
 /* =========================
-   ACTIVITIES
+   ACTIVITY GRID
 ========================= */
 
-.activities{
+.activities-grid{
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
-    gap:30px;
+    gap:25px;
 }
 
 .activity-card{
     background:rgba(255,255,255,.06);
-
-    border:1px solid rgba(255,255,255,.09);
-
+    border:1px solid rgba(255,255,255,.1);
     border-radius:22px;
-
     overflow:hidden;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.2);
-
     transition:.3s;
-
-    position:relative;
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
 }
 
 .activity-card:hover{
     transform:translateY(-5px);
-
     border-color:rgba(255,159,197,.35);
 }
 
-
-/* =========================
-   IMAGE
-========================= */
-
 .activity-image{
     width:100%;
-
-    height:280px;
-
-    object-fit:cover;
-
-    display:block;
-
-    background:#101f36;
+    height:270px;
+    overflow:hidden;
 }
 
+.activity-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
 
-/* =========================
-   CONTENT
-========================= */
+.activity-card:hover .activity-image img{
+    transform:scale(1.04);
+}
 
 .activity-content{
-    padding:25px;
-}
-
-.activity-number{
-    color:#ff9fc5;
-
-    font-size:14px;
-
-    margin-bottom:8px;
+    padding:20px;
 }
 
 .activity-content h3{
-    font-size:21px;
-
-    font-weight:500;
-
-    line-height:1.5;
-
-    margin-bottom:14px;
+    color:#fff;
+    font-size:19px;
+    margin-bottom:9px;
 }
 
 .activity-content p{
-    color:#c2cedd;
-
-    font-size:15px;
-
-    line-height:1.9;
+    color:#b9c6d8;
+    line-height:1.7;
+    font-size:14px;
 }
 
 
 /* =========================
-   BOTTOM NAVIGATION
+   BOTTOM NAV
 ========================= */
 
 .bottom-nav{
     display:flex;
-
     justify-content:center;
-    align-items:center;
-
     flex-wrap:wrap;
-
-    gap:15px;
-
-    margin-top:60px;
+    gap:12px;
+    margin-top:50px;
 }
 
 .bottom-nav a{
-    padding:12px 24px;
-
+    padding:10px 18px;
     border-radius:30px;
-
     background:rgba(255,255,255,.07);
-
     border:1px solid rgba(255,255,255,.1);
-
     color:#d9e3f0;
-
-    transition:.3s;
 }
 
-.bottom-nav a:hover{
-    background:rgba(255,159,197,.15);
-
+.bottom-nav a:hover,
+.bottom-nav a.active{
     color:#ff9fc5;
+    background:rgba(255,159,197,.12);
 }
 
 
@@ -369,129 +302,53 @@ main{
    RESPONSIVE
 ========================= */
 
-@media(max-width:850px){
+@media(max-width:700px){
 
     header{
         flex-direction:column;
-
         gap:15px;
     }
 
     nav{
         flex-wrap:wrap;
-
         justify-content:center;
-
-        gap:15px;
+        gap:13px;
     }
 
-    .activities{
+    .page-title h1{
+        font-size:38px;
+    }
+
+    .activities-grid{
         grid-template-columns:1fr;
     }
 
-    .page-title h1{
-        font-size:40px;
-    }
-
-}
-
-
-@media(max-width:500px){
-
-    main{
-        width:92%;
-
-        padding:45px 0;
-    }
-
-    .page-title h1{
-        font-size:34px;
-    }
-
-    .page-title p{
-        font-size:14px;
-    }
-
     .activity-image{
-        height:240px;
-    }
-
-    .activity-content{
-        padding:20px;
-    }
-
-    .activity-content h3{
-        font-size:19px;
-    }
-
-    .activity-content p{
-        font-size:14px;
+        height:230px;
     }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
+<!-- 🎈 BALLOONS -->
 
-<!-- =========================
-     BUTTERFLIES
-========================= -->
+<div class="balloons">
 
-<div class="butterflies">
-
-    <span
-        class="butterfly"
-        style="left:4%;animation-delay:-2s;animation-duration:13s;">
-        🦋
-    </span>
-
-    <span
-        class="butterfly"
-        style="left:17%;animation-delay:-7s;animation-duration:15s;font-size:16px;">
-        🦋
-    </span>
-
-    <span
-        class="butterfly"
-        style="left:30%;animation-delay:-4s;animation-duration:12s;font-size:18px;">
-        🦋
-    </span>
-
-    <span
-        class="butterfly"
-        style="left:45%;animation-delay:-9s;animation-duration:16s;font-size:15px;">
-        🦋
-    </span>
-
-    <span
-        class="butterfly"
-        style="left:61%;animation-delay:-5s;animation-duration:14s;">
-        🦋
-    </span>
-
-    <span
-        class="butterfly"
-        style="left:76%;animation-delay:-10s;animation-duration:17s;font-size:17px;">
-        🦋
-    </span>
-
-    <span
-        class="butterfly"
-        style="left:91%;animation-delay:-3s;animation-duration:13s;font-size:19px;">
-        🦋
-    </span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
+    <span class="balloon"></span>
 
 </div>
 
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -501,443 +358,235 @@ main{
 
     <nav>
 
-        <a href="./index.html">
-            หน้าแรก
-        </a>
+        <a href="./index.html">หน้าแรก</a>
 
-        <a href="./profile.html">
-            เกี่ยวกับฉัน
-        </a>
+        <a href="./profile.html">เกี่ยวกับฉัน</a>
 
-        <a href="./education.html">
-            มหาวิทยาลัย
-        </a>
+        <a href="./education.html">มหาวิทยาลัย</a>
 
-        <a href="./activities.html" class="active">
-            กิจกรรม
-        </a>
+        <a href="./activities.html" class="active">กิจกรรม</a>
 
-        <a href="./certificates.html">
-            เกียรติบัตร
-        </a>
+        <a href="./certificates.html">เกียรติบัตร</a>
 
-        <a href="./contact.html">
-            ติดต่อฉัน
-        </a>
+        <a href="./contact.html">ติดต่อฉัน</a>
 
     </nav>
 
 </header>
 
 
-<!-- =========================
-     MAIN
-========================= -->
-
 <main>
 
+    <div class="page-title">
 
-<div class="page-title">
-
-    <div class="small">
-        🦋 MY ACTIVITIES
-    </div>
-
-    <h1>
-        กิจกรรม
-    </h1>
-
-    <p>
-        กิจกรรม ประสบการณ์ และการเรียนรู้ที่สะท้อนตัวตนของฉัน 🩷
-    </p>
-
-</div>
-
-
-<!-- =========================
-     ACTIVITIES
-========================= -->
-
-<div class="activities">
-
-
-<!-- 01 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_0605.jpeg"
-        alt="การแข่งขันระบำจีน ปี พ.ศ. 2568"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 01
+        <div class="small">
+            🎈 ACTIVITIES
         </div>
 
-        <h3>
-            การแข่งขันระบำจีน ปี พ.ศ. 2568
-        </h3>
+        <h1>
+            กิจกรรม
+        </h1>
 
         <p>
-            เข้าร่วมการแข่งขันระบำจีนปี พ.ศ. 2568
-            ณ ห้องเรียนซงจื่อ โรงเรียนระยองพิทยาคม
-            ได้รับรางวัลชนะเลิศอันดับที่ 4
-            กิจกรรมนี้ช่วยพัฒนาทักษะภาษาและความเข้าใจวัฒนธรรมจีน
-            รวมถึงฝึกความรับผิดชอบ ความสามัคคี
-            และการวางแผนการทำงานร่วมกันเป็นทีม
+            กิจกรรมและประสบการณ์ที่ได้เรียนรู้ตลอดช่วงมัธยมศึกษา
         </p>
 
     </div>
 
-</div>
+
+    <div class="activities-grid">
 
 
-<!-- 02 -->
+        <div class="activity-card">
 
-<div class="activity-card">
+            <div class="activity-image">
+                <img src="./IMG_0605.jpeg" alt="การแข่งขันระบำจีน ปี พ.ศ. 2568">
+            </div>
 
-    <img
-        src="./IMG_0958.jpeg"
-        alt="กิจกรรมวันตรุษจีน ปี 2567"
-        class="activity-image"
-    >
+            <div class="activity-content">
+                <h3>การแข่งขันระบำจีน ปี พ.ศ. 2568</h3>
+                <p>
+                    เข้าร่วมการแข่งขันระบำจีนและได้ฝึกฝนการทำงานร่วมกับผู้อื่น
+                    รวมถึงการใช้ภาษาจีนผ่านกิจกรรมด้านวัฒนธรรม
+                </p>
+            </div>
 
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 02
         </div>
 
-        <h3>
-            กิจกรรมวันตรุษจีน ปี 2567
-        </h3>
 
-        <p>
-            รับผิดชอบการจัดบูทอาหารจีนในพิธีเปิดงานเทศกาลวันตรุษจีน
-            ประจำปีการศึกษา 2567
-            ได้ฝึกฝนการวางแผนการดำเนินงาน
-            การจัดการทรัพยากร
-            การสื่อสารและให้ข้อมูลสินค้าเป็นภาษาจีนแก่ผู้มาเยือน
-        </p>
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_0958.jpeg" alt="กิจกรรมวันตรุษจีน ปี 2567">
+            </div>
+
+            <div class="activity-content">
+                <h3>กิจกรรมวันตรุษจีน ปี 2567</h3>
+                <p>
+                    มีส่วนร่วมในการจัดกิจกรรมวันตรุษจีนและเรียนรู้วัฒนธรรมจีน
+                    ผ่านการทำงานร่วมกับเพื่อน ๆ
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_0606.jpeg" alt="การแสดงโชว์ระบำจีน">
+            </div>
+
+            <div class="activity-content">
+                <h3>การแสดงโชว์ระบำจีนในงานวันตรุษจีน ปี 2567</h3>
+                <p>
+                    เข้าร่วมการแสดงและฝึกซ้อมอย่างต่อเนื่อง
+                    ทำให้ได้พัฒนาความกล้าแสดงออกและการทำงานเป็นทีม
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_0586.jpeg" alt="Chinese 1 Day Camp">
+            </div>
+
+            <div class="activity-content">
+                <h3>Chinese 1 Day Camp ประจำปี พ.ศ. 2568</h3>
+                <p>
+                    เข้าร่วมกิจกรรมค่ายภาษาจีนและแลกเปลี่ยนเรียนรู้
+                    ฝึกใช้ภาษาในสถานการณ์ต่าง ๆ
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_0585.jpeg" alt="HSK4">
+            </div>
+
+            <div class="activity-content">
+                <h3>การอบรมและทดสอบความสามารถภาษาจีนระดับ HSK4</h3>
+                <p>
+                    เข้าร่วมการอบรมและทดสอบเพื่อพัฒนาความรู้
+                    และทักษะด้านภาษาจีน
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./JKP09702.jpeg" alt="Language Boot">
+            </div>
+
+            <div class="activity-content">
+                <h3>Language Boot: Power up your English, Chinese, Japanese & Korean</h3>
+                <p>
+                    เข้าร่วมกิจกรรมพัฒนาทักษะทางภาษา
+                    และเรียนรู้การสื่อสารในหลากหลายภาษา
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_1195.jpeg" alt="HSK Mock Test">
+            </div>
+
+            <div class="activity-content">
+                <h3>HSK Mock Test ประจำปีการศึกษา 2569</h3>
+                <p>
+                    เข้าร่วมการทดสอบจำลองเพื่อประเมินความรู้
+                    และเตรียมความพร้อมด้านภาษาจีน
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_2208.jpeg" alt="วรรณคดี On Air">
+            </div>
+
+            <div class="activity-content">
+                <h3>วรรณคดี On Air (พากย์เสียงวรรณคดี)</h3>
+                <p>
+                    เข้าร่วมกิจกรรมพากย์เสียงวรรณคดี
+                    ได้ฝึกการสื่อสาร การออกเสียง และการทำงานร่วมกับผู้อื่น
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_0603.jpeg" alt="CAT Camp">
+            </div>
+
+            <div class="activity-content">
+                <h3>CAT Camp ภาษาจีน ประจำปี พ.ศ. 2568</h3>
+                <p>
+                    เข้าร่วมกิจกรรมค่ายภาษาจีน
+                    เพื่อพัฒนาทักษะภาษาและเรียนรู้ผ่านกิจกรรมต่าง ๆ
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="activity-card">
+
+            <div class="activity-image">
+                <img src="./IMG_1507.jpeg" alt="พิธีเปิดเทศกาลวันตรุษจีน">
+            </div>
+
+            <div class="activity-content">
+                <h3>พิธีเปิดเทศกาลวันตรุษจีน ประจำปีการศึกษา 2568</h3>
+                <p>
+                    มีส่วนร่วมในกิจกรรมเทศกาลวันตรุษจีน
+                    และได้เรียนรู้เกี่ยวกับวัฒนธรรมจีนผ่านกิจกรรมของโรงเรียน
+                </p>
+            </div>
+
+        </div>
+
 
     </div>
 
-</div>
 
+    <div class="bottom-nav">
 
-<!-- 03 -->
+        <a href="./index.html">🏠 หน้าแรก</a>
 
-<div class="activity-card">
+        <a href="./profile.html">🩷 เกี่ยวกับฉัน</a>
 
-    <img
-        src="./IMG_0606.jpeg"
-        alt="การแสดงโชว์ระบำจีนในงานวันตรุษจีน ปี 2567"
-        class="activity-image"
-    >
+        <a href="./education.html">🧀 มหาวิทยาลัย</a>
 
-    <div class="activity-content">
+        <a href="./activities.html" class="active">🎈 กิจกรรม</a>
 
-        <div class="activity-number">
-            กิจกรรมที่ 03
-        </div>
+        <a href="./certificates.html">🏆 เกียรติบัตร</a>
 
-        <h3>
-            การแสดงโชว์ระบำจีนในงานวันตรุษจีน ปี 2567
-        </h3>
-
-        <p>
-            แสดงโชว์ระบำจีนในพิธีเปิดงานเทศกาลวันตรุษจีน
-            กิจกรรมนี้ช่วยพัฒนาความเข้าใจวัฒนธรรมจีน
-            และทักษะการสื่อสารภาษา
-            รวมถึงฝึกฝนการวางแผน
-            การทำงานร่วมกันเป็นทีม
-            และการประสานงานเพื่อให้งานสำเร็จลุล่วงอย่างมีประสิทธิภาพ
-        </p>
+        <a href="./contact.html">🥨 ติดต่อฉัน</a>
 
     </div>
-
-</div>
-
-
-<!-- 04 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_0586.jpeg"
-        alt="Chinese 1 Day Camp ประจำปี พ.ศ. 2568"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 04
-        </div>
-
-        <h3>
-            Chinese 1 Day Camp ประจำปี พ.ศ. 2568
-        </h3>
-
-        <p>
-            กิจกรรมแลกเปลี่ยนเรียนรู้ระหว่างโรงเรียน
-            ได้ฝึกทักษะการสื่อสารภาษาจีนในสถานการณ์จริง
-            เรียนรู้คำศัพท์ทางธุรกิจเบื้องต้น
-            และฝึกการทำงานร่วมกันเป็นทีม
-            วางแผนแก้ปัญหาร่วมกัน
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- 05 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_0585.jpeg"
-        alt="การอบรมและทดสอบความสามารถภาษาจีนระดับ HSK4"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 05
-        </div>
-
-        <h3>
-            การอบรมและทดสอบความสามารถภาษาจีนระดับ HSK4
-        </h3>
-
-        <p>
-            เข้ารับการอบรมและทดสอบความสามารถภาษาจีนระดับ HSK4
-            จากวิทยากร สถาบันการจัดการปัญญาภิวัฒน์
-            ประจำปี พ.ศ. 2568
-            ได้พัฒนาความสามารถด้านภาษาจีนให้มีมาตรฐานสากล
-            สามารถใช้ภาษาในการสื่อสารทางธุรกิจ
-            การเจรจา และการนำเสนอข้อมูล
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- 06 -->
-
-<div class="activity-card">
-
-    <img
-        src="./JKP09702.jpeg"
-        alt="Language Boot"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 06
-        </div>
-
-        <h3>
-            Language Boot: Power up your English, Chinese, Japanese & Korean
-        </h3>
-
-        <p>
-            เข้าร่วมกิจกรรมภาษาต่างประเทศ
-            Language Boot: Power up your English, Chinese, Japanese & Korean
-            ประจำปีการศึกษา 2569
-            ได้พัฒนาทักษะการสื่อสารหลายภาษา
-            เรียนรู้วัฒนธรรมประเทศต่างๆ
-            และฝึกการปรับตัวในการสื่อสารกับผู้คนหลากหลาย
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- 07 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_1195.jpeg"
-        alt="HSK Mock Test"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 07
-        </div>
-
-        <h3>
-            HSK Mock Test ประจำปีการศึกษา 2569
-        </h3>
-
-        <p>
-            เข้าร่วมฝึกอบรมและทดสอบวัดระดับความสามารถทางภาษาจีน
-            HSK Mock Test ณ มหาวิทยาลัยธุรกิจบัณฑิตย์
-            ประจำปีการศึกษา 2569
-            ได้ประเมินและพัฒนาความสามารถภาษาจีนตามมาตรฐานสากล
-            โดยเน้นการใช้ภาษาในบริบทธุรกิจ การค้า
-            และการสื่อสารมวลชน
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- 08 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_2208.jpeg"
-        alt="วรรณคดี On Air"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 08
-        </div>
-
-        <h3>
-            วรรณคดี On Air (พากย์เสียงวรรณคดี)
-        </h3>
-
-        <p>
-            เข้าร่วมการแข่งขันกิจกรรม วรรณคดี On Air
-            (พากย์เสียงวรรณคดี) ระดับชั้นมัธยมศึกษาปีที่ 4-6
-            ประจำปีการศึกษา 2569
-            ได้รับรางวัลรองชนะเลิศอันดับที่ 2
-            ได้ฝึกทักษะการคิดสร้างสรรค์
-            การวางแผนการผลิตสื่อ
-            การทำงานร่วมกันเป็นทีม
-            และการนำเสนอผลงานอย่างมีประสิทธิภาพ
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- 09 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_0603.jpeg"
-        alt="CAT Camp ภาษาจีน"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 09
-        </div>
-
-        <h3>
-            CAT Camp ภาษาจีน ประจำปี พ.ศ. 2568
-        </h3>
-
-        <p>
-            เข้าร่วมค่ายภาษาต่างประเทศ Catcamp ภาษาจีน
-            โดยวิทยากรจากมหาวิทยาลัยธุรกิจบัณฑิตย์
-            ประจำปี พ.ศ. 2568
-            ได้ฝึกฝนการสื่อสารภาษาจีนในสถานการณ์จริง
-            โดยเฉพาะคำศัพท์และการสนทนาทางด้านธุรกิจและการค้า
-        </p>
-
-    </div>
-
-</div>
-
-
-<!-- 10 -->
-
-<div class="activity-card">
-
-    <img
-        src="./IMG_1507.jpeg"
-        alt="พิธีเปิดเทศกาลวันตรุษจีน ประจำปีการศึกษา 2568"
-        class="activity-image"
-    >
-
-    <div class="activity-content">
-
-        <div class="activity-number">
-            กิจกรรมที่ 10
-        </div>
-
-        <h3>
-            พิธีเปิดเทศกาลวันตรุษจีน ประจำปีการศึกษา 2568
-        </h3>
-
-        <p>
-            เข้าร่วมพิธีเปิดเทศกาลวันตรุษจีน
-            ประจำปีการศึกษา 2568
-            ได้เรียนรู้การวางแผนการจัดการงาน
-            การทำงานร่วมกันเป็นทีม
-            และการประสานงานเพื่อให้งานสำเร็จลุล่วง
-            รวมถึงส่งเสริมความเข้าใจวัฒนธรรมจีน
-        </p>
-
-    </div>
-
-</div>
-
-
-</div>
-
-
-<!-- =========================
-     BOTTOM NAVIGATION
-========================= -->
-
-<div class="bottom-nav">
-
-    <a href="./index.html">
-        🏠 หน้าแรก
-    </a>
-
-    <a href="./profile.html">
-        🩷 เกี่ยวกับฉัน
-    </a>
-
-    <a href="./education.html">
-        🧀 มหาวิทยาลัย
-    </a>
-
-    <a href="./activities.html">
-        🦋 กิจกรรม
-    </a>
-
-    <a href="./certificates.html">
-        🏆 เกียรติบัตร
-    </a>
-
-    <a href="./contact.html">
-        🥨 ติดต่อฉัน
-    </a>
-
-</div>
-
 
 </main>
 
 </body>
-
 </html>
