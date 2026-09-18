@@ -9,8 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Kanit',sans-serif;
     color:#fff;
@@ -21,20 +29,55 @@ body{
     radial-gradient(circle at 80% 70%,rgba(255,100,180,.12),transparent 30%),
     #07111f;
 }
-a{text-decoration:none;color:inherit}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-    position:sticky;top:0;z-index:100;
+    position:sticky;
+    top:0;
+    z-index:100;
     padding:22px 7%;
-    display:flex;justify-content:space-between;align-items:center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
     background:rgba(5,15,30,.85);
     backdrop-filter:blur(15px);
     border-bottom:1px solid rgba(120,170,255,.15);
 }
-.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700}
-nav{display:flex;gap:28px;flex-wrap:wrap}
-nav a{color:#b8c8df;font-size:15px;transition:.3s}
-nav a:hover,nav a.active{color:#72a8ff}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    font-size:24px;
+    font-weight:700;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#b8c8df;
+    font-size:15px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#72a8ff;
+}
+
+/* =========================
+   MAIN
+========================= */
 
 main{
     position:relative;
@@ -44,7 +87,10 @@ main{
     margin:auto;
 }
 
-/* ดาว */
+/* =========================
+   ✨ ดาววิ้ง
+========================= */
+
 .sparkles{
     position:fixed;
     inset:0;
@@ -52,17 +98,43 @@ main{
     overflow:hidden;
     z-index:0;
 }
+
 .sparkle{
     position:absolute;
     color:#fff;
     font-size:20px;
-    animation:twinkle 3s ease-in-out infinite;
-    text-shadow:0 0 12px #72a8ff;
+    animation:twinkle 2.2s ease-in-out infinite;
+    text-shadow:
+        0 0 6px #fff,
+        0 0 12px #72a8ff,
+        0 0 20px rgba(114,168,255,.8);
 }
+
 @keyframes twinkle{
-    0%,100%{opacity:.15;transform:scale(.7) rotate(0deg)}
-    50%{opacity:1;transform:scale(1.4) rotate(45deg)}
+    0%,100%{
+        opacity:.2;
+        transform:scale(.6) rotate(0deg);
+    }
+
+    25%{
+        opacity:.55;
+        transform:scale(1) rotate(20deg);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.55) rotate(45deg);
+    }
+
+    75%{
+        opacity:.65;
+        transform:scale(1.05) rotate(25deg);
+    }
 }
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:calc(100vh - 90px);
@@ -72,46 +144,87 @@ main{
     text-align:center;
     padding:60px 0;
 }
+
+/* =========================
+   PROFILE IMAGE
+   ไม่หมุน
+========================= */
+
 .profile-img{
-    width:190px;height:190px;
+    width:190px;
+    height:190px;
     margin:0 auto 25px;
     padding:5px;
     border-radius:50%;
-    background:linear-gradient(135deg,#72a8ff,#ff9fc5,#fff,#72a8ff);
-    animation:spin 8s linear infinite;
-    box-shadow:0 0 40px rgba(100,170,255,.25);
+    background:linear-gradient(
+        135deg,
+        #72a8ff,
+        #ff9fc5,
+        #fff,
+        #72a8ff
+    );
+    box-shadow:
+        0 0 25px rgba(100,170,255,.25),
+        0 0 50px rgba(114,168,255,.12);
 }
+
 .profile-img img{
-    width:100%;height:100%;
+    width:100%;
+    height:100%;
     object-fit:cover;
     border-radius:50%;
     border:4px solid #071426;
 }
-@keyframes spin{to{transform:rotate(360deg)}}
+
+/* =========================
+   TEXT
+========================= */
 
 .hero h1{
     font-family:'Playfair Display',serif;
     font-size:52px;
     margin:10px 0;
 }
-.hero h2{font-size:22px;font-weight:400;color:#72a8ff}
+
+.hero h2{
+    font-size:22px;
+    font-weight:400;
+    color:#72a8ff;
+}
+
 .hero p{
     max-width:700px;
     margin:20px auto;
     color:#b7c6da;
     line-height:1.9;
 }
+
+/* =========================
+   BUTTON
+========================= */
+
 .button{
     display:inline-block;
     margin-top:15px;
     padding:13px 28px;
     border-radius:30px;
-    background:linear-gradient(135deg,#568eff,#8bb5ff);
+    background:linear-gradient(
+        135deg,
+        #568eff,
+        #8bb5ff
+    );
     color:white;
     box-shadow:0 10px 30px rgba(50,120,255,.2);
     transition:.3s;
 }
-.button:hover{transform:translateY(-4px)}
+
+.button:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
 
 .bottom-navigation{
     padding:30px 0 50px;
@@ -120,6 +233,7 @@ main{
     gap:12px;
     flex-wrap:wrap;
 }
+
 .bottom-button{
     min-width:110px;
     padding:12px 15px;
@@ -130,34 +244,121 @@ main{
     color:#dbe7f7;
     transition:.3s;
 }
-.bottom-button:hover{transform:translateY(-4px);border-color:#72a8ff;color:#72a8ff}
+
+.bottom-button:hover{
+    transform:translateY(-4px);
+    border-color:#72a8ff;
+    color:#72a8ff;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
-    header{flex-direction:column;gap:15px;padding:18px 5%}
-    nav{gap:13px;justify-content:center}
-    nav a{font-size:13px}
-    .hero h1{font-size:38px}
-    .hero h2{font-size:18px}
-    .profile-img{width:145px;height:145px}
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:18px 5%;
+    }
+
+    nav{
+        gap:13px;
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .hero{
+        padding:45px 0;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .hero h2{
+        font-size:18px;
+    }
+
+    .profile-img{
+        width:145px;
+        height:145px;
+    }
+
+    .hero p{
+        font-size:14px;
+        line-height:1.8;
+    }
+
+    .bottom-button{
+        min-width:100px;
+        font-size:13px;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<!-- ✨ ดาววิ้งด้านหลัง -->
 <div class="sparkles">
-    <span class="sparkle" style="left:5%;top:15%;animation-delay:-1s">✦</span>
-    <span class="sparkle" style="left:15%;top:70%;animation-delay:-2s">✧</span>
-    <span class="sparkle" style="left:28%;top:25%;animation-delay:-.5s">✦</span>
-    <span class="sparkle" style="left:42%;top:80%;animation-delay:-1.8s">✧</span>
-    <span class="sparkle" style="left:55%;top:15%;animation-delay:-2.5s">✦</span>
-    <span class="sparkle" style="left:68%;top:65%;animation-delay:-1.2s">✧</span>
-    <span class="sparkle" style="left:80%;top:25%;animation-delay:-2s">✦</span>
-    <span class="sparkle" style="left:93%;top:75%;animation-delay:-.8s">✧</span>
+
+    <span class="sparkle"
+        style="left:5%;top:15%;animation-delay:-1s">
+        ✦
+    </span>
+
+    <span class="sparkle"
+        style="left:15%;top:70%;animation-delay:-2s">
+        ✧
+    </span>
+
+    <span class="sparkle"
+        style="left:28%;top:25%;animation-delay:-.5s">
+        ✦
+    </span>
+
+    <span class="sparkle"
+        style="left:42%;top:80%;animation-delay:-1.8s">
+        ✧
+    </span>
+
+    <span class="sparkle"
+        style="left:55%;top:15%;animation-delay:-2.5s">
+        ✦
+    </span>
+
+    <span class="sparkle"
+        style="left:68%;top:65%;animation-delay:-1.2s">
+        ✧
+    </span>
+
+    <span class="sparkle"
+        style="left:80%;top:25%;animation-delay:-2s">
+        ✦
+    </span>
+
+    <span class="sparkle"
+        style="left:93%;top:75%;animation-delay:-.8s">
+        ✧
+    </span>
+
 </div>
 
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-    <div class="logo">🧀 My Portfolio</div>
+
+    <div class="logo">
+        🧀 My Portfolio
+    </div>
+
     <nav>
         <a href="./index.html" class="active">หน้าแรก</a>
         <a href="./profile.html">เกี่ยวกับฉัน</a>
@@ -166,19 +367,34 @@ main{
         <a href="./certificates.html">เกียรติบัตร</a>
         <a href="./contact.html">ติดต่อฉัน</a>
     </nav>
+
 </header>
 
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
 <main>
+
 <section class="hero">
 
 <div>
+
+    <!-- รูปโปรไฟล์ -->
     <div class="profile-img">
-        <img src="./IMG_3814.jpeg" alt="พัทธ์ธีรา วรรณสวัสดิ์">
+        <img
+            src="./IMG_3814.jpeg"
+            alt="พัทธ์ธีรา วรรณสวัสดิ์"
+        >
     </div>
 
-    <h2>🩷 Welcome to my Portfolio</h2>
+    <h2>
+        🩷 Welcome to my Portfolio
+    </h2>
 
-    <h1>พัทธ์ธีรา วรรณสวัสดิ์</h1>
+    <h1>
+        พัทธ์ธีรา วรรณสวัสดิ์
+    </h1>
 
     <p>
         นักเรียนชั้นมัธยมศึกษาปีที่ 6/8
@@ -193,18 +409,43 @@ main{
     <a class="button" href="./profile.html">
         🩷 ทำความรู้จักฉัน
     </a>
+
 </div>
 
 </section>
 
+<!-- =========================
+     BOTTOM NAVIGATION
+========================= -->
+
 <div class="bottom-navigation">
-    <a class="bottom-button" href="./index.html">🏠<br>หน้าแรก</a>
-    <a class="bottom-button" href="./profile.html">🩷<br>เกี่ยวกับฉัน</a>
-    <a class="bottom-button" href="./education.html">🧀<br>มหาวิทยาลัย</a>
-    <a class="bottom-button" href="./activities.html">🦋<br>กิจกรรม</a>
-    <a class="bottom-button" href="./certificates.html">🏆<br>เกียรติบัตร</a>
-    <a class="bottom-button" href="./contact.html">🥨<br>ติดต่อฉัน</a>
+
+    <a class="bottom-button" href="./index.html">
+        🏠<br>หน้าแรก
+    </a>
+
+    <a class="bottom-button" href="./profile.html">
+        🩷<br>เกี่ยวกับฉัน
+    </a>
+
+    <a class="bottom-button" href="./education.html">
+        🧀<br>มหาวิทยาลัย
+    </a>
+
+    <a class="bottom-button" href="./activities.html">
+        🦋<br>กิจกรรม
+    </a>
+
+    <a class="bottom-button" href="./certificates.html">
+        🏆<br>เกียรติบัตร
+    </a>
+
+    <a class="bottom-button" href="./contact.html">
+        🥨<br>ติดต่อฉัน
+    </a>
+
 </div>
+
 </main>
 
 </body>
