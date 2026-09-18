@@ -1,125 +1,667 @@
-<div class="contact-box">
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>YEE. — ติดต่อฉัน</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #172b4d 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #101d38 0%, transparent 40%),
+                #071426;
+
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
 
-    <!-- INSTAGRAM -->
+        /* =========================
+           HEADER
+        ========================= */
 
-    <div class="contact-card">
+        header {
+            width: 100%;
+            padding: 22px 7%;
 
-        <div class="contact-icon">
-            📱
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            background: rgba(7,20,38,0.85);
+
+            backdrop-filter: blur(10px);
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #c7d4e8;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ff9fc5;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 86%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 0;
+        }
+
+
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title .small {
+            color: #ff9fc5;
+            font-size: 15px;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .page-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .page-title p {
+            color: #aebdd1;
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+
+        .contact-card {
+            background: rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(255,255,255,0.09);
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(255,159,197,0.35);
+        }
+
+
+        /* =========================
+           ICON
+        ========================= */
+
+        .contact-icon {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+
+        .contact-card h2 {
+            font-size: 23px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .contact-card p {
+            color: #c2cedd;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+
+        /* =========================
+           CONTACT BUTTON
+        ========================= */
+
+        .contact-link {
+            display: inline-block;
+
+            margin-top: 18px;
+
+            padding: 10px 20px;
+
+            border-radius: 30px;
+
+            background: rgba(255,159,197,0.12);
+
+            border: 1px solid rgba(255,159,197,0.25);
+
+            color: #ffb4d0;
+
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,159,197,0.22);
+
+            color: #ffffff;
+        }
+
+
+        /* =========================
+           PROFILE CIRCLE
+        ========================= */
+
+        .profile-back-card {
+            text-align: center;
+        }
+
+        .profile-circle {
+            width: 150px;
+            height: 150px;
+
+            margin: 0 auto 22px;
+
+            padding: 5px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(
+                135deg,
+                #ff9fc5,
+                #a8c7ff,
+                #ffffff,
+                #ff9fc5
+            );
+
+            animation: cuteSpin 8s linear infinite;
+
+            box-shadow:
+                0 0 0 6px rgba(255,255,255,0.05),
+                0 10px 30px rgba(0,0,0,0.25);
+        }
+
+        .profile-circle img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+            border: 4px solid #071426;
+        }
+
+
+        /* =========================
+           ROTATION
+        ========================= */
+
+        @keyframes cuteSpin {
+
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* =========================
+           THANK YOU MESSAGE
+        ========================= */
+
+        .contact-message {
+            margin-top: 30px;
+
+            background: rgba(255,255,255,0.05);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 22px;
+
+            padding: 30px;
+
+            text-align: center;
+        }
+
+        .contact-message h2 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .contact-message p {
+            color: #b9c6d8;
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           BOTTOM NAVIGATION
+        ========================= */
+
+        .bottom-nav {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 60px;
+        }
+
+        .bottom-nav a {
+            padding: 12px 24px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.07);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            color: #d9e3f0;
+
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: rgba(255,159,197,0.15);
+
+            color: #ff9fc5;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 40px;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            main {
+                width: 92%;
+                padding: 45px 0;
+            }
+
+            .page-title h1 {
+                font-size: 34px;
+            }
+
+            .page-title p {
+                font-size: 14px;
+            }
+
+            .contact-card,
+            .contact-message {
+                padding: 22px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <a href="./index.html" class="logo">
+            🧀 My Portfolio
+        </a>
+
+
+        <nav>
+
+            <a href="./index.html">
+                หน้าแรก
+            </a>
+
+            <a href="./profile.html">
+                เกี่ยวกับฉัน
+            </a>
+
+            <a href="./education.html">
+                มหาวิทยาลัย
+            </a>
+
+            <a href="./activities.html">
+                กิจกรรม
+            </a>
+
+            <a href="./certificates.html">
+                เกียรติบัตร
+            </a>
+
+            <a href="./contact.html" class="active">
+                ติดต่อฉัน
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
+
+
+        <div class="page-title">
+
+            <div class="small">
+                🩷 CONTACT ME
+            </div>
+
+            <h1>
+                ติดต่อฉัน
+            </h1>
+
+            <p>
+                ช่องทางสำหรับติดต่อและพูดคุยกับฉัน 🦋
+            </p>
+
         </div>
 
-        <h2>
-            Instagram
-        </h2>
-
-        <p>
-            สามารถติดตามและพูดคุยกับฉัน
-            ผ่าน Instagram ได้ที่บัญชีด้านล่าง
-        </p>
-
-        <a
-            href="https://www.instagram.com/pxxttxee"
-            target="_blank"
-            class="contact-link"
-        >
-            @pxxttxee
-        </a>
-
-        <br>
-
-        <a
-            href="https://www.instagram.com/p.pxxttxee"
-            target="_blank"
-            class="contact-link"
-        >
-            @p.pxxttxee
-        </a>
-
-    </div>
 
 
-    <!-- PHONE -->
+        <!-- =========================
+             CONTACT CARDS
+        ========================= -->
 
-    <div class="contact-card">
+        <div class="contact-box">
 
-        <div class="contact-icon">
-            ☎️
+
+            <!-- INSTAGRAM -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📱
+                </div>
+
+                <h2>
+                    Instagram
+                </h2>
+
+                <p>
+                    สามารถติดตามและพูดคุยกับฉัน
+                    ผ่าน Instagram ได้ที่บัญชีด้านล่าง
+                </p>
+
+                <a
+                    href="https://www.instagram.com/pxxttxee"
+                    target="_blank"
+                    class="contact-link"
+                >
+                    @pxxttxee
+                </a>
+
+                <br>
+
+                <a
+                    href="https://www.instagram.com/p.pxxttxee"
+                    target="_blank"
+                    class="contact-link"
+                >
+                    @p.pxxttxee
+                </a>
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    ☎️
+                </div>
+
+                <h2>
+                    เบอร์โทรศัพท์
+                </h2>
+
+                <p>
+                    สามารถติดต่อฉันได้ทางโทรศัพท์
+                    สำหรับการติดต่อทั่วไป
+                </p>
+
+                <a
+                    href="tel:0996164878"
+                    class="contact-link"
+                >
+                    099-616-4878
+                </a>
+
+            </div>
+
+
+
+            <!-- LINE -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    💬
+                </div>
+
+                <h2>
+                    LINE
+                </h2>
+
+                <p>
+                    สามารถติดต่อและพูดคุยกับฉัน
+                    ผ่าน LINE ได้ที่ ID ด้านล่าง
+                </p>
+
+                <a
+                    href="https://line.me/ti/p/~0886540283"
+                    target="_blank"
+                    class="contact-link"
+                >
+                    ID: 0886540283
+                </a>
+
+            </div>
+
+
+
+            <!-- PROFILE / BACK HOME -->
+
+            <div class="contact-card profile-back-card">
+
+                <div class="profile-circle">
+
+                    <img
+                        src="./IMG_2139.jpeg"
+                        alt="รูปโปรไฟล์"
+                    >
+
+                </div>
+
+                <h2>
+                    🩷 ยินดีที่ได้รู้จัก
+                </h2>
+
+                <p>
+                    ขอบคุณที่เข้ามาเยี่ยมชม Portfolio ของฉัน
+                    หากต้องการกลับไปดูหน้าแรก
+                    สามารถกดปุ่มด้านล่างได้เลย
+                </p>
+
+                <a
+                    href="./index.html"
+                    class="contact-link"
+                >
+                    🏠 กลับหน้าแรก
+                </a>
+
+            </div>
+
+
         </div>
 
-        <h2>
-            เบอร์โทรศัพท์
-        </h2>
-
-        <p>
-            สามารถติดต่อฉันได้ทางโทรศัพท์
-            สำหรับการติดต่อทั่วไป
-        </p>
-
-        <a
-            href="tel:0996164878"
-            class="contact-link"
-        >
-            099-616-4878
-        </a>
-
-    </div>
 
 
-    <!-- LINE -->
+        <!-- =========================
+             THANK YOU
+        ========================= -->
 
-    <div class="contact-card">
+        <div class="contact-message">
 
-        <div class="contact-icon">
-            💬
+            <h2>
+                🩷 ขอบคุณที่เข้ามาเยี่ยมชม Portfolio
+            </h2>
+
+            <p>
+                หวังว่า Portfolio นี้จะช่วยให้ทุกคนได้รู้จักตัวตน
+                ความสนใจ ประสบการณ์ และความตั้งใจของฉันมากขึ้น
+                ขอบคุณสำหรับการเยี่ยมชมเว็บไซต์ของฉัน
+            </p>
+
         </div>
 
-        <h2>
-            LINE
-        </h2>
-
-        <p>
-            สามารถติดต่อและพูดคุยกับฉัน
-            ผ่าน LINE ได้ที่ ID ด้านล่าง
-        </p>
-
-        <a
-            href="https://line.me/ti/p/~0886540283"
-            target="_blank"
-            class="contact-link"
-        >
-            ID: 0886540283
-        </a>
-
-    </div>
 
 
-    <!-- PORTFOLIO -->
+        <!-- =========================
+             BOTTOM NAVIGATION
+        ========================= -->
 
-    <div class="contact-card">
+        <div class="bottom-nav">
 
-        <div class="contact-icon">
-            🧀
+            <a href="./index.html">
+                🏠 หน้าแรก
+            </a>
+
+            <a href="./profile.html">
+                🩷 เกี่ยวกับฉัน
+            </a>
+
+            <a href="./education.html">
+                🧀 มหาวิทยาลัย
+            </a>
+
+            <a href="./activities.html">
+                🦋 กิจกรรม
+            </a>
+
+            <a href="./certificates.html">
+                🏆 เกียรติบัตร
+            </a>
+
+            <a href="./contact.html">
+                🥨 ติดต่อฉัน
+            </a>
+
         </div>
 
-        <h2>
-            My Portfolio
-        </h2>
 
-        <p>
-            เว็บไซต์ Portfolio นี้รวบรวมข้อมูล
-            ประวัติการศึกษา กิจกรรม เกียรติบัตร
-            และเป้าหมายในการศึกษาต่อของฉัน
-        </p>
-
-        <a
-            href="./index.html"
-            class="contact-link"
-        >
-            กลับหน้าแรก
-        </a>
-
-    </div>
+    </main>
 
 
-</div>
+</body>
+
+</html>
