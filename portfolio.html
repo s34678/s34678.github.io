@@ -2,6 +2,683 @@
 <html lang="th">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>เกี่ยวกับฉัน | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Kanit', sans-serif;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(45, 95, 180, 0.25), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(70, 120, 220, 0.18), transparent 30%),
+                #071426;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 22px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: rgba(5, 17, 32, 0.85);
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .logo span {
+            margin-left: 6px;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #aebbd0;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #72a8ff;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            width: 100%;
+        }
+
+        .container {
+            width: min(1050px, 90%);
+            margin: auto;
+            padding: 60px 0 70px;
+            position: relative;
+        }
+
+        /* =========================
+           DECORATION
+        ========================= */
+
+        .decor {
+            position: absolute;
+            font-size: 28px;
+            opacity: 0.65;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .decor-one {
+            top: 100px;
+            left: 2%;
+        }
+
+        .decor-two {
+            top: 220px;
+            right: 2%;
+            animation-delay: 1s;
+        }
+
+        .decor-three {
+            top: 650px;
+            left: 4%;
+            animation-delay: 2s;
+        }
+
+        .decor-four {
+            top: 720px;
+            right: 4%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+        /* =========================
+           PAGE TITLE
+        ========================= */
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .page-title .small-title {
+            color: #9bc2ff;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .page-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 7vw, 65px);
+            margin-bottom: 12px;
+        }
+
+        .page-title h1 span {
+            color: #72a8ff;
+        }
+
+        .page-title p {
+            color: #9aaac0;
+            font-size: 15px;
+        }
+
+        /* =========================
+           PROFILE BOX
+        ========================= */
+
+        .profile-box {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 45px;
+            align-items: center;
+            padding: 35px;
+            background: rgba(15, 35, 60, 0.72);
+            border: 1px solid rgba(120, 165, 230, 0.18);
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+        }
+
+        /* =========================
+           PHOTO
+        ========================= */
+
+        .photo-area {
+            position: relative;
+            width: 240px;
+            height: 290px;
+            margin: auto;
+        }
+
+        .photo-glow {
+            position: absolute;
+            inset: -20px;
+            border-radius: 40px;
+            background: rgba(70, 130, 255, 0.22);
+            filter: blur(35px);
+        }
+
+        .profile-photo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 35px;
+            border: 3px solid rgba(120, 170, 255, 0.8);
+            box-shadow:
+                0 0 30px rgba(50, 120, 255, 0.3),
+                0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        /* =========================
+           PROFILE TEXT
+        ========================= */
+
+        .profile-text h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .profile-text h2 span {
+            color: #72a8ff;
+        }
+
+        .nickname {
+            color: #9bc2ff;
+            margin-bottom: 25px;
+        }
+
+        .profile-text p {
+            color: #b5c2d3;
+            font-size: 16px;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .section {
+            margin-top: 55px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 28px;
+        }
+
+        .section-title span {
+            color: #72a8ff;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .info-card {
+            padding: 28px;
+            background: rgba(15, 35, 60, 0.72);
+            border: 1px solid rgba(120, 165, 230, 0.15);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(100, 160, 255, 0.4);
+        }
+
+        .info-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: #aebbd0;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        /* =========================
+           INTERESTS
+        ========================= */
+
+        .interest-box {
+            padding: 30px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35, 75, 135, 0.35),
+                    rgba(12, 30, 55, 0.75)
+                );
+            border: 1px solid rgba(110, 165, 255, 0.18);
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .interest-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest {
+            padding: 10px 18px;
+            border-radius: 25px;
+            background: rgba(70, 130, 230, 0.14);
+            border: 1px solid rgba(110, 165, 255, 0.2);
+            color: #b9d3ff;
+        }
+
+        /* =========================
+           END
+        ========================= */
+
+        .nice-card {
+            margin-top: 55px;
+            padding: 35px;
+            border-radius: 25px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(35, 75, 135, 0.35),
+                    rgba(12, 30, 55, 0.75)
+                );
+            border: 1px solid rgba(110, 165, 255, 0.18);
+        }
+
+        .nice-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 27px;
+            color: #9bc2ff;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            header {
+                padding: 18px 5%;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .container {
+                width: 90%;
+                padding-top: 40px;
+            }
+
+            .profile-box {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 25px;
+            }
+
+            .photo-area {
+                width: 200px;
+                height: 245px;
+            }
+
+            .profile-text {
+                text-align: center;
+            }
+
+            .profile-text h2 {
+                font-size: 25px;
+            }
+
+            .profile-text p {
+                font-size: 14px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h1 {
+                font-size: 43px;
+            }
+
+            .section-title {
+                font-size: 29px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <a href="index.html" class="logo">
+            🧀 <span>My Portfolio</span>
+        </a>
+
+        <nav>
+            <a href="index.html">หน้าแรก</a>
+            <a href="profile.html" class="active">เกี่ยวกับฉัน</a>
+            <a href="education.html">การศึกษา</a>
+            <a href="activities.html">ผลงาน</a>
+            <a href="contact.html">ติดต่อฉัน</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <div class="container">
+
+            <!-- DECORATION -->
+
+            <div class="decor decor-one">🦋</div>
+            <div class="decor decor-two">🩷</div>
+            <div class="decor decor-three">🥨</div>
+            <div class="decor decor-four">🧀</div>
+
+
+            <!-- TITLE -->
+
+            <div class="page-title">
+
+                <div class="small-title">
+                    🩷 GET TO KNOW ME
+                </div>
+
+                <h1>
+                    เกี่ยวกับ<span>ฉัน</span> 🦋
+                </h1>
+
+                <p>
+                    มาทำความรู้จักตัวตน ความสนใจ และเป้าหมายของฉันกัน
+                </p>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile-box">
+
+                <div class="photo-area">
+
+                    <div class="photo-glow"></div>
+
+                    <img
+                        class="profile-photo"
+                        src="./IMG_3814.jpeg"
+                        alt="รูปโปรไฟล์ของพัทธ์ธีรา"
+                    >
+
+                </div>
+
+
+                <div class="profile-text">
+
+                    <h2>
+                        พัทธ์ธีรา <span>วรรณสวัสดิ์</span>
+                    </h2>
+
+                    <div class="nickname">
+                        🩷 นักเรียนชั้นมัธยมศึกษาปีที่ 6/8
+                    </div>
+
+                    <p>
+                        ปัจจุบันกำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6
+                        แผนการเรียนภาษาจีน
+                    </p>
+
+                    <p>
+                        เป็นคนที่มีความสนใจด้านภาษาจีน
+                        ธุรกิจ และการค้าระหว่างประเทศ
+                        โดยอยากนำความรู้ด้านภาษา
+                        มาประยุกต์ใช้ร่วมกับความรู้ด้านธุรกิจ
+                    </p>
+
+                    <p>
+                        เป้าหมายในอนาคตคือการพัฒนาทักษะด้านภาษา
+                        และการสื่อสาร เพื่อใช้ในการทำงานที่เกี่ยวข้องกับ
+                        ธุรกิจ การนำเข้าและส่งออก
+                        และการติดต่อระหว่างประเทศ
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- BASIC INFORMATION -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    ข้อมูล<span>ส่วนตัว</span> 🩷
+                </h2>
+
+
+                <div class="info-grid">
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🦋
+                        </div>
+
+                        <h3>
+                            การศึกษา
+                        </h3>
+
+                        <p>
+                            นักเรียนชั้นมัธยมศึกษาปีที่ 6/8
+                            แผนการเรียนภาษาจีน
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🥨
+                        </div>
+
+                        <h3>
+                            สิ่งที่สนใจ
+                        </h3>
+
+                        <p>
+                            ภาษาจีน ธุรกิจ
+                            การค้าระหว่างประเทศ
+                            การนำเข้าและส่งออก
+                            และการสื่อสารระหว่างประเทศ
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🧀
+                        </div>
+
+                        <h3>
+                            ทักษะที่อยากพัฒนา
+                        </h3>
+
+                        <p>
+                            การใช้ภาษาจีน
+                            การสื่อสาร
+                            การทำงานร่วมกับผู้อื่น
+                            และความรู้ด้านธุรกิจ
+                        </p>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <div class="info-icon">
+                            🩷
+                        </div>
+
+                        <h3>
+                            เป้าหมาย
+                        </h3>
+
+                        <p>
+                            นำความรู้ด้านภาษาและธุรกิจ
+                            ไปประยุกต์ใช้ในการเรียนต่อ
+                            และการทำงานในอนาคต
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- INTERESTS -->
+
+            <section class="section">
+
+                <h2 class="section-title">
+                    ความ<span>สนใจ</span> 🦋
+                </h2>
+
+                <div class="interest-box">
+
+                    <div class="interest-list">
+
+                        <div class="interest">
+                            🧀 ภาษาจีน
+                        </div>
+
+                        <div class="interest">
+                            🥨 ธุรกิจ
+                        </div>
+
+                        <div class="interest">
+                            🩷 การค้าระหว่างประเทศ
+                        </div>
+
+                        <div class="interest">
+                            🦋 การนำเข้าและส่งออก
+                        </div>
+
+                        <div class="interest">
+                            🧀 การสื่อสารระหว่างประเทศ
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- END -->
+
+            <div class="nice-card">
+
+                <div class="nice-title">
+                    nice to miss you
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="th">
+
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
