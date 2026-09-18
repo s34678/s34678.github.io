@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>มหาวิทยาลัย | พัทธ์ธีรา วรรณสวัสดิ์</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Kanit',sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(45,95,180,.25),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(70,120,220,.18),transparent 30%),
+        #071426;
+
+    color:#fff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    width:100%;
+
+    padding:22px 7%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:rgba(5,17,32,.92);
+
+    backdrop-filter:blur(15px);
+
+    position:sticky;
+    top:0;
+
+    z-index:100;
+}
+
+.logo{
+    text-decoration:none;
+    color:#fff;
+
+    font-family:'Playfair Display',serif;
+
+    font-size:28px;
+    font-weight:700;
+}
+
+.logo span{
+    margin-left:5px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    text-decoration:none;
+
+    color:#aebbd0;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#72a8ff;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main{
+    width:100%;
+}
+
+.container{
+    width:min(1050px,90%);
+
+    margin:auto;
+
+    padding:55px 0 70px;
+
+    position:relative;
+}
+
+
+/* =========================
+   DECORATION
+========================= */
+
+.decor{
+    position:fixed;
+
+    font-size:28px;
+
+    opacity:.55;
+
+    pointer-events:none;
+}
+
+.decor-one{
+    top:25%;
+    left:3%;
+}
+
+.decor-two{
+    top:42%;
+    right:3%;
+}
+
+.decor-three{
+    bottom:20%;
+    left:5%;
+}
+
+.decor-four{
+    bottom:12%;
+    right:5%;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.page-title{
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+.small-title{
+    color:#9bc2ff;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+}
+
+.page-title h1{
+    font-family:'Playfair Display',serif;
+
+    font-size:clamp(42px,7vw,65px);
+
+    line-height:1.2;
+
+    margin-bottom:12px;
+}
+
+.page-title h1 span{
+    color:#72a8ff;
+}
+
+.page-title p{
+    color:#9aaac0;
+
+    font-size:15px;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro-box{
+    padding:30px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,75,135,.35),
+            rgba(12,30,55,.75)
+        );
+
+    border:1px solid rgba(110,165,255,.18);
+
+    border-radius:25px;
+
+    margin-bottom:40px;
+}
+
+.intro-box h2{
+    font-size:25px;
+
+    font-weight:500;
+
+    margin-bottom:10px;
+}
+
+.intro-box h2 span{
+    color:#72a8ff;
+}
+
+.intro-box p{
+    color:#aebbd0;
+
+    font-size:15px;
+
+    line-height:1.9;
+}
+
+
+/* =========================
+   UNIVERSITY GRID
+========================= */
+
+.university-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+}
+
+
+/* =========================
+   UNIVERSITY CARD
+========================= */
+
+.university-card{
+    padding:30px;
+
+    background:rgba(15,35,60,.78);
+
+    border:1px solid rgba(120,165,230,.15);
+
+    border-radius:25px;
+
+    transition:.3s;
+}
+
+.university-card:hover{
+    transform:translateY(-5px);
+
+    border-color:rgba(100,160,255,.4);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+
+.university-icon{
+    font-size:38px;
+
+    margin-bottom:15px;
+}
+
+.university-card h2{
+    font-size:23px;
+
+    font-weight:500;
+
+    line-height:1.5;
+
+    margin-bottom:12px;
+}
+
+.university-card h2 span{
+    color:#72a8ff;
+}
+
+.university-card p{
+    color:#aebbd0;
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+.university-info{
+    margin-top:18px;
+
+    padding-top:15px;
+
+    border-top:1px solid rgba(120,165,230,.12);
+}
+
+.info-row{
+    margin-bottom:10px;
+
+    color:#b7c5d7;
+
+    font-size:14px;
+}
+
+.info-row strong{
+    color:#9bc2ff;
+
+    font-weight:500;
+}
+
+
+/* =========================
+   FACULTY / MAJOR
+========================= */
+
+.study-box{
+    margin-top:40px;
+
+    padding:30px;
+
+    background:rgba(15,35,60,.78);
+
+    border:1px solid rgba(120,165,230,.15);
+
+    border-radius:25px;
+}
+
+.study-box h2{
+    text-align:center;
+
+    font-size:27px;
+
+    font-weight:500;
+
+    margin-bottom:25px;
+}
+
+.study-box h2 span{
+    color:#72a8ff;
+}
+
+.study-grid{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+}
+
+.study-item{
+    padding:20px;
+
+    background:rgba(70,130,230,.10);
+
+    border:1px solid rgba(110,165,255,.15);
+
+    border-radius:18px;
+}
+
+.study-item .icon{
+    font-size:27px;
+
+    margin-bottom:8px;
+}
+
+.study-item h3{
+    font-size:18px;
+
+    font-weight:500;
+
+    margin-bottom:7px;
+}
+
+.study-item p{
+    color:#aebbd0;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   WHY
+========================= */
+
+.why-box{
+    margin-top:40px;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,75,135,.35),
+            rgba(12,30,55,.75)
+        );
+
+    border:1px solid rgba(110,165,255,.18);
+
+    border-radius:25px;
+}
+
+.why-box h2{
+    text-align:center;
+
+    font-size:27px;
+
+    font-weight:500;
+
+    margin-bottom:20px;
+}
+
+.why-box h2 span{
+    color:#72a8ff;
+}
+
+.why-list{
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+}
+
+.why-item{
+    padding:15px 18px;
+
+    background:rgba(70,130,230,.10);
+
+    border-radius:16px;
+
+    border:1px solid rgba(110,165,255,.13);
+
+    color:#b7c5d7;
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FUTURE
+========================= */
+
+.future-box{
+    margin-top:40px;
+
+    padding:30px;
+
+    text-align:center;
+
+    background:rgba(15,35,60,.78);
+
+    border:1px solid rgba(120,165,230,.15);
+
+    border-radius:25px;
+}
+
+.future-icon{
+    font-size:35px;
+
+    margin-bottom:10px;
+}
+
+.future-box h2{
+    font-size:25px;
+
+    font-weight:500;
+
+    margin-bottom:12px;
+}
+
+.future-box h2 span{
+    color:#72a8ff;
+}
+
+.future-box p{
+    color:#aebbd0;
+
+    font-size:15px;
+
+    line-height:1.9;
+
+    max-width:750px;
+
+    margin:auto;
+}
+
+
+/* =========================
+   NICE TO MEET YOU
+========================= */
+
+.nice-card{
+    margin-top:55px;
+
+    padding:35px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(35,75,135,.35),
+            rgba(12,30,55,.75)
+        );
+
+    border:1px solid rgba(110,165,255,.18);
+}
+
+.nice-title{
+    font-family:'Playfair Display',serif;
+
+    font-size:27px;
+
+    color:#9bc2ff;
+
+    letter-spacing:1px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        padding:18px 5%;
+
+        flex-direction:column;
+
+        gap:15px;
+    }
+
+    .logo{
+        font-size:26px;
+    }
+
+    nav{
+        gap:14px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .container{
+        width:90%;
+
+        padding-top:40px;
+    }
+
+    .page-title h1{
+        font-size:43px;
+    }
+
+    .university-grid{
+        grid-template-columns:1fr;
+    }
+
+    .study-grid{
+        grid-template-columns:1fr;
+    }
+
+    .why-list{
+        grid-template-columns:1fr;
+    }
+
+    .intro-box,
+    .university-card,
+    .study-box,
+    .why-box,
+    .future-box{
+        padding:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="./index.html" class="logo">
+        🧀 <span>My Portfolio</span>
+    </a>
+
+    <nav>
+
+        <a href="./index.html">
+            หน้าแรก
+        </a>
+
+        <a href="./profile.html">
+            เกี่ยวกับฉัน
+        </a>
+
+        <a href="./education.html" class="active">
+            มหาวิทยาลัย
+        </a>
+
+        <a href="./activities.html">
+            ผลงาน
+        </a>
+
+        <a href="./contact.html">
+            ติดต่อฉัน
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+<div class="container">
+
+
+<!-- DECORATION -->
+
+<div class="decor decor-one">🦋</div>
+
+<div class="decor decor-two">🩷</div>
+
+<div class="decor decor-three">🥨</div>
+
+<div class="decor decor-four">🧀</div>
+
+
+<!-- TITLE -->
+
+<div class="page-title">
+
+    <div class="small-title">
+        🩷 MY UNIVERSITY JOURNEY
+    </div>
+
+    <h1>
+        มหา<span>วิทยาลัย</span> 🦋
+    </h1>
+
+    <p>
+        เส้นทางการเรียนต่อและเป้าหมายในอนาคต
+    </p>
+
+</div>
+
+
+<!-- INTRO -->
+
+<div class="intro-box">
+
+    <h2>
+        🎓 เส้นทางที่ฉัน<span>กำลังมุ่งไป</span>
+    </h2>
+
+    <p>
+        หลังจากจบชั้นมัธยมศึกษาตอนปลาย
+        ฉันต้องการศึกษาต่อในระดับมหาวิทยาลัย
+        โดยมุ่งเน้นด้านธุรกิจควบคู่กับการใช้ภาษาจีน
+        เพื่อนำความรู้ไปประยุกต์ใช้ในการทำงานจริง
+    </p>
+
+</div>
+
+
+<!-- =========================
+     UNIVERSITY
+========================= -->
+
+<div class="university-grid">
+
+
+    <!-- มจพ. -->
+
+    <div class="university-card">
+
+        <div class="university-icon">
+            🧀
+        </div>
+
+        <h2>
+            มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ
+        </h2>
+
+        <p>
+            มจพ. วิทยาเขตปราจีนบุรี
+            เป็นหนึ่งในมหาวิทยาลัยที่ฉันสนใจ
+            สำหรับการศึกษาต่อในระดับปริญญาตรี
+        </p>
+
+        <div class="university-info">
+
+            <div class="info-row">
+                <strong>คณะ:</strong>
+                บริหารธุรกิจและอุตสาหกรรมบริการ
+            </div>
+
+            <div class="info-row">
+                <strong>สาขา:</strong>
+                บริหารธุรกิจอุตสาหกรรมและการค้า
+            </div>
+
+            <div class="info-row">
+                <strong>ความสนใจ:</strong>
+                ธุรกิจ การค้า และการนำภาษาไปประยุกต์ใช้
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- มหาวิทยาลัยอื่น -->
+
+    <div class="university-card">
+
+        <div class="university-icon">
+            🥨
+        </div>
+
+        <h2>
+            มหาวิทยาลัยที่สนใจ
+        </h2>
+
+        <p>
+            นอกจากเป้าหมายหลักแล้ว
+            ฉันยังเปิดโอกาสให้ตัวเองได้เรียนรู้
+            และพิจารณาหลักสูตรที่เกี่ยวข้องกับ
+            ธุรกิจ ภาษา และการค้าระหว่างประเทศ
+        </p>
+
+        <div class="university-info">
+
+            <div class="info-row">
+                <strong>ด้านที่มองหา:</strong>
+                ธุรกิจ + ภาษา
+            </div>
+
+            <div class="info-row">
+                <strong>ทักษะสำคัญ:</strong>
+                ภาษาจีน การสื่อสาร และธุรกิจ
+            </div>
+
+            <div class="info-row">
+                <strong>เป้าหมาย:</strong>
+                สามารถนำความรู้ไปใช้ในการทำงานจริง
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     คณะและสาขาที่สนใจ
+========================= -->
+
+<div class="study-box">
+
+    <h2>
+        สิ่งที่อยาก<span>เรียนต่อ</span> 🩷
+    </h2>
+
+
+    <div class="study-grid">
+
+
+        <div class="study-item">
+
+            <div class="icon">
+                🧀
+            </div>
+
+            <h3>
+                ธุรกิจ
+            </h3>
+
+            <p>
+                ต้องการเรียนรู้พื้นฐานด้านธุรกิจ
+                การบริหารจัดการ
+                และการนำความรู้ไปต่อยอดในอนาคต
+            </p>
+
+        </div>
+
+
+        <div class="study-item">
+
+            <div class="icon">
+                🥨
+            </div>
+
+            <h3>
+                ภาษาจีน
+            </h3>
+
+            <p>
+                ต้องการพัฒนาภาษาจีนให้สามารถ
+                นำไปใช้ในการเรียน การทำงาน
+                และการติดต่อสื่อสารได้จริง
+            </p>
+
+        </div>
+
+
+        <div class="study-item">
+
+            <div class="icon">
+                🦋
+            </div>
+
+            <h3>
+                การค้าระหว่างประเทศ
+            </h3>
+
+            <p>
+                สนใจเรื่องการซื้อขายระหว่างประเทศ
+                การนำเข้าและส่งออก
+                และการประสานงานทางธุรกิจ
+            </p>
+
+        </div>
+
+
+        <div class="study-item">
+
+            <div class="icon">
+                🩷
+            </div>
+
+            <h3>
+                การสื่อสารระหว่างประเทศ
+            </h3>
+
+            <p>
+                ต้องการพัฒนาทักษะการสื่อสาร
+                เพื่อสามารถทำงานร่วมกับผู้คน
+                จากหลากหลายประเทศได้
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     เหตุผล
+========================= -->
+
+<div class="why-box">
+
+    <h2>
+        ทำไมถึงสนใจ<span>ด้านนี้</span> 🦋
+    </h2>
+
+
+    <div class="why-list">
+
+
+        <div class="why-item">
+            🩷 สนใจการนำภาษาจีนมาใช้ร่วมกับธุรกิจ
+        </div>
+
+        <div class="why-item">
+            🧀 อยากมีความรู้ด้านการบริหารและการค้า
+        </div>
+
+        <div class="why-item">
+            🥨 สนใจการนำเข้าและส่งออกสินค้า
+        </div>
+
+        <div class="why-item">
+            🦋 อยากพัฒนาทักษะเพื่อใช้ในการทำงานจริง
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FUTURE
+========================= -->
+
+<div class="future-box">
+
+    <div class="future-icon">
+        🩷
+    </div>
+
+    <h2>
+        เป้าหมาย<span>หลังเรียนจบ</span>
+    </h2>
+
+    <p>
+        ฉันอยากนำความรู้ด้านธุรกิจและภาษาจีน
+        มาต่อยอดสู่การทำงานที่เกี่ยวข้องกับธุรกิจระหว่างประเทศ
+        เช่น งานด้านการจัดซื้อ การนำเข้าและส่งออก
+        การประสานงานกับต่างประเทศ
+        และงานที่สามารถใช้ภาษาจีนร่วมกับความรู้ทางธุรกิจ
+    </p>
+
+</div>
+
+
+<!-- END -->
+
+<div class="nice-card">
+
+    <div class="nice-title">
+        nice to meet you
+    </div>
+
+</div>
+
+
+</div>
+
+</main>
+
+
+</body>
+
+</html>
